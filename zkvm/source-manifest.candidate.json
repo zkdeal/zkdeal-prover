@@ -24,7 +24,7 @@
     "vendor/rustcrypto-crypto-bigint",
     "vendor/rustcrypto-k256"
   ],
-  "filesDigest": "c2378668acc48f5d0dadd7ed6f809d80eddaacd0169250ed3a3e73fdc7954653",
+  "filesDigest": "18ce91ac53e33300281bacafe54a129b35c6d7675b2911c3c2405ef1e46b8abf",
   "files": [
     {
       "path": "Cargo.lock",
@@ -304,8 +304,8 @@
     },
     {
       "path": "crates/stf-core/Cargo.toml",
-      "size": 1492,
-      "sha256": "290ea0015f2577ad67d1c0c67b34bf43b657088b23453ef4762b0267dde5d144",
+      "size": 1457,
+      "sha256": "b70e4eb1f6470a0f01d4051848bd4eeec9a7b8e239fffad77672f0942651678d",
       "executable": false
     },
     {
@@ -352,14 +352,14 @@
     },
     {
       "path": "crates/stf-core/src/db/mod.rs",
-      "size": 13430,
-      "sha256": "185042d782112dd6468483793d721e131b74f203212acf22c70e010b9d27b849",
+      "size": 13102,
+      "sha256": "95fa6c68fe405f59a7df896a323eac88489bc93c5d9dde943e619d5262fe7e0e",
       "executable": false
     },
     {
       "path": "crates/stf-core/src/db/roots.rs",
-      "size": 4930,
-      "sha256": "634f5374f7f60e3bc23b21b585a78ac56c4dd5342c1ea1818d5a3a11de8a0b59",
+      "size": 4824,
+      "sha256": "747b4d80fbb06e0eaf6df13eff89ecfdff71a8e5b485f95dec91c1bb7c6d4930",
       "executable": false
     },
     {
@@ -478,8 +478,8 @@
     },
     {
       "path": "crates/stf-core/src/settlement/mod.rs",
-      "size": 12539,
-      "sha256": "721abeab3791afe1fdfd51fffef56821581727e66edee5d745838b2cfb6f57d9",
+      "size": 12128,
+      "sha256": "40a3461e608c630f5b25ff4705fcf84048be125b0d3cae8992f831cabd86c899",
       "executable": false
     },
     {
@@ -514,14 +514,14 @@
     },
     {
       "path": "crates/stf-core/tests/batch_v4/fixture.rs",
-      "size": 13447,
-      "sha256": "a2236f200a0aeec028838c63646544983a69203661f5b5e8089d7b5521393272",
+      "size": 13074,
+      "sha256": "246fd866adad636f193de71aa1b9b5eff29179d5fdafcb2e5575e3e3ab765e00",
       "executable": false
     },
     {
       "path": "crates/stf-core/tests/batch_v4/main.rs",
-      "size": 290,
-      "sha256": "98e7353e484807b221a78f213acb6c9310962bb7d18123b66f4b57826c7ae001",
+      "size": 280,
+      "sha256": "acf4b79889c0a6b277d5e97fd72a550594744f8399356f8dcc92ac62e2ed666d",
       "executable": false
     },
     {
@@ -1029,12 +1029,6 @@
       "executable": false
     },
     {
-      "path": "vendor/risc0-groth16-sys/Cargo.toml.orig",
-      "size": 664,
-      "sha256": "f8b65fd55a7a679aea4c7d4858d445e55a67e2031683f270edf0c8a355953ded",
-      "executable": false
-    },
-    {
       "path": "vendor/risc0-groth16-sys/build.rs",
       "size": 1248,
       "sha256": "4242d65f592dcc848bd0eafeed05b0b359cf4d7a6d810a2ba4d70088a467b6b4",
@@ -1086,12 +1080,6 @@
       "path": "vendor/risc0-sys/Cargo.toml",
       "size": 1301,
       "sha256": "4ca7aad08394551c05b81374673ab239c231a7ae19f2e26696c1f41619298194",
-      "executable": false
-    },
-    {
-      "path": "vendor/risc0-sys/Cargo.toml.orig",
-      "size": 611,
-      "sha256": "d90263bac9d225bc9f6ffdd2e6c3e58da52ffe2673a6e418155f58b7e402a6a0",
       "executable": false
     },
     {
