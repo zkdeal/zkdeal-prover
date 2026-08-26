@@ -1,0 +1,21 @@
+[package]
+name = "stf-types"
+version.workspace = true
+edition.workspace = true
+description = "zkdeal STF guest/host shared types (no_std-friendly)"
+
+[dependencies]
+alloy-primitives = { workspace = true }
+alloy-rlp = { workspace = true }
+serde = { workspace = true }
+bls12_381 = { version = "0.8", default-features = false }
+ff = { version = "0.13", default-features = false }
+sha2 = { version = "0.10", default-features = false }
+
+[features]
+default = ["std"]
+std = ["alloy-primitives/std", "serde/std"]
+
+[dev-dependencies]
+c-kzg = { version = "=2.1.8", features = ["ethereum_kzg_settings"] }
+serde_json = { workspace = true }

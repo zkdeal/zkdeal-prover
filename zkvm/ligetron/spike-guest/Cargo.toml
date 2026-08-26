@@ -1,0 +1,55 @@
+# NON-PRODUCTION SPIKE (S3 capacity experiment). The production Ligetron
+# guest is zkvm/crates/ligetron-guest; this crate is its own workspace root (so
+# it is not part of the zkvm workspace) and is absent from artifacts.lock.json.
+#
+#   cargo check                                    # everywhere
+#   cargo build --release --target wasm32-wasip1 --bin stf_guest
+#   cargo run --bin stf_host_ref -- <num_txs> <rounds>
+#   cargo test
+#
+# stf_guest can only be *built* for wasm32-wasip1: the ligetron SDK's `env`
+# imports (assert_one, print_str, ...) exist only inside the Ligero runtime.
+# The last two commands additionally need a host whose linker tolerates
+# undefined symbols in a shared object, because cargo also builds the vendored
+# SDK's `cdylib` crate type; that holds on Linux and not on Windows/MSVC.
+[package]
+name = "stf-guest"
+version = "0.1.0"
+edition = "2021"
+
+# Own workspace root, like ligetron/sdk-rust and crates/ligetron-guest. Without
+# this, cargo's root search walks up to zkvm/Cargo.toml, which lists neither
+# this crate in `members` nor a parent of it in `exclude`, and refuses to build
+# ("current package believes it's in a workspace when it's not"). Adding it to
+# `members` instead would be wrong: cargo ignores `[profile.*]` outside the
+# workspace root, silently dropping the opt-level/lto/panic settings below that
+# the capacity numbers were measured under.
+[workspace]
+
+[dependencies]
+ligetron = { path = "../sdk-rust" }
+tiny-keccak = { version = "2.0", features = ["keccak"] }
+
+[[bin]]
+name = "stf_guest"
+path = "src/main.rs"
+# The guest links the ligetron SDK's `env` wasm imports (assert_one, print_str,
+# ...), which have no host definition, so a host-side test harness for this
+# target cannot link. There are no tests in main.rs; the shared logic in stf.rs
+# is covered through the stf_host_ref target below.
+test = false
+
+# The native reference host that generates the tx blob, the expected post-state
+# root and both config lines. Previously in no compilation unit at all, so a
+# signature change to run_stf produced no error and a clean clone could not
+# regenerate the configs behind the recorded capacity numbers.
+[[bin]]
+name = "stf_host_ref"
+path = "src/host_ref_body.rs"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+panic = "abort"
+

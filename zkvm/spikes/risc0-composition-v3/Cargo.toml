@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2"
+members = ["methods", "host"]
+exclude = ["methods/cold-guest", "methods/suffix-guest"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+# This spike is its own workspace root, so cargo's upward search never reaches
+# `zkvm/Cargo.toml`. Mirror its `[patch.crates-io]` block here or the spike
+# resolves the unpatched crates.io stack (risc0-sys 1.5.0 + sppark 0.1.15) that
+# aborts CUDA Groth16 wrapping — see docs/V5-READINESS-2026-07-23.md and the
+# "Ethereum-seal blocker" section of PROFILE-RTX4090-20260721.md.
+[patch.crates-io]
+risc0-sys = { path = "../../vendor/risc0-sys" }
+risc0-groth16-sys = { path = "../../vendor/risc0-groth16-sys" }
+

@@ -1,0 +1,64 @@
+# zkdeal zkVM workstream — Rust STF (revm + alloy-trie, byte-parity with the
+# ethereumjs MerkleStateManager roots) plus the RISC Zero backend crates:
+#   stf-wire         host-side wire codecs (retired borsh v4 frames + the
+#                    witness-JSON bridge); no longer in the guest closure
+#   stf-wasm         wasm-bindgen STF executor (browser + Node execute path)
+#   risc0/methods    guest ELF embedding; the image id comes from the native
+#                    rzup guest build run inside the pinned toolchain image
+#                    (see crates/risc0/methods/build.rs — RISC0_USE_DOCKER is
+#                    developer mode and produces no released artifact)
+#   risc0/host       zkdeal-r0 prover/verifier binary (JSON-over-stdio + /v5 HTTP)
+#   risc0/wasm-verifier  succinct receipt verifier for browser/Node
+# Excluded (own workspaces): risc0/methods/guest (risc0 target + tiny-keccak
+# accelerator patch), ligetron-guest (wasm32-wasip1 + vendored ligetron SDK).
+# The trust root zkvm/build.mjs mints covers only risc0/host, its client-verifier
+# build and risc0/wasm-verifier: neither the Ligetron backend nor stf-wasm is
+# built or pinned by that pipeline.
+[workspace]
+resolver = "3"
+members = [
+    "crates/stf-types",
+    "crates/stf-core",
+    "crates/stf-wire",
+    "crates/stf-wasm",
+    "crates/risc0/methods",
+    "crates/risc0/host",
+    "crates/risc0/wasm-verifier",
+]
+exclude = [
+    "crates/risc0/methods/guest",
+    "crates/ligetron-guest",
+    "ligetron/sdk-rust",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+stf-types = { path = "crates/stf-types" }
+
+alloy-primitives = { version = "=1.6.1", default-features = false, features = ["std", "serde", "rlp", "map"] }
+alloy-consensus = { version = "=1.6.3", default-features = false, features = ["std", "k256", "serde"] }
+alloy-eips = { version = "=1.6.3", default-features = false, features = ["std"] }
+alloy-rlp = { version = "=0.3.16", default-features = false }
+alloy-trie = { version = "0.9", default-features = false }
+revm = { version = "36.0.0", default-features = false, features = ["std"] }
+serde = { version = "1", default-features = false, features = ["derive", "alloc"] }
+serde_json = "1"
+
+[patch.crates-io]
+# RISC Zero 3.0.6's CUDA zeroize kernels round their launch grid up to a
+# full block but omit the count guard used by the adjacent copy/add kernels.
+# The identity-p254 recursion used before Groth16 wrapping exposes a 32-field
+# buffer and therefore launches 224 out-of-bounds threads on ordinary CUDA
+# devices. Keep the reviewed upstream 1.5.0 source with the two missing bounds
+# checks until the fix is available in a pinned upstream release.
+risc0-sys = { path = "vendor/risc0-sys" }
+# RISC Zero's v0.1.0 Groth16 setup asset and CUDA kernels were released
+# together against sppark 0.1.12. The vendored crate pins that exact ABI,
+# validates the 48-byte record layout, and rejects incompatible assets.
+risc0-groth16-sys = { path = "vendor/risc0-groth16-sys" }
+
+[profile.release]
+lto = true

@@ -1,0 +1,82 @@
+{
+  "format": "zkdeal/zkvm-artifacts-lock/v5",
+  "note": "Reviewed v5-only zkVM trust root. Regenerate with pushed repository@sha256 --toolchain-image and --runtime-image pins plus --cuda --check-repro --update-lock.",
+  "journalVersion": 5,
+  "runtimeCompatibility": "v5-only",
+  "witnessSchemas": {
+    "room": "BatchInputV5/zkdeal:v5:room-prover-job/guest-exit-program-v1/full-room-state-v1",
+    "coldTemplate": "ColdTemplateInputV5/zkdeal:v5:cold-template-prover-job/full-room-state-v1"
+  },
+  "toolchain": {
+    "image": "ghcr.io/olegjakushkin/zkdeal-risc0-toolchain@sha256:56292c1d14531ddf5ca08b6058e495be042e8e1e79a091e60d0cc1da1bf3adb7",
+    "digest": "sha256:56292c1d14531ddf5ca08b6058e495be042e8e1e79a091e60d0cc1da1bf3adb7",
+    "rust": "1.88.0",
+    "riscZero": {
+      "crates": "3.0.6",
+      "rustToolchain": "1.91.1",
+      "groth16": "0.1.0",
+      "rzupSha256": "7cdc1dd5d4b8ef38ea6170c45bd29ba65d389f0e96b365da61631d1fc5c6c1ca"
+    },
+    "wasmPack": "0.13.1",
+    "risc0HomeTreeSha256": "e36f77cd614108ff82a27635f6db3e0f8fc57de4719ee206a7a0d19de429d5f4"
+  },
+  "runtime": {
+    "image": "ghcr.io/olegjakushkin/zkdeal-risc0-runtime@sha256:c3592e74433ef780107af420e8ae69410a6497d0f414a89090f3c6933659d9a5",
+    "digest": "sha256:c3592e74433ef780107af420e8ae69410a6497d0f414a89090f3c6933659d9a5",
+    "cudaRequired": true,
+    "cpuFallback": false,
+    "hostBinarySha256": "806abff416ecc7b21963bef609920cd0684c33cca63bc1bf5e1bdd8094cd71ab"
+  },
+  "risc0": {
+    "imageId": "d4f4d47fa7ed58a2c7a6ed7869a8188876d46ba24fe3a6e0f1631a79901b75e4",
+    "programId": "0xd4f4d47fa7ed58a2c7a6ed7869a8188876d46ba24fe3a6e0f1631a79901b75e4",
+    "containerDigest": "sha256:c3592e74433ef780107af420e8ae69410a6497d0f414a89090f3c6933659d9a5",
+    "cudaRequired": true,
+    "cpuFallback": false,
+    "ethereumSeal": true,
+    "commands": [
+      "imageid",
+      "capabilities",
+      "health",
+      "serve",
+      "prepare-room-v5",
+      "prepare-room-batch-v5",
+      "prepare-cold-template-v5",
+      "execute-room-v5",
+      "prove-room-v5",
+      "verify-room-v5",
+      "execute-cold-template-v5",
+      "prove-cold-template-v5",
+      "verify-cold-template-v5",
+      "prove-room-suite-v5",
+      "wrap-groth16-v5",
+      "wrap-identity-p254-v5",
+      "wrap-groth16-from-p254-v5"
+    ],
+    "capabilityFormat": "zkdeal/risc0-capabilities/v5",
+    "compactStateModel": "full-room-state-v1"
+  },
+  "artifacts": {
+    "build/risc0/verifier/r0_wasm_verifier.js": {
+      "sha256": "9fb2a589cbd018dedde0b8050666a3d041fe0994e8ee17865f1e250f5bfb11de"
+    },
+    "build/risc0/verifier/r0_wasm_verifier_bg.wasm": {
+      "sha256": "5a29487d6072e3dcdc08cb82002b1bf6cbdddcbe57c24954c8520a166346a80d"
+    },
+    "build/risc0/zkdeal-r0": {
+      "sha256": "547e05a9ac42c6a8bf2514adb93eb9ad7311bdd434a746e1f487e5fcb32e0722"
+    },
+    "build/risc0/zkdeal-r0-client": {
+      "sha256": "840259156d38bd48ae7c2f7dd32803853e371330778e8548c19e743442398eb7"
+    },
+    "build/risc0/capabilities-v5.json": {
+      "sha256": "2c0549208ff25658e9aeaf3c9b353044df064b1aca92227ebebd2c2b3f7807b5"
+    },
+    "fixtures/amm-certified-v4.json": {
+      "sha256": "4434e3c6a4722d83d2e62e1441a95d201aaa24a792df08e70a094ce28507e3e5"
+    },
+    "fixtures/amm-terminal-close-v4.json": {
+      "sha256": "d2d7f5bc15be5192cf3899e66b0c383bac0635d829da9105332cecb9dd23c09d"
+    }
+  }
+}

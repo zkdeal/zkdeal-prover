@@ -1,0 +1,196 @@
+{
+  "schema": "zkdeal/4090-physical-settlement-scenario/v2",
+  "sourceClosure": {
+    "verifiedDeterministicBundle": true,
+    "zkvmSubmanifestBound": true,
+    "repositoryHistoryAllowed": false,
+    "requiredProjects": [
+      "app-node",
+      "prover-node",
+      "web3-protocol",
+      "web2-api",
+      "cloud-deployer-infra"
+    ]
+  },
+  "hostedBatch": {
+    "preparedFrom": "live-room-engine-state",
+    "batchInput": "BatchInputV5",
+    "fixture": false,
+    "authorizationMode": "VALIDITY_ONLY",
+    "queueEndpoints": [
+      "/hosting/v1/rooms/prepare-batch",
+      "/v5/rooms/prove",
+      "/v5/rooms/verify"
+    ],
+    "publication": "RoomManager.submitBatch",
+    "ownerAcceptanceTokenRequired": true
+  },
+  "durablePublishing": {
+    "ownerManagedOnly": true,
+    "castEncodingOnly": true,
+    "directBroadcastAllowed": false,
+    "statusEndpoint": "/hosting/v1/l1-transactions/{operationId}",
+    "requiredOperations": {
+      "roomBatch": {
+        "endpoint": "/hosting/v1/l1-operations/room-batches",
+        "selector": "0x62dad01b"
+      },
+      "roomAggregate": {
+        "endpoint": "/hosting/v1/l1-operations/room-aggregates",
+        "selector": "0x5e8b37ac",
+        "type3BlobTransaction": true,
+        "partialMemberOutcomes": true,
+        "successfulMemberOnlyCharging": true
+      },
+      "withdrawalClaim": {
+        "endpoint": "/hosting/v1/withdrawals/{roomId}/{epoch}/{withdrawalIndex}/claims",
+        "selector": "0xb051a9f8"
+      },
+      "sponsorReserveAndStart": {
+        "endpoint": "/hosting/v1/l1-operations/pool-sponsor-mutations",
+        "selector": "0x827ac259",
+        "senderAuthority": "sponsor"
+      },
+      "sponsorRenew": {
+        "endpoint": "/hosting/v1/l1-operations/pool-sponsor-mutations",
+        "selector": "0xf180fe5d",
+        "senderAuthority": "sponsor"
+      },
+      "finalizedCheckpoint": {
+        "endpoint": "/hosting/v1/l1-operations/pool-finalized-checkpoints",
+        "selector": "0xe19bc67e",
+        "senderAuthority": "finality-oracle"
+      },
+      "beneficiaryDisposal": {
+        "endpoint": "/hosting/v1/l1-operations/pool-beneficiary-disposals",
+        "selector": "0xed97f11a",
+        "senderAuthority": "beneficiary",
+        "refundRecipient": "stored-payer"
+      }
+    }
+  },
+  "deployment": {
+    "fresh": true,
+    "runtimeCodeHashesRequired": true,
+    "requiredAddressFields": [
+      "roomManager",
+      "roomIntakeFacet",
+      "roomImportFacet",
+      "roomBatchFacet",
+      "roomValidationFacet",
+      "roomObservationFacet",
+      "roomChallengeFacet",
+      "roomHostingFacet",
+      "roomPool",
+      "roomPoolHostingFacet"
+    ]
+  },
+  "aggregate": {
+    "memberCount": 8,
+    "distinctRooms": true,
+    "singleRecursiveProof": true,
+    "maxTransactionBlobs": 6,
+    "members": [
+      { "roomId": 1, "availability": "blob", "blobStartIndex": 0, "blobCount": 1 },
+      { "roomId": 2, "availability": "blob", "blobStartIndex": 1, "blobCount": 1 },
+      { "roomId": 3, "availability": "blob", "blobStartIndex": 2, "blobCount": 1 },
+      { "roomId": 4, "availability": "blob", "blobStartIndex": 3, "blobCount": 1 },
+      { "roomId": 5, "availability": "blob", "blobStartIndex": 4, "blobCount": 1 },
+      { "roomId": 6, "availability": "blob", "blobStartIndex": 5, "blobCount": 1 },
+      { "roomId": 7, "availability": "calldata", "blobCount": 0 },
+      { "roomId": 8, "availability": "calldata", "blobCount": 0, "staleAtSubmission": true }
+    ]
+  },
+  "preAggregateMutation": {
+    "roomId": 8,
+    "action": "submit the already-proved batch 1 as a valid single-room transaction",
+    "effect": "the unchanged aggregate member for room 8 is stale while the recursive aggregate proof remains valid"
+  },
+  "expectedAggregateOutcome": {
+    "appliedMembers": 7,
+    "failedMembers": 1,
+    "failedRoomId": 8,
+    "failedMemberStateChange": false,
+    "failedMemberChargeFinalization": false,
+    "successfulMemberChargeFinalizations": 7,
+    "requiredEvents": {
+      "AggregateMemberOutcome.applied=true": 7,
+      "AggregateMemberOutcome.applied=false": 1,
+      "BatchAccepted": 7,
+      "DataAvailabilityAccepted": 7,
+      "ProtocolFeeMadeClaimable": 7
+    }
+  },
+  "retry": {
+    "roomId": 8,
+    "batchIndex": 2,
+    "freshProofRequired": true,
+    "action": "prepare and prove a continuation from the independently accepted batch 1, consume one newly queued fee-bearing deposit, and submit it once",
+    "expectedEvents": {
+      "BatchAccepted": 1,
+      "DataAvailabilityAccepted": 1,
+      "ProtocolFeeMadeClaimable": 1
+    },
+    "replayMustFail": true,
+    "secondChargeMustNotOccur": true
+  },
+  "sponsorship": {
+    "distinctPayerAndBeneficiary": true,
+    "fundedEvent": "SponsoredEscrowFunded",
+    "refundRecipient": "payer",
+    "freshRenewalPriceRequired": true,
+    "finalizedCheckpointRequired": true,
+    "doubleBillingAllowed": false
+  },
+  "withdrawal": {
+    "liveHostedValidityOnlyWitness": true,
+    "nonzeroRootRequired": true,
+    "realProofRequired": true,
+    "claimRequired": true,
+    "replayMustFail": true,
+    "checks": [
+      "withdrawalLeaf matches the guest leaf",
+      "verifyWithdrawalProof returns true",
+      "claimWithdrawal succeeds once",
+      "isWithdrawalClaimed becomes true",
+      "the same claim replay fails"
+    ]
+  },
+  "reorg": {
+    "preFinalityOrphanRequired": true,
+    "canonicalRecoveryRequired": true,
+    "finalizedReceiptRequired": true,
+    "duplicateNonceAllowed": false,
+    "duplicateChargeAllowed": false
+  },
+  "failover": {
+    "coordinatorPromotion": true,
+    "proverRestart": true,
+    "headlessRestart": true,
+    "jobIdentityStable": true,
+    "sealedOutputDigestStable": true
+  },
+  "soak": {
+    "durationSeconds": 43200,
+    "restartSafe": true,
+    "ownerRunnerDigestRequired": true,
+    "requiredFaults": [
+      "headless-restart",
+      "prover-restart",
+      "coordinator-promotion",
+      "indexer-rollback",
+      "rpc-split",
+      "object-store-restart",
+      "database-restart",
+      "docker-host-restart-resume"
+    ]
+  },
+  "gasEvidence": {
+    "chain": "EIP-4844-capable Anvil or devnet",
+    "realGroth16Verifier": true,
+    "realPointEvaluationPrecompile": "0x0a",
+    "type3BlobTransaction": true,
+    "reportExecutionGasSeparatelyFromBlobGasAndFees": true,
+    "mockMeasurementsAreReleaseEvidence": false
+  }
+}

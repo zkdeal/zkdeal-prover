@@ -1,0 +1,26 @@
+# zkdeal STF ligetron guest — wasm32-wasip1, proven by the Ligero
+# webgpu_prover (browser WebGPU or native). Standalone workspace: needs its
+# own profile (size-optimized, panic=abort per SDK conventions) and must not
+# join the host workspace's feature resolution.
+[package]
+name = "zkdeal-stf-guest"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[[bin]]
+name = "zkdeal_stf_guest"
+path = "src/main.rs"
+
+[dependencies]
+ligetron = { path = "../../ligetron/sdk-rust" }
+stf-core = { path = "../stf-core" }
+stf-types = { path = "../stf-types" }
+stf-wire = { path = "../stf-wire", default-features = false }
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+panic = "abort"

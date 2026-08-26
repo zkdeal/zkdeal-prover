@@ -1,0 +1,24 @@
+# Normalization is a property of the REPO, not one developer's core.autocrlf.
+# The artifact locks in this project pin sha256 over RAW BYTES, computed over
+# LF. A CRLF checkout therefore fails lock verification. LF everywhere.
+* text=auto eol=lf
+*.sh text eol=lf
+
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.bin   binary
+*.wasm  binary
+*.zkey  binary
+*.r1cs  binary
+*.ptau  binary
+*.gz    binary
+*.zip   binary
+*.pptx  binary
+*.docx  binary
+
+pnpm-lock.yaml linguist-generated=true -diff
+zkvm/ligetron/sdk-rust/** linguist-vendored=true

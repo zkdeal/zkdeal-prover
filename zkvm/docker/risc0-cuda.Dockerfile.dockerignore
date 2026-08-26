@@ -1,0 +1,10 @@
+# This Dockerfile copies only the Rust zkVM workspace. Keeping a dedicated
+# context filter prevents local Cargo targets (multiple GiB) and unrelated
+# monorepo artifacts from entering the reproducible CUDA build context.
+**
+!zkvm
+!zkvm/**
+zkvm/target
+zkvm/build
+zkvm/**/target
+zkvm/**/.git

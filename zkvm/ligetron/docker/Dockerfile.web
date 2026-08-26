@@ -1,0 +1,65 @@
+# Ligetron web (emscripten) build of webgpu_prover / webgpu_verifier
+# Pinned: emsdk 6.0.4 by digest, cmake 3.29.6 by sha256, wasm-libs and
+#         ligero-prover by full commit SHA. The digest below is what
+#         `emscripten/emsdk:latest` resolved to when the pin was taken.
+FROM emscripten/emsdk:6.0.4@sha256:3a0d11e50f072dc2c4bc92e3b05ab1340fb7d4dd152f80b8af35fc1c6f15e644
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    protobuf-compiler ninja-build ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+# emsdk image ships an old cmake; ligero needs >= 3.24.
+# sha256 is the one published in cmake-3.29.6-SHA-256.txt by Kitware; download
+# to a file first so the archive is verified before anything is unpacked.
+RUN curl -fsSL -o /tmp/cmake.tar.gz \
+      https://github.com/Kitware/CMake/releases/download/v3.29.6/cmake-3.29.6-linux-x86_64.tar.gz \
+ && echo "28fef61e64840b784da6db35218fd3ae179ff8bf0be1c8a9d075d6185a0e4fdc  /tmp/cmake.tar.gz" \
+      | sha256sum -c - \
+ && tar xzf /tmp/cmake.tar.gz -C /opt \
+ && rm -f /tmp/cmake.tar.gz \
+ && ln -sf /opt/cmake-3.29.6-linux-x86_64/bin/cmake /usr/local/bin/cmake \
+ && cmake --version
+
+# The codeload archive resolves the pinned large-file objects. The archive hash
+# and post-extraction size check make both pointer bytes and upstream drift fail.
+ARG WASM_LIBS_COMMIT=a24342428c71aea284e9f626fb7fc7db80d4b781
+ARG WASM_LIBS_ARCHIVE_SHA256=8ff359403d27433b5d1ff74f5e66a3e6eaf018ea6fbf69c1238b4bac8d39f349
+RUN test "$(printf %s "${WASM_LIBS_COMMIT}" | wc -c)" -eq 40 \
+ && curl -fsSL -o /tmp/wasm-libs.tar.gz \
+      "https://codeload.github.com/ligeroinc/wasm-libs/tar.gz/${WASM_LIBS_COMMIT}" \
+ && echo "${WASM_LIBS_ARCHIVE_SHA256}  /tmp/wasm-libs.tar.gz" | sha256sum -c - \
+ && mkdir -p /opt/wasm-libs \
+ && tar xzf /tmp/wasm-libs.tar.gz -C /opt/wasm-libs --strip-components=1 \
+ && rm -f /tmp/wasm-libs.tar.gz \
+ && cd /opt/wasm-libs \
+ && n=0 \
+ && for a in lib/*.a; do \
+      [ -e "$a" ] || break; \
+      sz=$(stat -c %s "$a") || exit 1; \
+      if [ "$sz" -le 4096 ]; then \
+        echo "wasm-libs: $a is $sz bytes (git-lfs pointer, not an archive)" >&2; exit 1; \
+      fi; \
+      n=$((n+1)); \
+    done \
+ && if [ "$n" -eq 0 ]; then \
+      echo "wasm-libs: no static archives under /opt/wasm-libs/lib" >&2; exit 1; \
+    fi
+
+ARG LIGERO_COMMIT=6395bb105f259160b42654ec4e3592432b048126
+ARG LIGERO_ARCHIVE_SHA256=0cf882a09882b14cddce5bbba85a649a0401daefdece48bc1194eea054ec0b56
+RUN test "$(printf %s "${LIGERO_COMMIT}" | wc -c)" -eq 40 \
+ && curl -fsSL -o /tmp/ligero.tar.gz \
+      "https://codeload.github.com/ligeroinc/ligero-prover/tar.gz/${LIGERO_COMMIT}" \
+ && echo "${LIGERO_ARCHIVE_SHA256}  /tmp/ligero.tar.gz" | sha256sum -c - \
+ && mkdir -p /opt/ligero \
+ && tar xzf /tmp/ligero.tar.gz -C /opt/ligero --strip-components=1 \
+ && rm -f /tmp/ligero.tar.gz
+
+RUN cd /opt/ligero && mkdir -p build-web/pack \
+ && cd build-web \
+ && emcmake cmake -DCMAKE_BUILD_TYPE=Web -DCMAKE_PREFIX_PATH=/opt/wasm-libs -G Ninja .. \
+ && ninja -j 8 || ninja -j 2
+
+WORKDIR /opt/ligero/build-web
+CMD ["/bin/bash"]

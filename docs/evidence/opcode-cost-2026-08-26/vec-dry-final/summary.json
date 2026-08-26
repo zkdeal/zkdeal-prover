@@ -1,0 +1,720 @@
+{
+  "ok": 14,
+  "bad": 0,
+  "rows": [
+    {
+      "name": "ECRECOVER",
+      "byte": 1,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 1349,
+      "status": "OK",
+      "gasPerUnit": 6240,
+      "gasIntercept": 77026,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 77026,
+          "opcodeSteps": 62,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 449,
+          "executedGas": 2878786,
+          "opcodeSteps": 7246,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 900
+        },
+        {
+          "units": 899,
+          "executedGas": 5686786,
+          "opcodeSteps": 14446,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 1800
+        },
+        {
+          "units": 1349,
+          "executedGas": 8494786,
+          "opcodeSteps": 21646,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2700
+        }
+      ]
+    },
+    {
+      "name": "MODEXP_32",
+      "byte": 5,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 1002,
+      "status": "OK",
+      "gasPerUnit": 8400,
+      "gasIntercept": 79222,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 79222,
+          "opcodeSteps": 74,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 334,
+          "executedGas": 2884822,
+          "opcodeSteps": 5418,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 670
+        },
+        {
+          "units": 668,
+          "executedGas": 5690422,
+          "opcodeSteps": 10762,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 1338
+        },
+        {
+          "units": 1002,
+          "executedGas": 8496022,
+          "opcodeSteps": 16106,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2006
+        }
+      ]
+    },
+    {
+      "name": "BN254_ADD",
+      "byte": 6,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 3027,
+      "status": "OK",
+      "gasPerUnit": 540,
+      "gasIntercept": 71326,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 71326,
+          "opcodeSteps": 62,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 1009,
+          "executedGas": 616186,
+          "opcodeSteps": 16206,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2020
+        },
+        {
+          "units": 2018,
+          "executedGas": 1161046,
+          "opcodeSteps": 32350,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 4038
+        },
+        {
+          "units": 3027,
+          "executedGas": 1705906,
+          "opcodeSteps": 48494,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 6056
+        }
+      ]
+    },
+    {
+      "name": "BN254_MUL",
+      "byte": 7,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 687,
+      "status": "OK",
+      "gasPerUnit": 12240,
+      "gasIntercept": 83008,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 83008,
+          "opcodeSteps": 56,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 229,
+          "executedGas": 2885968,
+          "opcodeSteps": 3720,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 460
+        },
+        {
+          "units": 458,
+          "executedGas": 5688928,
+          "opcodeSteps": 7384,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 918
+        },
+        {
+          "units": 687,
+          "executedGas": 8491888,
+          "opcodeSteps": 11048,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 1376
+        }
+      ]
+    },
+    {
+      "name": "BLS12_G1ADD",
+      "byte": 11,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 3009,
+      "status": "OK",
+      "gasPerUnit": 990,
+      "gasIntercept": 71848,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 71848,
+          "opcodeSteps": 86,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 1003,
+          "executedGas": 1064818,
+          "opcodeSteps": 16134,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2008
+        },
+        {
+          "units": 2006,
+          "executedGas": 2057788,
+          "opcodeSteps": 32182,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 4014
+        },
+        {
+          "units": 3009,
+          "executedGas": 3050758,
+          "opcodeSteps": 48230,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 6020
+        }
+      ]
+    },
+    {
+      "name": "BLS12_G1MSM_k1",
+      "byte": 12,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 346,
+      "status": "OK",
+      "gasPerUnit": 24240,
+      "gasIntercept": 95044,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 95044,
+          "opcodeSteps": 68,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 115,
+          "executedGas": 2882644,
+          "opcodeSteps": 1908,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 232
+        },
+        {
+          "units": 230,
+          "executedGas": 5670244,
+          "opcodeSteps": 3748,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 462
+        },
+        {
+          "units": 346,
+          "executedGas": 8482084,
+          "opcodeSteps": 5604,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 694
+        }
+      ]
+    },
+    {
+      "name": "BLS12_G1MSM_k2",
+      "byte": 12,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 183,
+      "status": "OK",
+      "gasPerUnit": 45792,
+      "gasIntercept": 116686,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 116686,
+          "opcodeSteps": 98,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 61,
+          "executedGas": 2909998,
+          "opcodeSteps": 1074,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 124
+        },
+        {
+          "units": 122,
+          "executedGas": 5703310,
+          "opcodeSteps": 2050,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 246
+        },
+        {
+          "units": 183,
+          "executedGas": 8496622,
+          "opcodeSteps": 3026,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 368
+        }
+      ]
+    },
+    {
+      "name": "BLS12_G2ADD",
+      "byte": 13,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 2972,
+      "status": "OK",
+      "gasPerUnit": 1440,
+      "gasIntercept": 72442,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 72442,
+          "opcodeSteps": 134,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 990,
+          "executedGas": 1498042,
+          "opcodeSteps": 15974,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 1982
+        },
+        {
+          "units": 1981,
+          "executedGas": 2925082,
+          "opcodeSteps": 31830,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 3964
+        },
+        {
+          "units": 2972,
+          "executedGas": 4352122,
+          "opcodeSteps": 47686,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 5946
+        }
+      ]
+    },
+    {
+      "name": "BLS12_G2MSM_k1",
+      "byte": 14,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 185,
+      "status": "OK",
+      "gasPerUnit": 45240,
+      "gasIntercept": 116116,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 116116,
+          "opcodeSteps": 92,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 61,
+          "executedGas": 2875756,
+          "opcodeSteps": 1068,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 124
+        },
+        {
+          "units": 123,
+          "executedGas": 5680636,
+          "opcodeSteps": 2060,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 248
+        },
+        {
+          "units": 185,
+          "executedGas": 8485516,
+          "opcodeSteps": 3052,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 372
+        }
+      ]
+    },
+    {
+      "name": "BLS12_G2MSM_k2",
+      "byte": 14,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 92,
+      "status": "OK",
+      "gasPerUnit": 90240,
+      "gasIntercept": 161278,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 161278,
+          "opcodeSteps": 146,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 30,
+          "executedGas": 2868478,
+          "opcodeSteps": 626,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 62
+        },
+        {
+          "units": 61,
+          "executedGas": 5665918,
+          "opcodeSteps": 1122,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 124
+        },
+        {
+          "units": 92,
+          "executedGas": 8463358,
+          "opcodeSteps": 1618,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 186
+        }
+      ]
+    },
+    {
+      "name": "BLS12_PAIRING_k2",
+      "byte": 15,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 39,
+      "status": "OK",
+      "gasPerUnit": 206040,
+      "gasIntercept": 277186,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 277186,
+          "opcodeSteps": 182,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 13,
+          "executedGas": 2955706,
+          "opcodeSteps": 390,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 28
+        },
+        {
+          "units": 26,
+          "executedGas": 5634226,
+          "opcodeSteps": 598,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 54
+        },
+        {
+          "units": 39,
+          "executedGas": 8312746,
+          "opcodeSteps": 806,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 80
+        }
+      ]
+    },
+    {
+      "name": "BLS12_MAP_FP_TO_G1",
+      "byte": 16,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 748,
+      "status": "OK",
+      "gasPerUnit": 11240,
+      "gasIntercept": 81990,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 81990,
+          "opcodeSteps": 50,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 249,
+          "executedGas": 2880750,
+          "opcodeSteps": 4034,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 500
+        },
+        {
+          "units": 498,
+          "executedGas": 5679510,
+          "opcodeSteps": 8018,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 998
+        },
+        {
+          "units": 748,
+          "executedGas": 8489510,
+          "opcodeSteps": 12018,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 1498
+        }
+      ]
+    },
+    {
+      "name": "BLS12_MAP_FP2_TO_G2",
+      "byte": 17,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 175,
+      "status": "OK",
+      "gasPerUnit": 47840,
+      "gasIntercept": 118626,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 118626,
+          "opcodeSteps": 62,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 58,
+          "executedGas": 2893346,
+          "opcodeSteps": 990,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 118
+        },
+        {
+          "units": 116,
+          "executedGas": 5668066,
+          "opcodeSteps": 1918,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 234
+        },
+        {
+          "units": 175,
+          "executedGas": 8490626,
+          "opcodeSteps": 2862,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 352
+        }
+      ]
+    },
+    {
+      "name": "P256VERIFY",
+      "byte": 256,
+      "klass": "precompile",
+      "kind": "precompile",
+      "unitBytes": 8,
+      "cap": 599,
+      "status": "OK",
+      "gasPerUnit": 14040,
+      "gasIntercept": 84844,
+      "gasNonlinearity": 0,
+      "stepsPerUnit": 16,
+      "points": [
+        {
+          "units": 0,
+          "executedGas": 84844,
+          "opcodeSteps": 68,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 2
+        },
+        {
+          "units": 199,
+          "executedGas": 2878804,
+          "opcodeSteps": 3252,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 400
+        },
+        {
+          "units": 399,
+          "executedGas": 5686804,
+          "opcodeSteps": 6452,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 800
+        },
+        {
+          "units": 599,
+          "executedGas": 8494804,
+          "opcodeSteps": 9652,
+          "fusedMotifHits": 0,
+          "maxMemoryBytes": 2112,
+          "encodedWitnessBytes": 31715,
+          "precompileCalls": 1200
+        }
+      ]
+    }
+  ]
+}

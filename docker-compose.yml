@@ -1,0 +1,75 @@
+# Build and test the RISC Zero prover without any host toolchain.
+#   docker compose run --rm test              # cargo STF suites (CPU, no GPU)
+#   docker compose run --rm toolchain-build   # build the CUDA toolchain image
+#   docker compose run --rm build             # build the runtime prover image
+#   docker compose run --rm locks-test        # zkVM lock verification
+#   docker compose run --rm agent-test        # queue-pull agent suite (no GPU)
+#   docker compose --profile gpu run --rm smoke   # runtime health on the GPU
+#
+# CUDA_ARCH defaults to 86 (this stand's RTX 3080). The 4090 CI stand builds
+# with 89; build-docker-images.* auto-probes nvidia-smi and overrides this.
+services:
+  test:
+    image: rust:1.88-bookworm
+    working_dir: /w
+    volumes:
+      - ./zkvm:/w
+      - cargo-target:/w/target
+      - cargo-registry:/usr/local/cargo/registry
+    environment:
+      CARGO_TARGET_DIR: /w/target
+    # bash -c, not -lc: a login shell sources /etc/profile, which resets PATH
+    # and drops /usr/local/cargo/bin -- "cargo: command not found".
+    command: bash -c "cargo test -p stf-core --locked && cargo test -p stf-wire -p stf-types --locked && RISC0_SKIP_BUILD=1 RISC0_SKIP_BUILD_KERNELS=1 cargo check -p zkdeal-r0 -p r0-methods --locked && RISC0_SKIP_BUILD=1 RISC0_SKIP_BUILD_KERNELS=1 cargo test -p zkdeal-r0 --locked http_"
+
+  toolchain-build:
+    image: docker:27-cli
+    working_dir: /ctx
+    volumes:
+      - .:/ctx
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: docker build --target toolchain -f zkvm/docker/risc0-cuda.Dockerfile -t zkdeal-risc0-toolchain:dev /ctx
+
+  build:
+    image: docker:27-cli
+    working_dir: /ctx
+    volumes:
+      - .:/ctx
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: docker build --target runtime -f zkvm/docker/risc0-cuda.Dockerfile --build-arg CUDA_ARCH=${CUDA_ARCH:-86} -t zkdeal-risc0-cuda-runtime:dev /ctx
+
+  locks-test:
+    image: node:22-bookworm
+    working_dir: /w
+    volumes:
+      - .:/w
+    command: node scripts/verify-zkvm-locks.mjs
+
+  # The queue-pull sidecar is plain Node against fake HTTP peers; its suite
+  # needs neither CUDA nor the Rust workspace, so it stays out of `test`.
+  agent-test:
+    image: node:22-bookworm
+    volumes:
+      - ..:/src:ro
+      - pnpm-store:/pnpm-store
+    command: bash -lc "mkdir /u && tar -C /src --exclude='./*/node_modules' --exclude='./*/*/node_modules' -cf - ./prover-node/agent ./prover-node/package.json ./prover-node/pnpm-workspace.yaml ./prover-node/pnpm-lock.yaml ./prover-node/tsconfig.base.json | tar -C /u -xf - && cd /u/prover-node && corepack enable && corepack prepare pnpm@10.13.1 --activate && pnpm config set store-dir /pnpm-store && pnpm install --frozen-lockfile && pnpm -C agent run build && pnpm -C agent run test"
+
+  smoke:
+    profiles: [gpu]
+    image: zkdeal-risc0-cuda-runtime:dev
+    environment:
+      RISC0_DEV_MODE: "0"
+      RISC0_REQUIRE_CUDA: "1"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command: ["health"]
+
+volumes:
+  cargo-target:
+  cargo-registry:
+  pnpm-store:

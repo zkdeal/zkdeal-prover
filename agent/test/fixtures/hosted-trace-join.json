@@ -1,0 +1,54 @@
+{
+  "schema": "zkdeal/hosted-trace-join/current",
+  "joinFields": ["correlationId", "tenantId", "roomId", "jobId"],
+  "records": [
+    {
+      "schemaVersion": 1,
+      "timestamp": "2026-08-21T12:00:00.000Z",
+      "correlationId": "corr-room-7-batch-3",
+      "tenantId": "tenant-a",
+      "roomId": "7",
+      "jobId": "pj-0000000001",
+      "operationId": null,
+      "component": "queue",
+      "event": "job.lease",
+      "outcome": "started"
+    },
+    {
+      "schemaVersion": 1,
+      "timestamp": "2026-08-21T12:00:01.000Z",
+      "correlationId": "corr-room-7-batch-3",
+      "tenantId": "tenant-a",
+      "roomId": "7",
+      "jobId": "pj-0000000001",
+      "operationId": null,
+      "component": "prover-agent",
+      "event": "job.start",
+      "outcome": "started"
+    },
+    {
+      "schemaVersion": 1,
+      "timestamp": "2026-08-21T12:00:08.000Z",
+      "correlationId": "corr-room-7-batch-3",
+      "tenantId": "tenant-a",
+      "roomId": "7",
+      "jobId": "pj-0000000001",
+      "operationId": null,
+      "component": "prover-agent",
+      "event": "job.complete",
+      "outcome": "succeeded"
+    },
+    {
+      "schemaVersion": 1,
+      "timestamp": "2026-08-21T12:00:09.000Z",
+      "correlationId": "corr-room-7-batch-3",
+      "tenantId": "tenant-a",
+      "roomId": "7",
+      "jobId": "pj-0000000001",
+      "operationId": null,
+      "component": "queue",
+      "event": "job.complete",
+      "outcome": "succeeded"
+    }
+  ]
+}

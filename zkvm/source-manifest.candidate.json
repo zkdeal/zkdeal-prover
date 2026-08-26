@@ -1,0 +1,2202 @@
+{
+  "format": "zkdeal/zkvm-source-manifest/v1",
+  "algorithm": "sha256",
+  "sourceRoots": [
+    "Cargo.toml",
+    "Cargo.lock",
+    "rust-toolchain.toml",
+    "build-config.mjs",
+    "build-exec.mjs",
+    "build-lock.mjs",
+    "build.mjs",
+    "lock-schema.mjs",
+    "crates/risc0/methods",
+    "crates/risc0/host",
+    "crates/risc0/wasm-verifier",
+    "crates/stf-core",
+    "crates/stf-types",
+    "crates/stf-wire",
+    "docker",
+    "scripts",
+    "vendor/risc0-groth16-sys",
+    "vendor/risc0-sys",
+    "vendor/rustcrypto-sources.json",
+    "vendor/rustcrypto-crypto-bigint",
+    "vendor/rustcrypto-k256"
+  ],
+  "filesDigest": "c2378668acc48f5d0dadd7ed6f809d80eddaacd0169250ed3a3e73fdc7954653",
+  "files": [
+    {
+      "path": "Cargo.lock",
+      "size": 154363,
+      "sha256": "035c402ac144eeab7cd4e8a8a2b9617bc378e0f644aecd9fcf2293631a846f07",
+      "executable": false
+    },
+    {
+      "path": "Cargo.toml",
+      "size": 3042,
+      "sha256": "490cc65cc15ca3c39263d5799a2f7d42074c4c84dc33f76b869a05fa9efdcc7b",
+      "executable": false
+    },
+    {
+      "path": "build-config.mjs",
+      "size": 4911,
+      "sha256": "32362a68a791a58d278539f09dcd1f757d145793585d1705adcc9fc3a657c106",
+      "executable": false
+    },
+    {
+      "path": "build-exec.mjs",
+      "size": 9535,
+      "sha256": "2d5e27751b8d18355846da874163170b5f27d3b3c3e2d23728584c8f251e7a3e",
+      "executable": false
+    },
+    {
+      "path": "build-lock.mjs",
+      "size": 6952,
+      "sha256": "62851b0c9ce00ded84f58f587f6cf3c942fd432904f7ec788985fa8a4dfca81e",
+      "executable": false
+    },
+    {
+      "path": "build.mjs",
+      "size": 15830,
+      "sha256": "2f887e3252ac9202256ce7646f4a2af0e734e7d68fa03ea491856e6f5fa29a19",
+      "executable": true
+    },
+    {
+      "path": "crates/risc0/host/Cargo.toml",
+      "size": 1982,
+      "sha256": "cd80b1e4274066bf84cec9dbef45aaf282ba68773504a4d674bd8c7fdf3cde7c",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/capabilities.rs",
+      "size": 6295,
+      "sha256": "6bc1258e821c4e12380e330008eb9509a79d3275239c7a490a038f969f24b257",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/commands_v5.rs",
+      "size": 16632,
+      "sha256": "f08a730e36371eddad9772d3d3201b71f1f41fc125165a832c526aab03ae71c1",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/gpu.rs",
+      "size": 8080,
+      "sha256": "9ed26eaab84e70e5569d80ad8f9e5b86df6767f2a61194995ce041de789939f9",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/hosting.rs",
+      "size": 24482,
+      "sha256": "bf367dd52dd442adf46454791b05279ca070bcf31f74085882c6d97f1ddce45c",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/http.rs",
+      "size": 22086,
+      "sha256": "c9ab30592c8572995df47c337db9840deee74e0b62768dd653df9a6314705903",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/live_prepare.rs",
+      "size": 44313,
+      "sha256": "f54bdacd8d20705c9acb1d238a56713559e096451550e28d0f7a30d8164b8e9e",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/main.rs",
+      "size": 8420,
+      "sha256": "c66b73882cb225ce72cf910b93d4f516e4ac406effece133c76e0741d87cde8d",
+      "executable": true
+    },
+    {
+      "path": "crates/risc0/host/src/receipt.rs",
+      "size": 8914,
+      "sha256": "97b63dda988b2f083c6e67742018c13f3f7a0e90494a7a8f3aea612d10d285a3",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/report.rs",
+      "size": 8354,
+      "sha256": "d5780e8c8d924947504818e33fad9e7c0eb56372d55de4fb12687ba58e583aee",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/suite_v5.rs",
+      "size": 7771,
+      "sha256": "2dd245b27cb25f80519dfff614a8def727d3fb06a47e8fa635edd4a017dd01e3",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture.rs",
+      "size": 20813,
+      "sha256": "3e277c2048ac7482cb72b5528b342575b1e382fb4883bc3318a97dfbfdff50a0",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/blocks.rs",
+      "size": 8371,
+      "sha256": "7c03e4c57804c64d0eb89e8d94390a8b828dafcc2b25b9d2409e81005e432a2a",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/bytecode.rs",
+      "size": 7555,
+      "sha256": "06e13e3ddf4ac53cb927d43864f55063d793d9d4b44574b16ec75df2944b7d5b",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/capability.rs",
+      "size": 9176,
+      "sha256": "adfbc36b163b63365792610ac7f32376025f0417eee3bbabdf3ee49d8bd0dfa1",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/card.rs",
+      "size": 16390,
+      "sha256": "9cfeec4c67e51dc92c877ffb7ad8de9adc551313957b56240a04297077a85262",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/client_tests.rs",
+      "size": 10153,
+      "sha256": "416626c7dda57557492db9739927339aada4ac373fce60534072b60b667f7810",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/config.rs",
+      "size": 20495,
+      "sha256": "655794968905aa6403709fb37cebaec837dddb4ed60e0745c13ff408b0dae0ee",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/continuation.rs",
+      "size": 6848,
+      "sha256": "4e9e7b6d621357acd114c2f0233c012e6cb6ee1b5deffbab3844f49448d2e8fa",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/continuation_tests.rs",
+      "size": 11764,
+      "sha256": "d0bf9c8d65279c723a1fc4d0ac9c56cc78337e90c532937f7bd7a6dce5384a42",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/contracts.rs",
+      "size": 19299,
+      "sha256": "4c254d0b9335909376f7325a9c73d149c56e21a9c0c374133854e26a7df6b994",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/json.rs",
+      "size": 4175,
+      "sha256": "195d7ee22739baf3391c98f1878d88c92fa549950e2a06ecaca508cf86a37a72",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/merkle.rs",
+      "size": 2043,
+      "sha256": "6bfc81d2d84bdb2a708e91ecc02ca6f3d16f48afac1fbfb8c7da2b188b7b0402",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/policy.rs",
+      "size": 6800,
+      "sha256": "d68f01149ca8bb9ffe7f4ebe9802409fce3e188fc93edcf8dd3ac077156c78f4",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/raw.rs",
+      "size": 13524,
+      "sha256": "1264e7b195b8b17fabf3987deab35f3acf8d328f380997b32e0d96648b4554fe",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/request_tests.rs",
+      "size": 17098,
+      "sha256": "f7e640c4f863dea433005ff3140d5c481bdfaca07d07394f4d0830ec257d7b7b",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/selectors.rs",
+      "size": 6767,
+      "sha256": "6e13900c46fe19b05399488841b2cf0f9019d899fed4ec8005796a6143c6f35e",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/signing.rs",
+      "size": 4668,
+      "sha256": "762a6ce1020733f7fffea5a28ac81b2294f10ea563ab21269a12b0e15416a896",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/v5_fixture/state.rs",
+      "size": 11484,
+      "sha256": "6582628bf8fc081b15532f98980e45bc44adc4697529697a754990278d8d0ee5",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/witness.rs",
+      "size": 7149,
+      "sha256": "c9212c01afd9cc9d658cfad7fab0b6281bc86643a90905bf1ba4c17b2c1b8d9f",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/host/src/wrap_v5.rs",
+      "size": 10816,
+      "sha256": "3becdc5555b050d5a1993b083b0c32fd20aee1b8beb49a027ae691e8f40e7834",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/methods/Cargo.toml",
+      "size": 288,
+      "sha256": "849166b7b05a8d504675fc3501b7cbfc6b5d07c6b3d77b2a59991fa8ef96e6b2",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/methods/build.rs",
+      "size": 1906,
+      "sha256": "ca382427a3a19a417fe1e05ed2e41ff8c7ba102eaa1a5debbf29d87d34e6a8ce",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/methods/guest/Cargo.lock",
+      "size": 89735,
+      "sha256": "f4cc1f57f67f69a34b3b1d1319cee3544197964ade56216d0675d73ea1caa16e",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/methods/guest/Cargo.toml",
+      "size": 1909,
+      "sha256": "d39e687f13e4882f0d1df53169b1c1479e6c1211ee430e35b9750fae193e06b6",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/methods/guest/src/main.rs",
+      "size": 5109,
+      "sha256": "daa181e33b466a57487e4ab3244b8760d7bf84874376c20f6427eb2bb5ded2c0",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/methods/guest/src/native_keccak.rs",
+      "size": 2550,
+      "sha256": "525c91911bc65671319bb9de73ed051f737c526c7cb6b8a848e48ebf7bf05f44",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/methods/src/lib.rs",
+      "size": 121,
+      "sha256": "a556f7eb888985e48ad4849c22477101a3e77b15b4db187043a92cec911c56df",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/wasm-verifier/Cargo.toml",
+      "size": 822,
+      "sha256": "f2e2498da8fcdeee97453a46c9846e81ec243a679f0d4b40d217e9783767c10d",
+      "executable": false
+    },
+    {
+      "path": "crates/risc0/wasm-verifier/src/lib.rs",
+      "size": 1967,
+      "sha256": "9ea52a3221bb931489d477eb7786dca74a098b68293c4beb9a7b0b60d1d25b07",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/Cargo.toml",
+      "size": 1492,
+      "sha256": "290ea0015f2577ad67d1c0c67b34bf43b657088b23453ef4762b0267dde5d144",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/batch_v4.rs",
+      "size": 15253,
+      "sha256": "a6d01abccdbf158fffa762dd15a8902f0b3c38e875078e23ed8a75a9537b7d87",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/bin/eest-osaka-v5.rs",
+      "size": 11253,
+      "sha256": "d5d1668f6fc47c27db30ce622496298aeb73e358cf61f518b6c3ea89a3642e4d",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/block.rs",
+      "size": 11232,
+      "sha256": "4fe5b6d8a81bf0e0bf20bb2eb79204c12ffc8bbf03dc7c84bd7bac2a73790115",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/cold_room.rs",
+      "size": 10936,
+      "sha256": "ebb8e96f0a4b2c4c5cc7fb1e77f356f4371ccd472aac75e1cab42f95268ae607",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/cold_state.rs",
+      "size": 9791,
+      "sha256": "4e89e658a1cb7de9791362e1f2d4a88ef23ca65b95bf99a4f0d913d4b95e48d2",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/compact.rs",
+      "size": 7116,
+      "sha256": "7620b5f7db19428acfa6e097ca4cf31d043b2dcfe279eb5e75dcdbecb39bf822",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/db/evm.rs",
+      "size": 11411,
+      "sha256": "c61259ffccd0b0afb5e2a6200fa40189123800889131c203e01d63224ec66a17",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/db/mod.rs",
+      "size": 13430,
+      "sha256": "185042d782112dd6468483793d721e131b74f203212acf22c70e010b9d27b849",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/db/roots.rs",
+      "size": 4930,
+      "sha256": "634f5374f7f60e3bc23b21b585a78ac56c4dd5342c1ea1818d5a3a11de8a0b59",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/error.rs",
+      "size": 3274,
+      "sha256": "bb29137a1f93bc1343bbcd559800c4a481eace1007c1a9b59e1ba907897dcde0",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/genesis.rs",
+      "size": 7907,
+      "sha256": "79715de08c1405f383409287e3805354cdbb1fdc4bc66620ce687b2f2eec7c34",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/lib.rs",
+      "size": 2303,
+      "sha256": "e263b049d97a4b2a1c4a4678bb251f012e85276a943d89be4834b4b0d085adfb",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/opcode_gadgets.rs",
+      "size": 13243,
+      "sha256": "4adff7128471acd75b708b738858d6f32b90b1a8ee687479b04ba7a3e067947d",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/opcode_manifest.rs",
+      "size": 3129,
+      "sha256": "d871de964f7700ea5734de3ccb272462b566e532bbed98cea8a618f89595aea2",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/policy/enforce.rs",
+      "size": 6545,
+      "sha256": "94dec8cba12b6202afbb50c92008f9ffe22506c94d2eee588b61e5d4f57cd4ee",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/policy/from_input.rs",
+      "size": 18779,
+      "sha256": "3ebf96c4937abbea2c7d14ee154b0d67a809ef8d9e6133a6999b4b707ba50674",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/policy/from_v5.rs",
+      "size": 13341,
+      "sha256": "136080cc378a8657f430c47384055dbe316c3398c19d0f572ee6f507157ddc2c",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/policy/inspector.rs",
+      "size": 10788,
+      "sha256": "8055c5dd6f683a5b5623754e2b9d3dc7bf28f00f4c058a1f9904d02750112206",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/policy/mod.rs",
+      "size": 11485,
+      "sha256": "947b03e9121970bac035b4f1cffb53132595895a348fbe0b33b8cfc7418c9c44",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/report.rs",
+      "size": 4185,
+      "sha256": "19b195323f74bec81ba75f8007666eb9798536843e4beb2283ca0c4a567f0acf",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/room_v5/admission.rs",
+      "size": 11172,
+      "sha256": "758cccf91086211ac2b111da53802e9964c4a55d73e523d56ac07a01a5352d9c",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/room_v5/exit.rs",
+      "size": 13718,
+      "sha256": "9ab686efb97c73406e040343a42251b76620cd191c624fc5037058114daa7f28",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/room_v5/import.rs",
+      "size": 7367,
+      "sha256": "68bfa184c2f2fbfed68edfc19a01fc7e6efd9434ec10ac211ff2a7311db0d7ff",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/room_v5/liabilities.rs",
+      "size": 10635,
+      "sha256": "1bfc34610b99086c6b49b6e94a79301f303e949b57d571071bc0739ec9f49f61",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/room_v5/mod.rs",
+      "size": 14778,
+      "sha256": "02908b95ed7ba6200ed07f6bd714bf43b95af016a1295f6a01ed0bf25817a031",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/room_v5/roster.rs",
+      "size": 7257,
+      "sha256": "6722176bc923f07bcd98eaef2b6007b3c8124ae5262d46ab1dbd84f02783372e",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/settlement/exit.rs",
+      "size": 14580,
+      "sha256": "ae4e7aad2f08fbe06ab3db681ce2c6473cfc7c5f151bc4e0e42a1f9292d7f581",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/settlement/inbox.rs",
+      "size": 6566,
+      "sha256": "9040085c272d19cf28559c93815e7e844801a14868dbff76186a420082fb345e",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/settlement/mod.rs",
+      "size": 12539,
+      "sha256": "721abeab3791afe1fdfd51fffef56821581727e66edee5d745838b2cfb6f57d9",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/settlement/program.rs",
+      "size": 12741,
+      "sha256": "ab179ffcdedd0fe671b2dc3687e07a43dde8a18cbb9a91da0245cbbc2c00b7c4",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/settlement/roster.rs",
+      "size": 5763,
+      "sha256": "bc4504f8717328fd3d248dc124e19796cae8a68ae2444063f895257977575e1c",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/src/txenv.rs",
+      "size": 4362,
+      "sha256": "f03b53c17e3ac8ea980163235fd5c833bbd37a911081a36483f37a3d74604d12",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/batch_v4/batches.rs",
+      "size": 14339,
+      "sha256": "90fafe4f45076c76d15c2814ca8c2a6646b4958a0c1485afd609d9a41e5b2563",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/batch_v4/execution.rs",
+      "size": 11738,
+      "sha256": "708db2bc886e400c46c79ca7f165cd6da9e6957574da7bcaee11a5d50cc9c6de",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/batch_v4/fixture.rs",
+      "size": 13447,
+      "sha256": "a2236f200a0aeec028838c63646544983a69203661f5b5e8089d7b5521393272",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/batch_v4/main.rs",
+      "size": 290,
+      "sha256": "98e7353e484807b221a78f213acb6c9310962bb7d18123b66f4b57826c7ae001",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/batch_v4/preset.rs",
+      "size": 3488,
+      "sha256": "28d6007c7c5afc5e6274d47171d3ae6e11419c63ff706e5b0b35697ebae383f5",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/batch_v4/refusals.rs",
+      "size": 9025,
+      "sha256": "a61657a5cd1a067663a72f82c423b2aebc5056e63d812e22ef0b5b235aaa19f9",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/cold_room_v4.rs",
+      "size": 8210,
+      "sha256": "80c3f71167f6936c85f279333b751791f53844094204bb6863949e26f87ee09e",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/cuda_zeroize_regression.rs",
+      "size": 4515,
+      "sha256": "4c0f9f9068aeaa835648d755aecef6bc4a9c05b33dbe4937634f32c5d73ed1fd",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/genesis_v4.rs",
+      "size": 6953,
+      "sha256": "f3912fb73e00e5bbfa9968877acce0d07d293f25041a799e2ac12a4e883704d8",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/opcode_gadgets.rs",
+      "size": 4201,
+      "sha256": "404d5c0da41c12e6df52c7a5b862261e4b90d485e7289c8db82e324e8e63e814",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/parity.rs",
+      "size": 9621,
+      "sha256": "bf8bf4d7944f82857f1d17d67e145788c89ba861bebca0c0f59ec187831a1c02",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/policy.rs",
+      "size": 12505,
+      "sha256": "73c4d457f1dfcc7a2f03d36d8ae8fc5c818447d582e54559ea4e5ee2a89bb84e",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/room_v5/cold_template_vectors.rs",
+      "size": 14628,
+      "sha256": "7f87e77bd99aba860bff01745114f55d993864ff7aae54d3a6c33548ab14037e",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/room_v5/execution.rs",
+      "size": 9164,
+      "sha256": "790dcd402ea865724843c3a5bca171d13eb630bfd4cb606fa5bafa725238c92d",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/room_v5/exit.rs",
+      "size": 16078,
+      "sha256": "8176d1bbc62f978e6d55628356e7657f0c1444d80cf67e2f47af635810984b30",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/room_v5/forced_vectors.rs",
+      "size": 22899,
+      "sha256": "67529640d827d03d6daa31612f7d3b32eae42df7e2c6e100219691f675b3bf02",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/room_v5/guards.rs",
+      "size": 22119,
+      "sha256": "88aa22730535ce7df20239fccb9d844834a40366d40f54e4c4bb79afa25a8b6e",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/room_v5/main.rs",
+      "size": 227,
+      "sha256": "bb7b5baf041925eee912f9eb5e51b5a4a43565a1540fa909e8f2e7ef91ed92c5",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/room_v5/support.rs",
+      "size": 8409,
+      "sha256": "876bdf3ce4895877daaa4dfa3391b3a16b318a37e5a5a97caf7fd563a9a677a5",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/room_v5/vectors/cold-template-frame-v5.json",
+      "size": 19240,
+      "sha256": "02fc19fdc5722649302e5ede6d0fe27d809e25541f81a7305099c06d8e5d5a2f",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/room_v5/vectors/forced-rejection-v5.json",
+      "size": 14160,
+      "sha256": "12d78271f5a184e1c5351166b2e98d2fe33c19318f301c813ecb2aa1e0406dee",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-core/tests/room_v5/witness.rs",
+      "size": 35045,
+      "sha256": "fabeb8437a0e4c8218a0540dc5ce297486c08637ca844633a8ae6409956fa222",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/Cargo.toml",
+      "size": 627,
+      "sha256": "e87285be55dbd7b16adf7c10398ea15aaec2489ed77d29108249277aeeb23429",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/abi.rs",
+      "size": 1901,
+      "sha256": "31a7ddd3ae4dfa09c9fbd04d91aba822fbe5daff63c272f00c05d230d066aec7",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/batch_data.rs",
+      "size": 4713,
+      "sha256": "c16044600b652aef717bd14787747d199b45d05f0d2823638f6cdeb963561b47",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/block.rs",
+      "size": 4394,
+      "sha256": "3f7df2b5729b376b4de6aa080a15dd796ec7d7611b5d7f4dad414c4bc0464229",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/domain.rs",
+      "size": 2941,
+      "sha256": "a708edb9104e84b6a64faf142cc518e6042590b28e56a649c95660fd51940132",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/hosting.rs",
+      "size": 25430,
+      "sha256": "a785a5e98337265a1082a8fb2f2d732579c5ab33191b9b1cd8c7e96b82194ad4",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/lib.rs",
+      "size": 866,
+      "sha256": "a73e075971722137ef62562921312559a60c3d182684db4cfd3523749bac9db3",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/limits.rs",
+      "size": 3191,
+      "sha256": "86199ee90797407378ad2977fbea8eb0165d415356d16b376fa49811ba6ef064",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/tests.rs",
+      "size": 18272,
+      "sha256": "9d85d4298f3a7f160be13fa14a0b06f4a526057a59ecf40e4442dc3d3b430ae4",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/v4/cold.rs",
+      "size": 6654,
+      "sha256": "16e46d6ea131c6518b63188efd065877103859730d23c0445c2e89064263c14b",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/v4/hash.rs",
+      "size": 14640,
+      "sha256": "092d37b9c9160f23a5d7e4c3b18fa4db23a7017e28ff3c180220c56b43cfb877",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/v4/mod.rs",
+      "size": 157,
+      "sha256": "d9a1fbd98e741d87c5be761ff55a4e33c32a26bded22ea49e5ddb99834c31c74",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/v4/types.rs",
+      "size": 16785,
+      "sha256": "b91c3fb6e1f29c83ccd1a75a4af19ca09b8dfb28716207d844899b3effe0c1e0",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/v5/hash.rs",
+      "size": 19232,
+      "sha256": "77e0cafffb8c73a5764564576f8c40321bbd0a28d82a5cacdcc62597d0187ff8",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/v5/mod.rs",
+      "size": 221,
+      "sha256": "75b09266e2ed1c600530e91086997216cda94cbb1a8502614a3ca841aee207f2",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/src/v5/types.rs",
+      "size": 15859,
+      "sha256": "b8fea5756360687ce9922f29589a15d0d84a6efa64a0c2567ec8091a65336832",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/tests/canonical_batch_vectors.rs",
+      "size": 5016,
+      "sha256": "bff15e279726a6734a3571095cd62c42551fd3c0c9842e79504ac7a73bdcf681",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-types/tests/vectors/canonical-batch-v5.json",
+      "size": 4049,
+      "sha256": "b392f6f3b4a46b44cd78f03ae0c911f9a2dffad4b66b2da177c1c321fcdea7e7",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/Cargo.toml",
+      "size": 614,
+      "sha256": "315c524ab0b2b77f24dea075e98fc7252fdbf658f389e7f24fc8fa7410d44c0b",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/batch_input_v4.rs",
+      "size": 17070,
+      "sha256": "bd849312c4fa42af26c1d971afc5ab6d2b987912b45df41b93e491156e0c93a2",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/batch_journal_v4.rs",
+      "size": 7909,
+      "sha256": "2c684ed76f75db5f200b6638c0adaa28ddf4fa6df51db437ec45806e9602f868",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/bin/differential-batch-v4.rs",
+      "size": 1946,
+      "sha256": "2b86f9b132eca58c438533801e82840e72a0abd13e3f2ca165ea6e15a9891b9e",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/bin/gen-amm-cold-composed-v4.rs",
+      "size": 12136,
+      "sha256": "36798790043fc1a5f155dcddb0bb8c339630246af2140c47355c13cbc5fa5645",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/bin/gen-amm-cold-composed-v4/digest.rs",
+      "size": 6138,
+      "sha256": "0030f67d1e0d60d4fdfa84cd6b63a612f5832a2966fcad0c50104eb4a46d192b",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/bin/gen-amm-cold-composed-v4/spec.rs",
+      "size": 10559,
+      "sha256": "e7de1c6adfdc6d12faa3cb495eecce940bce13e986d4e476455102a845ab5c4a",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/block_v1.rs",
+      "size": 5545,
+      "sha256": "4df9cdbf75f5b8caeb3a596c6d5712d3b2d8d381b4944b6b2c75980a0443c0ac",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/cold_input_v4.rs",
+      "size": 11243,
+      "sha256": "26fdb31a0c86501524f0a6fef276e83ec88fb7cd815f024fde170c43fad5455f",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/frame_v4.rs",
+      "size": 4118,
+      "sha256": "a82531683a81409841e3df82386857a065b308bc83145bf798c508bb385c9993",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/json_bridge/journal_v4.rs",
+      "size": 11764,
+      "sha256": "e84690be4e6fcfd501a0a058ee653495c812d56d2c25d6e463bc42ffda465c18",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/json_bridge/mod.rs",
+      "size": 662,
+      "sha256": "d98546685dba722be5aab2630958e8460acc14575574ca0255d8378d71bec01d",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/json_bridge/scalars.rs",
+      "size": 3478,
+      "sha256": "340bf1952435fd73979187b2584cf37de3fdc48373f719c4bcf97a460307397b",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/json_bridge/single_block.rs",
+      "size": 7173,
+      "sha256": "f24458a2bb9a0fe771f56254740d9a91db9f636225940cabfcd0d09b9389fd91",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/json_bridge/witness_fields_v4.rs",
+      "size": 9720,
+      "sha256": "0a6360479b3c1c524a871ab49435ec32646d6de291f04155d6ca92596cd28a5c",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/json_bridge/witness_v4.rs",
+      "size": 18815,
+      "sha256": "28bc4c74a230f9b687d01ad1beb7203272dcaeaf90bc8a7defddfe9b1030e58d",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/src/lib.rs",
+      "size": 9294,
+      "sha256": "2d8e67d73cb2372ae3ee12b411a8f68fe358e2b13257b40e4f09fa56c89c07c5",
+      "executable": false
+    },
+    {
+      "path": "crates/stf-wire/tests/differential_jsonl.rs",
+      "size": 1711,
+      "sha256": "ccaf36fd16db1e678c20a9b3935892ed8b9733364c00bed92a127c12a59520d3",
+      "executable": false
+    },
+    {
+      "path": "docker/README.md",
+      "size": 7587,
+      "sha256": "cfed6e4a48759ddd03c0b19496e8820ad2fd598256a45e2317de6297343e0819",
+      "executable": false
+    },
+    {
+      "path": "docker/RTX4090_RELEASE_RUNBOOK.md",
+      "size": 41302,
+      "sha256": "f3fcce8dcf16732f5c8c2ec02ad31e1c7414e7d110300c090e9769373bbc31de",
+      "executable": false
+    },
+    {
+      "path": "docker/RTX5090_RELEASE_ADDENDUM.md",
+      "size": 4317,
+      "sha256": "070a994047af876d3fd4e3ab67178d0a979b61dd6da8008e219752f959d09ddf",
+      "executable": false
+    },
+    {
+      "path": "docker/V6_TRUST_ROOT_CEREMONY.md",
+      "size": 19655,
+      "sha256": "4964fc25474dbb87ef0df46ed3a431b5fa61fcf639a150351176c12de361d3b5",
+      "executable": false
+    },
+    {
+      "path": "docker/fetch-pinned-risc0-groth16.sh",
+      "size": 1911,
+      "sha256": "791f3d1d97df69992bc092c9fb1afb9192215595a8776889dd5923e9c816eea2",
+      "executable": true
+    },
+    {
+      "path": "docker/release-aggregate-plan.json",
+      "size": 827,
+      "sha256": "494e9b06a1b537616f7219fc663fcdb9d8443b6a9ec367911d731070a9413371",
+      "executable": false
+    },
+    {
+      "path": "docker/release-orchestrator.Dockerfile",
+      "size": 989,
+      "sha256": "5c90b685cfb8776d3d1ccede830dd58652372858a1811258a9b5574a1deb083d",
+      "executable": false
+    },
+    {
+      "path": "docker/release-room-request-template.json",
+      "size": 479,
+      "sha256": "7a341fb07aa6d2607a99a47afcbdbcd44b9c45147c165f6eec71d47b7c522e47",
+      "executable": false
+    },
+    {
+      "path": "docker/release-settlement-scenario.json",
+      "size": 6333,
+      "sha256": "fd512256d5b6c993a6309952c08da9eea3903ad4c70c0adc0ec0f4fb63231e68",
+      "executable": false
+    },
+    {
+      "path": "docker/risc0-cuda.Dockerfile",
+      "size": 10926,
+      "sha256": "e9ac4fc20bbcef85398544475e412b0be0e637e901d11fbd15e2f4d1e8b9c5ef",
+      "executable": false
+    },
+    {
+      "path": "docker/risc0-cuda.Dockerfile.dockerignore",
+      "size": 291,
+      "sha256": "a60d0f74e6c1bdb6aed440da0633ad743c7a2ac6fc290bb6b4c4c0d9ee424c2f",
+      "executable": false
+    },
+    {
+      "path": "lock-schema.mjs",
+      "size": 16068,
+      "sha256": "8fd4db6abbb57be6f74df1465ff93c17e4021f16b32abbb1f23a57514f967177",
+      "executable": false
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "size": 51,
+      "sha256": "f551701b35d5a41f19bfed8c68b13a03a703590ba30bfa4cf820b193db0ee103",
+      "executable": false
+    },
+    {
+      "path": "scripts/build-4090-evidence-requests.mjs",
+      "size": 61475,
+      "sha256": "a2e38dc1d62dc4478a708ce12f6f49bae12fa26f50cff78f753026dd15ee4c1b",
+      "executable": true
+    },
+    {
+      "path": "scripts/build-4090-evidence-requests.test.mjs",
+      "size": 25892,
+      "sha256": "0de0242b4f11a51fc33b18a3d753be139213372a86e4981610d45c0f15c8057c",
+      "executable": false
+    },
+    {
+      "path": "scripts/check-lock-freshness.mjs",
+      "size": 9547,
+      "sha256": "92cd26f15400f9dda37137ac9a3b17ce4df68d4ba563eb6f8965108ba46984f1",
+      "executable": true
+    },
+    {
+      "path": "scripts/check-no-git-sources.mjs",
+      "size": 2448,
+      "sha256": "6fd1ad4396e954068e435a2b1e0673311a9887c25784f643eeae12a0d33db68d",
+      "executable": true
+    },
+    {
+      "path": "scripts/gen-certified-amm-cold-composed.mts",
+      "size": 15825,
+      "sha256": "8dc15188d046071e9b3e1c680d6406a1f602cb38e70f909898aec03ca3a10677",
+      "executable": false
+    },
+    {
+      "path": "scripts/gen-certified-amm-fixture.mts",
+      "size": 15124,
+      "sha256": "99b3429884e3386916bf7fcb7b0dd917678cac8019cac4f85c77875c7d4aa215",
+      "executable": false
+    },
+    {
+      "path": "scripts/lib/amm-fixture-encoding.mts",
+      "size": 2544,
+      "sha256": "fe0d335b69b261ac208dc7e2a5a4c5a91de45004753308a265cb5ec594cb9f23",
+      "executable": false
+    },
+    {
+      "path": "scripts/lib/amm-fixture-witness.mts",
+      "size": 6381,
+      "sha256": "4d9097aab82bb6a72eefe325234edee66cb81ac28a4b22d9e5433fb2cb63a6d6",
+      "executable": false
+    },
+    {
+      "path": "scripts/lib/ethereumjs-util.mts",
+      "size": 873,
+      "sha256": "208e9189b22b058755b330442b2a07981f99986b0dbb36fba8cc9a56a0b4010f",
+      "executable": false
+    },
+    {
+      "path": "scripts/lock-schema.test.mjs",
+      "size": 19781,
+      "sha256": "8eed3dc5a5c6e15229ee2892a1be7a924b55c9b7ebced0078acb3b9796ca2b6d",
+      "executable": false
+    },
+    {
+      "path": "scripts/no-git-sources.test.mjs",
+      "size": 1689,
+      "sha256": "99692c3db0ae1a55d835a6a832b6f3df4896018dad0de06785d64b76f37210a1",
+      "executable": false
+    },
+    {
+      "path": "scripts/source-manifest.test.mjs",
+      "size": 2819,
+      "sha256": "1fbf76f803c09cc9806fb1742d7ea4ac225e3592a5f5f2f56b84b729d3b471bf",
+      "executable": false
+    },
+    {
+      "path": "scripts/verify-source-manifest.py",
+      "size": 3466,
+      "sha256": "527fafa331cd39ef0c4b23d1a1d9de5ba1cacdbb8a725f4daa8d0e47d42b9c1f",
+      "executable": true
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/.cargo-ok",
+      "size": 7,
+      "sha256": "afbf9d0f3560b0fd7795e81c42a0a79ee6b6fc67e064f77826aee642cad28d91",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/.cargo_vcs_info.json",
+      "size": 111,
+      "sha256": "70edd038045e7e7b325abe4a8ad1355d26d1d8b31a8f17d7725d864d763ab09c",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/Cargo.lock",
+      "size": 20096,
+      "sha256": "315508e196a93a45037cf8d1cb68ec464361113458bf5e5a8a70f8060d86da99",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/Cargo.toml",
+      "size": 1380,
+      "sha256": "21973efeb1c2d9e3529b95f5265915777d631a34d7805d7fd7cf8c163fb6f398",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/Cargo.toml.orig",
+      "size": 664,
+      "sha256": "f8b65fd55a7a679aea4c7d4858d445e55a67e2031683f270edf0c8a355953ded",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/build.rs",
+      "size": 1248,
+      "sha256": "4242d65f592dcc848bd0eafeed05b0b359cf4d7a6d810a2ba4d70088a467b6b4",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/kernels/cuda/chacha.cuh",
+      "size": 2876,
+      "sha256": "3a41fc3bcd2e4dd9fcb73ad3a5a32d73474536e60ac40508eda7c3fdf01e0648",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/kernels/cuda/ffi.cu",
+      "size": 3310,
+      "sha256": "89893ad69691447a358b40bea94dd1fe960d1717ea16891b452756bb2a85e98c",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/kernels/cuda/groth16_coeffs.cuh",
+      "size": 8804,
+      "sha256": "bb8c0d023a43e04c4440f0f825abc9007bdc6ae7fede52b9e7cd1502bfa6b2ee",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/kernels/cuda/groth16_prover.cuh",
+      "size": 12946,
+      "sha256": "fbf022e22878cfd331e33780f77dd2ede8ea4fe6410d01cbf58c3ba54498b9cc",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/kernels/cuda/groth16_srs.cuh",
+      "size": 10293,
+      "sha256": "1f4ae5c79e219796fea41ccb86b1ef2b982b0bdb884de77c7e1ac679ce3207eb",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/kernels/cuda/util.cuh",
+      "size": 4153,
+      "sha256": "2688365c34ea5181521758a4b52275adbb8927ab5ca01ccd3d652abb9d97afc3",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-groth16-sys/src/lib.rs",
+      "size": 4803,
+      "sha256": "ab135cef5304ae547944b802cac98ca7f2eab04dd272b3d90cc404293fd123f2",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/Cargo.toml",
+      "size": 1301,
+      "sha256": "4ca7aad08394551c05b81374673ab239c231a7ae19f2e26696c1f41619298194",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/Cargo.toml.orig",
+      "size": 611,
+      "sha256": "d90263bac9d225bc9f6ffdd2e6c3e58da52ffe2673a6e418155f58b7e402a6a0",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/build.rs",
+      "size": 2815,
+      "sha256": "dfab9bfabc621ef471a4971802e0d0c9e927614de72118c4a87ff0c5455e9e69",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/fp.h",
+      "size": 6256,
+      "sha256": "1f1cb927854060d06ed6bb53d52978de9cd89c711338ead0de9b805cb18633ad",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/fpext.h",
+      "size": 7203,
+      "sha256": "194bf07cb14abcead498da69c62ff8464f05139fd75e8271d11c703be6471213",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvToolsExt.h",
+      "size": 50655,
+      "sha256": "af6cba4df220d3554e068932ab9fe54dd9b1de614b8d9d4de79d08ee84533657",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvToolsExtCuda.h",
+      "size": 4617,
+      "sha256": "08a40ee64f66624ee0bf4e1920cfa70f453c44ef6a56082bb6a659e01cee45c6",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvToolsExtCudaRt.h",
+      "size": 3806,
+      "sha256": "15a6b46ba44ce42e4e60cc84cec2e25880ef2d311074195ab3017cf933ff4ef9",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvToolsExtOpenCL.h",
+      "size": 6976,
+      "sha256": "9e56ce81c0b5ff0b5540b98ec707e71fd881521e8b06c3ee0fd9d3c5fd3ddb65",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvToolsExtSync.h",
+      "size": 13169,
+      "sha256": "789e99f1d8cdc2ecabdb43dffa0db092ca61f1e70184921661b0d01e3171d910",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtx3.hpp",
+      "size": 100460,
+      "sha256": "b31bb12f1de44c548d28c2761c20a675c1e43af763451d218626ef4e71231823",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtxDetail/nvtxImpl.h",
+      "size": 21666,
+      "sha256": "edffd0c3b6aef070d0ca59b1a94e56e302f60238b56d44d73331b93905cbdee7",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtxDetail/nvtxImplCore.h",
+      "size": 10011,
+      "sha256": "8fbd57207cbe12b1efa0ea81c67cf056a89216952556e143a20f95d94dcbab86",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtxDetail/nvtxImplCudaRt_v3.h",
+      "size": 3104,
+      "sha256": "cd53793fd11ca9d3e8355f7db7f28ee83c9139a55d4ba889054b73879e760f30",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtxDetail/nvtxImplCuda_v3.h",
+      "size": 3883,
+      "sha256": "6bf154eef3e2f42ac48e8fca8160666ad11ec7065591ec01d6e3933e6f17952f",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtxDetail/nvtxImplOpenCL_v3.h",
+      "size": 6608,
+      "sha256": "b15b7b8d41852b00a7e32a271245f7be496707abd9c8a3cc10ff2c136d286200",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtxDetail/nvtxImplSync_v3.h",
+      "size": 3355,
+      "sha256": "87b559e0c5629df8ccf84bfcc68a89400b9631f22ecf9bdc1a70f8166d13cd24",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtxDetail/nvtxInit.h",
+      "size": 13049,
+      "sha256": "b28c6b9e397ac71b05fcbb78a5acf614bc8fec2a46a36c496aeeeaf808375899",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtxDetail/nvtxInitDecls.h",
+      "size": 9616,
+      "sha256": "fda14e810a23f51adcde5797ea74ceb29970aeb179728728880b743e520526e0",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtxDetail/nvtxInitDefs.h",
+      "size": 35687,
+      "sha256": "1858b4e79160bab5ea811cbe61c221953425a64d845e9ba97dce445188cc1416",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtxDetail/nvtxLinkOnce.h",
+      "size": 4118,
+      "sha256": "886cf7bcfa69e96704fae458b00fdca21a491ae76d72be3e32e1076a82affd3b",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/nvtx3/nvtxDetail/nvtxTypes.h",
+      "size": 15765,
+      "sha256": "2a8bcc1a6da35213e4abf7d845f0c9d9772b7fd0aedb61f71965f6a37af80695",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/cxx/vendor/poolstl.hpp",
+      "size": 113024,
+      "sha256": "cde2207025c8847a6bab644c895cfcf647313c6dc69b0c9967c91ef37a2b09cb",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/combos.cu",
+      "size": 1725,
+      "sha256": "940748ecf70e420fa784e55d7b3ab5bdfd94a5d1c01f5459b64c386307223639",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/cuda.h",
+      "size": 3823,
+      "sha256": "6b9af6e26b9fdae7950afd11307c1b5dd608dc7e4aa441c7e7cded14853b91ad",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/eltwise.cu",
+      "size": 2985,
+      "sha256": "78e4436177edc44a32ac3f288f4272b4128ba45dbb6714843c382e8196bdff6c",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/ffi.cu",
+      "size": 6077,
+      "sha256": "a856b8d34d8b431a008f5089fcddd3741758edfea527b3c984361709ac761bc0",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/fp.h",
+      "size": 6888,
+      "sha256": "3008312362bc716dc922925067ca27430d890ac087571a87a3c2d4d498d10b16",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/fpext.h",
+      "size": 7636,
+      "sha256": "baa0fbb7c8be1d77173442314b3f78a9d5d72b07d6999adfb15656f68a5d9a9b",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/kernels.cu",
+      "size": 4219,
+      "sha256": "04959576e5feeecfa037d858bf573fe3d72147d02cefe1616c395c388525408e",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/kernels.h",
+      "size": 3349,
+      "sha256": "85328e25d6a271fdeb4c19a776c6289651b8a8b75bbf2f396fb2d6fe3925c022",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/sha.cu",
+      "size": 1071,
+      "sha256": "de8765a3b690a015dcb1211d818cb041d437e5060b52d8b3661f631ab313e770",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/sha256.h",
+      "size": 8327,
+      "sha256": "d662b8aea2162a942a9f8376f732b9f07a98c59ca4cc16b3953074a5898a9d14",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/supra/api.cu",
+      "size": 4453,
+      "sha256": "f67abaa6e59ac01f28a990d3333a4ae80128dac21c3e94f9b92edd78d5f3d5eb",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/supra/fp.h",
+      "size": 851,
+      "sha256": "089459dc8fe428b22545d6d37a8ba2a19a7153faf349aaefdf11c4a15a88b5a2",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/supra/ntt.cu",
+      "size": 3928,
+      "sha256": "a3df61bb4d3936195d633effee685eb23d5ad24a57ff1b8c6a27d5c6c1327f1d",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/supra/poseidon2.cuh",
+      "size": 3963,
+      "sha256": "ce43d84855507666f79865e1d9f375cadb757a09f091866b72beb01d2398683c",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/supra/poseidon254.cuh",
+      "size": 6561,
+      "sha256": "a42609c96fa05b682cc98ad590797955d8c57560fe9a3762c34bdd623adce4f2",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/supra/poseidon254_constants.cuh",
+      "size": 29902,
+      "sha256": "7c2352a5f729fd2625239f8d1dbbb6a5f2d94fef9823d184b3e28cee3c37f442",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/cuda/supra/poseidon2_constants.cuh",
+      "size": 3548,
+      "sha256": "953365f58a1d43999d5fd2d3a5e8a48bd362d25d3a89fb7a28e9439a73370619",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/metal/eltwise.metal",
+      "size": 2141,
+      "sha256": "fcbe7e898366fcf934646016c0c8c96373c971c57ef1d3ec79fd61a26e75dff2",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/metal/fri.metal",
+      "size": 1648,
+      "sha256": "431dc9bc990849afe38fc3578bb94618c2b9ff94c4b388a79b0e1a71252017a5",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/metal/mix.metal",
+      "size": 1275,
+      "sha256": "edfb55fd13613c1764c32e9bfcd7ffd5a794db7369a82c7c1332ffe84e1a6b90",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/metal/ntt.metal",
+      "size": 6884,
+      "sha256": "65387217630ef8a710d3e5474cf04d25a46a6981dfa0a61bbc41f0e7a0fc334d",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/metal/poseidon2.metal",
+      "size": 5538,
+      "sha256": "da90d8750a4a539c8a774f73180ad01c7a01ef1a36aec72fda625820c1bf81e7",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/metal/sha.metal",
+      "size": 1162,
+      "sha256": "7783c25a460735ddc17ed70759662cfd591506d4e1146b7ae3ae1d99699c5a5f",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/metal/sha256.h",
+      "size": 7701,
+      "sha256": "5519cd1e84d73420c505e4776cba69a1b46c46c805ad722681fff5b70e29c7aa",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/kernels/zkp/metal/zk.metal",
+      "size": 935,
+      "sha256": "3776a37e561204338d8337ac01a35bd4abc7069b59fbbabe6845b350b91943cd",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/src/cuda.rs",
+      "size": 2188,
+      "sha256": "bd824b96bc7b841096dc7c45615a71068ddb5817748eadcc11647762617df192",
+      "executable": false
+    },
+    {
+      "path": "vendor/risc0-sys/src/lib.rs",
+      "size": 1823,
+      "sha256": "b41ff5c03dfe83f4800d7f59f68f6006071ff5a605369cd8814de312b9118a84",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/.github/dependabot.yml",
+      "size": 244,
+      "sha256": "46f22316d8a8efa7f292167f3a56ef60984d635e73994943395ff928d03bb692",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/.github/workflows/crypto-bigint.yml",
+      "size": 4937,
+      "sha256": "eb5fa4f64b2f576ded1e0890cf874d9324b0cdbb39dfa6be7c16c24d799402b7",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/.github/workflows/security-audit.yml",
+      "size": 527,
+      "sha256": "40401cb3aa4a37a66ef3663e2eb87af1d4c84986b39a16046eba38e103651071",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/.gitignore",
+      "size": 28,
+      "sha256": "e0596d83c485c011eb42e78fc5edd9b1bfd134c0fb364ab19f1ef04ca568473a",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/CHANGELOG.md",
+      "size": 14700,
+      "sha256": "dc759cacc69443dc4bbc1dd0227058905e8688f401f09eb6cc6d001315c52cf8",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/Cargo.lock",
+      "size": 27588,
+      "sha256": "aa9111a48a0692c4c7996e8c2151de8ba4ababace4848d5328682333b2de6321",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/Cargo.toml",
+      "size": 2036,
+      "sha256": "d2169f8ccf991714419747411a9278d4eeafd384307ff0787999ec4962721dc8",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/LICENSE-APACHE",
+      "size": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/LICENSE-MIT",
+      "size": 1077,
+      "sha256": "90c503b61dee04e1449c323ec34c229dfb68d7adcb96c7e140ee55f70fce2d8e",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/README.md",
+      "size": 3030,
+      "sha256": "e7e4bb1dc815119ed5e087ce1995a6fd45657c0f6d0fd565cbc52721c378b42e",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/SECURITY.md",
+      "size": 702,
+      "sha256": "566027e0957dcbe6245eef1df2d3f2e100f8ec60171a79943ac8c7b5a992dea8",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/benches/bench.rs",
+      "size": 8446,
+      "sha256": "0cf57ae7f1679191aec6bf4cd576b7f286886f7d9c758968e45543917b217fa5",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/dudect/Cargo.lock",
+      "size": 5874,
+      "sha256": "5acb814f191a2f993006c0efc4d9371e994c47a8b948728a0f12507838a6067a",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/dudect/Cargo.toml",
+      "size": 212,
+      "sha256": "42b3a23f796d2f2d6fb5e63c2f3a1d121728a8dd4db5633e4e5f772b2f197085",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/dudect/src/main.rs",
+      "size": 1141,
+      "sha256": "7b85506b237865bc30cda0fa0794d941e7adb5fd2d27fbbdcf3a37ecd36065cb",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/array.rs",
+      "size": 1341,
+      "sha256": "9b18991230aa12e88ac358cdb202f4225fcee58788e29c34ab931e29ba5a92aa",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/boxed.rs",
+      "size": 56,
+      "sha256": "4cd7fe04aa18a63d43ac70b9a3dbcb905c42be8a33551230353f191f1e6d9d4b",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/boxed/uint.rs",
+      "size": 6395,
+      "sha256": "0beb2eb330762109c5c162f996760e71350f9cf5795d1881b1ff0c450036e22d",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/boxed/uint/add.rs",
+      "size": 1704,
+      "sha256": "4fa0c262b01d1c995d31442daa241875fd16f8730f3502997b19669f97065dee",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/boxed/uint/cmp.rs",
+      "size": 1126,
+      "sha256": "c35064b6ad92666cd578ee1743db17f0bd6a736f9d9ab4d0dbd294c04c9b5bc2",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/checked.rs",
+      "size": 3758,
+      "sha256": "7efd3bdc2d2a8263d0b62aba3636ef59069c027636132a800f1c8639be3af5f8",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/ct_choice.rs",
+      "size": 2996,
+      "sha256": "14905f576de07334e955e689e5653b2e9214db56d011f51a01324e9af5ab23d8",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/lib.rs",
+      "size": 6490,
+      "sha256": "12705c32a4aef11a6b1853d7ac54b3ca6f3287b9b98a817d2ca31470481ec5bf",
+      "executable": true
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb.rs",
+      "size": 4199,
+      "sha256": "16fba5c446ad5d982509b58b15aed4f3b66894a6c6a5ed726645a354200971e3",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/add.rs",
+      "size": 4400,
+      "sha256": "c4cfbae55657e8366dfacf2ed26cc6cf4c547f810df26566f3f23d2287697cd2",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/bit_and.rs",
+      "size": 374,
+      "sha256": "019f888b11e16fafbd0518eb5b583094a5e8490f59f458195db9306d86e1adaa",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/bit_not.rs",
+      "size": 289,
+      "sha256": "0fa7cdec58e1d3058daee88ef26f07ad0ba9e545505c97a130b47ef3fdf46c5a",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/bit_or.rs",
+      "size": 324,
+      "sha256": "1b5f85eac6768d460070da05b4a1257cceafff2b612b63a609aff3ff48df8480",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/bit_xor.rs",
+      "size": 330,
+      "sha256": "06acf291a316aa1fa2311bedd1a7aca5170564735c1f0b1103ed9e2c6f24f096",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/bits.rs",
+      "size": 760,
+      "sha256": "2b1796eafeaac1ccef8479e0a638888a2e184e71a2ac9c1c68c2cd198741c11d",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/cmp.rs",
+      "size": 5349,
+      "sha256": "a59f12dccac4c482a658c9114ea8cb0a20d699cf47e85371b506811e47402cae",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/encoding.rs",
+      "size": 1672,
+      "sha256": "95f998fe8d1c0a3d41622c9691bfd638b198c9b4fe89b733bbef341b7c148290",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/from.rs",
+      "size": 1648,
+      "sha256": "7f595d9085730f95d2fe776a81e6f174061c9c4ec89a1fd85ab26feeaae0c2ad",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/mul.rs",
+      "size": 5074,
+      "sha256": "dbfa013061fc5d8cff5bf49814d9acd3d00d386211fbd657091a813bca977820",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/neg.rs",
+      "size": 363,
+      "sha256": "6e2443804f6a8a191a2fc43b849c9bbe36177b4094afa8e6e9d7a4ef83ccd4f9",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/rand.rs",
+      "size": 1005,
+      "sha256": "770463d84aa86d432b294975b62fd4f95b7dbee93a78ec2c2f3e03e23ea21fdb",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/shl.rs",
+      "size": 1328,
+      "sha256": "b90a4d551bea894ff2f545cf19149a6155c430ef128a37d6cb3a5f1bd615efc1",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/shr.rs",
+      "size": 1336,
+      "sha256": "a95dbd4507dc44308b09bcdf6024d60b37e787588d4f698b6d2c0b30c46d129a",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/limb/sub.rs",
+      "size": 4523,
+      "sha256": "2fe52b63f4876beb4d6fb44f2d04ac62231d66b7071097d592c690ceb4944764",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/macros.rs",
+      "size": 2244,
+      "sha256": "416288d628d10a92056cc42aa84eba4e7bff2342e0836aec7465e70a1f360607",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/non_zero.rs",
+      "size": 10768,
+      "sha256": "893138b2efc0da56a47d50b5609601646cfbb370d7d9904acca110a994902305",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/risc0.rs",
+      "size": 4695,
+      "sha256": "b6415122c7baee66a9346c0e121f3644d0749460531c529e69e5f74d5a6e8b9d",
+      "executable": true
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/traits.rs",
+      "size": 10148,
+      "sha256": "61181bd2f6d839aca9b44267c39808716d09de263cc1cece357c52439ed007e3",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint.rs",
+      "size": 13199,
+      "sha256": "ff1d174e7c236abb78ccc0aea1f637b86f30f2bb20df929396f9d2eac0fdd1c5",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/add.rs",
+      "size": 5856,
+      "sha256": "3784c73c31eb745372e332143a17703f1f835b53717d23a1d73c36b07a0feef4",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/add_mod.rs",
+      "size": 4880,
+      "sha256": "20579edb2de32fa1e5cd63f0e3368dcffceaeff855faa9ba3b261fe525106e4a",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/array.rs",
+      "size": 6315,
+      "sha256": "81e93b39a64fd5c609556f7ab8c23f3ca15aaf0c77a05e10d80855ac9a56292a",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/bit_and.rs",
+      "size": 3889,
+      "sha256": "54ebcac0e1a481d31e26a2acf3abda3de0ad6775225d02d41549aea4d1d5364a",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/bit_not.rs",
+      "size": 974,
+      "sha256": "b593a48c0e65849ea643f0a3624d2e8d3fc35d8f16a6b2a5e9de2728f0ad2fb4",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/bit_or.rs",
+      "size": 3681,
+      "sha256": "0fd351e1558c7b067be8fa45329e33c0e43111b4dfa7954a0837af88a3f733e8",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/bit_xor.rs",
+      "size": 3730,
+      "sha256": "4975f3df64a114313fd2d02993c6f7ce5ac02144534c15f2be310022261d18b6",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/bits.rs",
+      "size": 10851,
+      "sha256": "e71e8a3d75c59af2d6bf950e522d565353253fe748fbdfdef9c25e1bb02ad1fe",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/cmp.rs",
+      "size": 7890,
+      "sha256": "ba66fa2b91838fa31afab1b387662ab5f9286d62aaeb990d5537d295f236da51",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/concat.rs",
+      "size": 1714,
+      "sha256": "4705cd8bd6bc78d2fcfbc9ae141f3bbfa4d3e6029940b92de8bc1949de5a2bd2",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/div.rs",
+      "size": 22317,
+      "sha256": "35695ca56e646ec583762b447869cca19832774d1c507d949295be46c424e7a7",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/div_limb.rs",
+      "size": 11012,
+      "sha256": "9f67a65da08ef4deba3953445c913762257ac0f6f3100113a5120641c673a9b1",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/encoding.rs",
+      "size": 8269,
+      "sha256": "6cdee4ec79592bdd7493c33ef25ecda2375f93264ac5d5d9389e37bc0d43a0df",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/encoding/der.rs",
+      "size": 1798,
+      "sha256": "0873e5f48616d297402abba5805012f6aa2c240e321bae79eb9493764c6c1494",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/encoding/rlp.rs",
+      "size": 2404,
+      "sha256": "7c95d481e9da181d80d345f0e3b9669d65f20dbd39de42f27ac875dfecfe6908",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/extra_sizes.rs",
+      "size": 4002,
+      "sha256": "c49de70e027a82213920931faedb395c38e15c72631c8f91023fa62711ec7fe2",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/from.rs",
+      "size": 7905,
+      "sha256": "82e66bbfeceebb0b000f6b50d6e2f8fd2907b0280372038fbdd7ab57a0c641a3",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/inv_mod.rs",
+      "size": 12174,
+      "sha256": "8329baee728e26d371278a02a2dd10b35d3c8ce369521b13a3295c59351763f7",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/macros.rs",
+      "size": 3835,
+      "sha256": "33b23304d78c09f7fb949b8c93ea549596b5842951e667a761bd77f615ced1e5",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular.rs",
+      "size": 4674,
+      "sha256": "8ea4b5129312251a076b95fd84e0a41b8951ce4b443ec7dc33c08eef13721a6a",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/add.rs",
+      "size": 195,
+      "sha256": "6dd440f71305fcebe970ca51ef4a218574075978ab22ccbea7df03227a4b1dec",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/constant_mod.rs",
+      "size": 11562,
+      "sha256": "9444e7b01372bdff4ca5e650843d7f07cc33c4e5ed4f3d2d27419d5edc1f0dd3",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/constant_mod/const_add.rs",
+      "size": 2738,
+      "sha256": "5e2acd3d079f77d31d947fb5deb0bc6a230b483604292e775381eefff8beeb3e",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/constant_mod/const_inv.rs",
+      "size": 2091,
+      "sha256": "19640f8002179d2673abac3049e78ae280fb87898e993eb0e7efadcfa0fed2db",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/constant_mod/const_mul.rs",
+      "size": 2507,
+      "sha256": "73dca352b726c6782eef409712dfd97d9517215849f137f9af79be7fc9ed828e",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/constant_mod/const_neg.rs",
+      "size": 1258,
+      "sha256": "29479fed061c2ba34550d098d8255b50a827c93aa6d39af0138c86e8bb006d69",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/constant_mod/const_pow.rs",
+      "size": 8242,
+      "sha256": "362eeac83c2cbf217923e81d7c5f3a3d44f9d83348ddefd976d04993df8a36e8",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/constant_mod/const_sub.rs",
+      "size": 2728,
+      "sha256": "6cc421643c7ce79a6346c83cf9caaeedcda0f3c61827f1563dad85d4595bf95e",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/constant_mod/macros.rs",
+      "size": 2524,
+      "sha256": "262da2964954b2ef7417c7d395c62bb4c6f9b994042a7a19e85ca07d4971587f",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/div_by_2.rs",
+      "size": 1387,
+      "sha256": "4ae62b414fe7a571285deda7e71ae96ca41629a463313a964b630e4390ca6fa4",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/inv.rs",
+      "size": 616,
+      "sha256": "1f8f01ef369c0cf250f296ecc24e17d7a338c87777b49763de2263732e5f94af",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/mul.rs",
+      "size": 998,
+      "sha256": "24c3775cce959c6c7ca255de5d776affc81c72ea7465a191c867074262a27ab9",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/pow.rs",
+      "size": 5998,
+      "sha256": "ed3e57f966a505e34c688412f7fbd5ed6b4181c79c30a549e2c871342cb93a79",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/reduction.rs",
+      "size": 1825,
+      "sha256": "7ad87aa75c4d2ce07853f9cb0308e0ca1b7bb78c7572743991d9e05e5ecfcca1",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/runtime_mod.rs",
+      "size": 11329,
+      "sha256": "3dbef94d4fefafdb996aabf9fc6bef736555f3925f07f12b741151889f03a7d8",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/runtime_mod/runtime_add.rs",
+      "size": 2628,
+      "sha256": "03458894be7de14f8813a5a458662cde6d62dc24fb289bf1fae2bc87a981e159",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/runtime_mod/runtime_inv.rs",
+      "size": 1140,
+      "sha256": "336e4e5869290582ba504af5fc8ba8101a79c60e4ef289c81eaa31cd602acbf2",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/runtime_mod/runtime_mul.rs",
+      "size": 2376,
+      "sha256": "4f91f7e8c04065798dad0d371139eda354bf0388fb11f67d36ee0777ad5f5107",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/runtime_mod/runtime_neg.rs",
+      "size": 528,
+      "sha256": "c5948c91e82f92675357a4c53d3ebd6cda7bf4132bf36921e34ffcea530167b4",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/runtime_mod/runtime_pow.rs",
+      "size": 6409,
+      "sha256": "5b167b8b06e0a28264954013903c278555a1e62faa1a86bc2e7c7d2a6188b81e",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/runtime_mod/runtime_sub.rs",
+      "size": 2633,
+      "sha256": "cfc59cacdc1a37827aaf88e0478cf0b7ede8782e2e23c22ab69c02ec0af3d4cf",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/modular/sub.rs",
+      "size": 195,
+      "sha256": "c50b631f9d0c3309c2e3e445a4f44050f04d9d2632547843204a8797c618cecf",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/mul.rs",
+      "size": 12965,
+      "sha256": "bc2f7ffed01be1d437e6827a20256e3db1d40212570fc50d9b00e6df87df3b27",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/mul_mod.rs",
+      "size": 5744,
+      "sha256": "03460f7983c3776658630dc83d7808ac140afb434bad59d835466b5316db8652",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/neg.rs",
+      "size": 1390,
+      "sha256": "bd66efb350c7914299da19d69cb146912ba71ed08053419e07e110ee6030ab95",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/neg_mod.rs",
+      "size": 1995,
+      "sha256": "80bbec84a8ab8ed53dbdf5b2093cbb5a80aa561b374b1795eef00a6a01ace109",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/rand.rs",
+      "size": 3217,
+      "sha256": "09efd658214d43e1ad0238f5a6cd680fac3df334d2aca1dccb942b4e21aad70d",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/resize.rs",
+      "size": 995,
+      "sha256": "88990e70756fe211ca874538558a9eed7373176668aa71e81f0b1d3bae8eaf56",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/shl.rs",
+      "size": 6206,
+      "sha256": "c97b975c6a66611216696c8de13ca66e402e3ebf96bedc86005cd29dc4a509e4",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/shr.rs",
+      "size": 5420,
+      "sha256": "c9cd42471695d80c1a2d4e2986893781b22a8b616d25e4e209b1450803d5000f",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/split.rs",
+      "size": 901,
+      "sha256": "6cd6939c1c3711602af0e39821952ecf46ed3139b77fba06172c79c873541c6f",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/sqrt.rs",
+      "size": 5754,
+      "sha256": "daa8e688acfb22c074a2cc23da7b84058a833078f57183399fb917e611c13661",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/sub.rs",
+      "size": 6064,
+      "sha256": "43df967c0cc245a5f97593e19d474f0f09356b61f2b4a98d8773e6fa2e14e335",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/uint/sub_mod.rs",
+      "size": 7308,
+      "sha256": "b2a4155544b1e10b89d5aa2bb1e0b7e949d538378722eb55be1e385ac64323af",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/src/wrapping.rs",
+      "size": 3147,
+      "sha256": "2b8d96ebfb21b5540e3e4a31c47f8cbc630b085f222fe2c00aa4da9ebf486ce6",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/tests/const_residue.rs",
+      "size": 319,
+      "sha256": "d874022d955e065ccbade442679c4046ab47ec495411d24e128e7ea5f1296859",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/tests/impl_modulus.rs",
+      "size": 162,
+      "sha256": "ce1d05b4ddfd71b4cb08949db4c87d937efff74b5c6fa7aaae180a5d6bc9dd65",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-crypto-bigint/tests/proptests.rs",
+      "size": 10176,
+      "sha256": "9c610e0e57e25b8549967f87e684c7bfc0f2c7dda1167818c78b0eb14e44e39f",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/CHANGELOG.md",
+      "size": 20436,
+      "sha256": "cc6d71c54060de664b74db7a0e4280ac4dcfcbfa4f1ba2cfd03351e18bdbe734",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/Cargo.toml",
+      "size": 3455,
+      "sha256": "6dd9206fc8a5b15042a06e48865f17f890a52339a3d81073cf5fb6ec4ab7a903",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/LICENSE-APACHE",
+      "size": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/LICENSE-MIT",
+      "size": 1070,
+      "sha256": "3b4f73047906835fba5005acdf68f25a460b9ee298dae710f22b435d335a6f7b",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/README.md",
+      "size": 5436,
+      "sha256": "156dc2ef2a3a805297b902caff3712b23801653d1fbb39f05589575605e2bed0",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/benches/ecdsa.rs",
+      "size": 2015,
+      "sha256": "0ba38e42dd1c3ad19a3fb73ad6b2c828e799c66310d3786c8d19d926e485037c",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/benches/field.rs",
+      "size": 2671,
+      "sha256": "7696d2dde28d1d076942d7a983ba7f7ef1bab7f09c1e778748ad78326483b9ec",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/benches/scalar.rs",
+      "size": 3962,
+      "sha256": "25090471b62204a796067b4479203031e99c3233835f036bdb8cc493a22bd890",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic.rs",
+      "size": 3442,
+      "sha256": "015f8b70d174a96f3765ca2b40c122ea8b8fc3d3b102841d0b57105e801d2c9b",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/affine.rs",
+      "size": 13186,
+      "sha256": "9c7ee4306cbf87e1d4cf205a7be54c58d72aa5ab358688cb40db6c85e728dd51",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/dev.rs",
+      "size": 638,
+      "sha256": "233ae6d7691db70116762f13cff4e2d838d740cae4da86c4ee97a4dd2b4116ab",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/field.rs",
+      "size": 25800,
+      "sha256": "04395e393f38bc99eb07a18017a785f25a9466e9d468016b634fe9afa32d7196",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/field/field_10x26.rs",
+      "size": 31848,
+      "sha256": "74d70b8e70afa01871731a18443faaed9859548b6bd8935e1b958b51e7a524bc",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/field/field_5x52.rs",
+      "size": 20254,
+      "sha256": "afdb9d1d15f9ca7b986e439ab86589398200f65bf76dccc6afed0e55b415db51",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/field/field_8x32_risc0.rs",
+      "size": 10813,
+      "sha256": "2b2c573976e66b815af3a7ca06b8557f45e0b84a915b210ae10ca263ccfc939f",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/field/field_impl.rs",
+      "size": 6268,
+      "sha256": "117cc9f91c20a80d9872f37fc08f3661abcb501eeea9780f51c52f6c4e8332bd",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/hash2curve.rs",
+      "size": 20355,
+      "sha256": "1a64e9cec302094475ff0ac22549965bef82c6d679d90e05c1d27d48cdebf3b0",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/mul.rs",
+      "size": 18960,
+      "sha256": "7c832fa64279d13a381b288dd4e328b2bb7557aa5cd0c36d8d85beab3dfb64f8",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/projective.rs",
+      "size": 30078,
+      "sha256": "d68a46754b1c42c42fe7417a40c74b04b538f3860a767292d0b7cbed7e1fe3c7",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/scalar.rs",
+      "size": 36695,
+      "sha256": "262329ed760795eb70ccccf557ea1788ef72a2bdc060bb3f6e954b4d8336bd04",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/scalar/wide32.rs",
+      "size": 18595,
+      "sha256": "c974ce602f97bd8753699aa624d7dab0c19369d85719da50b40259b80c40d32a",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/arithmetic/scalar/wide64.rs",
+      "size": 9648,
+      "sha256": "baac98db7cfb7eb2c871598797332ff9e9417c3fc2bf024b2b1d2018416e7803",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/ecdh.rs",
+      "size": 2039,
+      "sha256": "a33e597d94dd35b577f1773c0267eb1cc74246654a7aa3ef9ca8080f76ffe032",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/ecdsa.rs",
+      "size": 16807,
+      "sha256": "62e7037addef7d2eb97896e6ba41143e5b1608f28ac3eb6aec64c102e0be64dc",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/lib.rs",
+      "size": 4684,
+      "sha256": "e7b1861cd837a046ebd416ca4f7a54135e9655c1e6463eb86435687cb2fcb806",
+      "executable": true
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/schnorr.rs",
+      "size": 19169,
+      "sha256": "374bef2468f10a592077c206fb9107ce0723e9f03adcaf9946a9fd97e5ebf4fe",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/schnorr/signing.rs",
+      "size": 7410,
+      "sha256": "c2e509f1e19caedc4acfa7d260227b8a092232db4a702a9ba53b877cf9eda831",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/schnorr/verifying.rs",
+      "size": 4907,
+      "sha256": "5c5df52c2f1373012ff600d7987682bfc263c1bd83dc2ef10bd94aec84147da4",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/test_vectors.rs",
+      "size": 86,
+      "sha256": "f008fd640b7a43cb1d8a5074b99f09e69e80d32a98c340b9b9bc778996eecb14",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/test_vectors/data/wycheproof.blb",
+      "size": 30900,
+      "sha256": "f792890e209ec78626385c6ebf35b61687b1ca8dfe0e65403e4d8290efc3e223",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/test_vectors/ecdsa.rs",
+      "size": 766,
+      "sha256": "e13b3c22dbfaa4092f208d00e8aea03c1af27c24c403fb69089258aea3f264d1",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/test_vectors/field.rs",
+      "size": 19673,
+      "sha256": "439673420ae61d475b0776e7563dfe37006e230d5808e0639a47fcfaa5fbabdb",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-k256/src/test_vectors/group.rs",
+      "size": 10695,
+      "sha256": "b385cdd2546a769becb73db6f67ee7d1bbfc5adc30d62784b4b86f2363b0b1b0",
+      "executable": false
+    },
+    {
+      "path": "vendor/rustcrypto-sources.json",
+      "size": 895,
+      "sha256": "49cce6289b42375d04a8dc23f6030c94ec4e25ca244dd4a6a1df7e9bb68c51d0",
+      "executable": false
+    }
+  ]
+}

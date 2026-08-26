@@ -1,0 +1,25 @@
+[package]
+name = "stf-wasm"
+version.workspace = true
+edition.workspace = true
+description = "wasm-bindgen wrapper over stf-core execute_block_full — the shared real-STF executor for browser and Node backends"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+stf-types = { workspace = true }
+stf-core = { path = "../stf-core" }
+stf-wire = { path = "../stf-wire", features = ["json"] }
+serde_json = { workspace = true }
+wasm-bindgen = "0.2"
+
+# Transitive (ark-* via revm-precompile) getrandom needs the JS backend on
+# wasm32-unknown-unknown. Never actually called by the STF (pure re-execution).
+[target.'cfg(all(target_arch = "wasm32", target_os = "unknown"))'.dependencies]
+getrandom02 = { package = "getrandom", version = "0.2", features = ["js"] }
+
+[package.metadata.wasm-pack.profile.release]
+# wasm-opt from wasm-pack's bundled binaryen occasionally rejects newer
+# LLVM output; the module is already release-optimized.
+wasm-opt = false

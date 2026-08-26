@@ -1,0 +1,18 @@
+[package]
+name = "stf-wire"
+version.workspace = true
+edition.workspace = true
+description = "Wire codecs shared by every zkVM backend: borsh guest input/journal encoding + the TS witness-JSON bridge"
+
+[features]
+default = ["json"]
+# Witness-JSON bridge (host / wasm side). Guests disable this and only use
+# the borsh wire types.
+json = ["dep:serde_json", "dep:stf-core"]
+
+[dependencies]
+stf-types = { workspace = true }
+alloy-primitives = { workspace = true }
+borsh = { version = "1", features = ["derive"] }
+serde_json = { workspace = true, optional = true }
+stf-core = { path = "../stf-core", optional = true }

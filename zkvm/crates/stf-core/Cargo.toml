@@ -1,0 +1,35 @@
+[package]
+name = "stf-core"
+version.workspace = true
+edition.workspace = true
+description = "zkdeal Rust STF: revm execution + alloy-trie MPT roots, parity with the ethereumjs L2 engine"
+
+[dependencies]
+stf-types = { workspace = true }
+alloy-primitives = { workspace = true }
+alloy-consensus = { workspace = true }
+alloy-eips = { workspace = true }
+alloy-rlp = { workspace = true }
+alloy-trie = { workspace = true }
+revm = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+# Policy tests build+sign raw txs. Both are already in the dependency graph
+# (alloy-consensus enables k256), so no new external crate is introduced.
+stf-wire = { path = "../stf-wire" }
+k256 = { version = "0.13", default-features = false, features = ["ecdsa", "std"] }
+# Cross-language golden-vector digests (forced-rejection vectors) use sha256 to
+# match the TypeScript mirror; sha2 is already in the graph via stf-types.
+sha2 = { version = "0.10", default-features = false }
+# The cold-template golden vector replicates the host's genesis frame (magic +
+# bincode, crates/risc0/host/src/witness.rs); same 1.3 line the host pins.
+bincode = "1.3"
+
+[features]
+default = []
+# Measurement-only build of the canonical Osaka path without the prepared
+# two-op dispatcher. Journals and roots remain identical; the program ID is
+# deliberately different and must never be registered as the production guest.
+disable-opcode-gadgets = []

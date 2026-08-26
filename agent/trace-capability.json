@@ -1,0 +1,56 @@
+{
+  "format": "zkdeal/prover-agent-trace-capability/current",
+  "enabled": true,
+  "lineageSource": {
+    "endpoint": "POST /queue/v1/lease",
+    "requiredFields": ["correlationId", "tenantId", "roomId", "jobId"],
+    "missingOrUnsafe": "fail-closed-without-forwarding",
+    "roomIdNullableForNonRoomJobs": true
+  },
+  "record": {
+    "schemaVersion": 1,
+    "component": "prover-agent",
+    "fields": [
+      "schemaVersion",
+      "timestamp",
+      "correlationId",
+      "tenantId",
+      "roomId",
+      "jobId",
+      "operationId",
+      "component",
+      "event",
+      "outcome"
+    ],
+    "operationId": null,
+    "maximumIdentifierCharacters": 200,
+    "maximumSerializedBytes": 2048
+  },
+  "events": {
+    "start": { "event": "job.start", "outcome": "started" },
+    "completion": { "event": "job.complete", "outcome": "succeeded" },
+    "retryableError": { "event": "job.error", "outcome": "retrying" },
+    "terminalError": { "event": "job.error", "outcome": "failed" }
+  },
+  "redaction": {
+    "allowlistOnly": true,
+    "forbiddenFields": [
+      "authorization",
+      "token",
+      "request",
+      "result",
+      "proof",
+      "seal",
+      "errorReason",
+      "environment"
+    ]
+  },
+  "metrics": {
+    "correlationIdAsLabel": false,
+    "tenantIdAsLabel": false,
+    "roomIdAsLabel": false,
+    "jobIdAsLabel": false
+  },
+  "testFixture": "test/fixtures/hosted-trace-join.json",
+  "exports": ["agentTraceRecord", "emitAgentTrace", "parseLeasedJob"]
+}

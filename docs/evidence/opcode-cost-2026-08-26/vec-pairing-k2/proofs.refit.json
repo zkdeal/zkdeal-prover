@@ -1,0 +1,66 @@
+[
+  {
+    "name": "BLS12_PAIRING_k2",
+    "byte": 15,
+    "klass": "precompile",
+    "kind": "precompile",
+    "unitBytes": 8,
+    "cap": 2,
+    "status": "OK",
+    "gasPerUnit": 206040,
+    "gasIntercept": 277186,
+    "gasNonlinearity": 0,
+    "stepsPerUnit": 16,
+    "points": [
+      {
+        "units": 0,
+        "executedGas": 277186,
+        "opcodeSteps": 182,
+        "fusedMotifHits": 0,
+        "maxMemoryBytes": 2112,
+        "encodedWitnessBytes": 31715,
+        "precompileCalls": 2,
+        "cycles": 217162376,
+        "totalCycles": 230948864,
+        "segments": 221,
+        "totalPipelineMs": 325546.84727300005,
+        "compositeProofMs": 205979.654716
+      },
+      {
+        "units": 1,
+        "executedGas": 483226,
+        "opcodeSteps": 198,
+        "fusedMotifHits": 0,
+        "maxMemoryBytes": 2112,
+        "encodedWitnessBytes": 31715,
+        "precompileCalls": 4,
+        "cycles": 428286264,
+        "totalCycles": 454557696,
+        "segments": 434,
+        "totalPipelineMs": 633462.9366929999,
+        "compositeProofMs": 400294.955747
+      },
+      {
+        "units": 2,
+        "executedGas": 689266,
+        "opcodeSteps": 214,
+        "fusedMotifHits": 0,
+        "maxMemoryBytes": 2112,
+        "encodedWitnessBytes": 31715,
+        "precompileCalls": 6,
+        "cycles": 639409980,
+        "totalCycles": 677904384,
+        "segments": 647,
+        "totalPipelineMs": 950034.412545,
+        "compositeProofMs": 600356.001718
+      }
+    ],
+    "cyclesPerUnit": 211123802,
+    "cyclesIntercept": 217162404.6666667,
+    "cyclesNonlinearity": 1.357813111793646e-7,
+    "cyclesPerGas": 1024.673859444768,
+    "totalCyclesPerUnit": 223477760,
+    "totalCyclesPerGas": 1084.6328868180935,
+    "refit": "exact user cycles"
+  }
+]

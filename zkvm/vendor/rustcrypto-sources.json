@@ -1,0 +1,22 @@
+{
+  "format": "zkdeal/vendored-source-archives/v1",
+  "archives": [
+    {
+      "crate": "k256",
+      "version": "0.13.4",
+      "commit": "7d4a8d6477e258ce4169ee4669cf92aee0582c39",
+      "url": "https://codeload.github.com/risc0/RustCrypto-elliptic-curves/tar.gz/7d4a8d6477e258ce4169ee4669cf92aee0582c39",
+      "archiveSha256": "800d05a46291b0dc1b8cfeb8d25b74c71925969c477a9df7e27f3c074dded153",
+      "archiveSubdirectory": "k256",
+      "destination": "vendor/rustcrypto-k256"
+    },
+    {
+      "crate": "crypto-bigint",
+      "version": "0.5.5",
+      "commit": "3ab63a6f1048833f7047d5a50532e4a4cc789384",
+      "url": "https://codeload.github.com/risc0/RustCrypto-crypto-bigint/tar.gz/3ab63a6f1048833f7047d5a50532e4a4cc789384",
+      "archiveSha256": "730a60cab7cafab391f146078df74b0ad2bcbb6d56bc1ae7fc26d13753b919bd",
+      "destination": "vendor/rustcrypto-crypto-bigint"
+    }
+  ]
+}

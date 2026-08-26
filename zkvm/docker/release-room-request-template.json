@@ -1,0 +1,18 @@
+{
+  "deploymentDomain": "0x1111111111111111111111111111111111111111111111111111111111111111",
+  "roomId": 1,
+  "l1ChainId": 31337,
+  "l1InclusionDeadline": 1000000,
+  "authorizationMode": "validity-only",
+  "activeSigners": 0,
+  "participantCapacity": 128,
+  "registeredParticipants": 1,
+  "touchedParticipants": 1,
+  "touchedContracts": 1,
+  "residentAccounts": 2,
+  "residentMirrorVariables": 1,
+  "importedVariables": 0,
+  "workload": "storage",
+  "stateCommitment": "mpt"
+}
+

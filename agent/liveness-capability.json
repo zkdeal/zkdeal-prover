@@ -1,0 +1,107 @@
+{
+  "format": "zkdeal/prover-liveness-capability/current",
+  "contractCall": {
+    "signature": "reportNodeHeartbeat(bytes32,bytes32)",
+    "selector": "0x7cd0e630",
+    "targetEnvironment": "ROOM_POOL"
+  },
+  "authority": {
+    "serviceRole": "l1-liveness",
+    "serverBinding": [
+      "nodeId",
+      "expectedLivenessAccount"
+    ],
+    "accountCheckedOnEveryOperationResponse": true,
+    "crossOperationRead": false,
+    "excludedAuthorities": [
+      "operations",
+      "payout",
+      "pool-admin",
+      "treasury"
+    ]
+  },
+  "productionTransport": {
+    "kind": "hosted-coordinator-durable-l1-operation",
+    "capabilities": "GET /hosting/v1/capabilities",
+    "publish": "POST /hosting/v1/l1-operations/node-heartbeats",
+    "status": "GET /hosting/v1/l1-transactions/{operationId}",
+    "authentication": "Bearer service principal with l1-liveness role",
+    "schemaNegotiation": {
+      "header": "Accept-Schema-Version",
+      "source": "current schemaVersion and supported set from capabilities",
+      "hardCodedVersion": false
+    },
+    "requestHeaders": [
+      "Authorization",
+      "Accept-Schema-Version",
+      "Idempotency-Key",
+      "X-Correlation-Id"
+    ],
+    "requestBody": [
+      "schemaVersion",
+      "chainId",
+      "poolAddress",
+      "expectedLivenessAccount",
+      "nodeId",
+      "profileHash",
+      "confirmationPolicy.minimumConfirmations"
+    ],
+    "durableStatuses": [
+      "RESERVED",
+      "SIGNED",
+      "ARCHIVED",
+      "BROADCAST",
+      "INCLUDED",
+      "FINALIZED",
+      "FAILED",
+      "RECOVERY_REQUIRED",
+      "SUPERSEDED"
+    ],
+    "canonicalSuccessEvidence": {
+      "requiredForIncludedAndFinalized": [
+        "decimal blockNumber",
+        "32-byte blockHash",
+        "integer confirmations",
+        "receiptSource.providerIds",
+        "receiptSource.observedAt",
+        "receiptSource.canonical=true"
+      ],
+      "additionalForFinalized": "finalized=true",
+      "missingOrMalformed": "fail-closed"
+    },
+    "idempotency": "one deterministic key and correlation id per logical heartbeat, reused on retry",
+    "nonceOwner": "hosted coordinator",
+    "signerOwner": "hosted coordinator",
+    "rawPrivateKeyProduction": false,
+    "directL1RpcProduction": false
+  },
+  "requiredEnvironment": [
+    "ROOM_POOL",
+    "NODE_LIVENESS_COORDINATOR_URL",
+    "NODE_LIVENESS_COORDINATOR_AUTH_TOKEN",
+    "NODE_LIVENESS_ACCOUNT",
+    "L1_CHAIN_ID"
+  ],
+  "optionalEnvironment": [
+    "NODE_LIVENESS_INTERVAL_MS",
+    "NODE_LIVENESS_CONFIRMATIONS",
+    "NODE_LIVENESS_RECEIPT_TIMEOUT_MS",
+    "NODE_LIVENESS_RETRY_DELAY_MS",
+    "NODE_LIVENESS_REQUEST_TIMEOUT_MS",
+    "NODE_LIVENESS_COORDINATOR_POLL_MS"
+  ],
+  "developmentOnlyTransport": {
+    "kind": "direct-viem-private-key",
+    "requiredEnvironment": [
+      "NODE_LIVENESS_DEV_MODE=true",
+      "NODE_LIVENESS_DEV_PRIVATE_KEY",
+      "loopback L1_RPC_URL"
+    ],
+    "remoteRpcRejected": true
+  },
+  "forbiddenEnvironment": [
+    "NODE_SERVICE_KEY",
+    "NODE_LIVENESS_SIGNER_URL",
+    "NODE_LIVENESS_SIGNER_AUTH_TOKEN"
+  ]
+}

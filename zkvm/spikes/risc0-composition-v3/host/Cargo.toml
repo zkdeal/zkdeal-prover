@@ -1,0 +1,22 @@
+[package]
+name = "zkdeal-risc0-composition-spike"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[[bin]]
+name = "zkdeal-risc0-composition-spike"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+bincode = "1.3"
+hex = "0.4"
+serde_json = "1"
+zkdeal-composition-methods = { path = "../methods" }
+risc0-zkvm = { version = "=3.0.6", features = ["prove", "disable-dev-mode"] }
+
+[features]
+default = []
+cuda = ["risc0-zkvm/cuda"]
+

@@ -1,0 +1,60 @@
+# --- Secrets and key material ---
+.agent-data/
+**/.agent-data/
+keys.json
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# --- Dependencies / build ---
+node_modules/
+.pnpm-store/
+dist/
+*.tsbuildinfo
+.turbo/
+.cache/
+
+# --- Local tool binaries ---
+.tools/
+
+# --- Logs ---
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# --- Python helpers ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# --- Editors and OS ---
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*.docx
+
+# --- Scratch ---
+*.tmp
+*.bak
+*.orig
+*.rej
+.scratch/
+
+# --- Rust / zkVM ---
+target/
+zkvm/build/
+# zkvm/artifacts.lock.json IS tracked: it pins every artifact sha256 + imageId.

@@ -1,0 +1,14 @@
+{
+  "requireMaxTransactionBlobs": true,
+  "members": [
+    { "kind": "blob", "roomProof": "room-1-proof.json", "dataAvailabilityProof": "room-1-da-proof.json" },
+    { "kind": "blob", "roomProof": "room-2-proof.json", "dataAvailabilityProof": "room-2-da-proof.json" },
+    { "kind": "blob", "roomProof": "room-3-proof.json", "dataAvailabilityProof": "room-3-da-proof.json" },
+    { "kind": "blob", "roomProof": "room-4-proof.json", "dataAvailabilityProof": "room-4-da-proof.json" },
+    { "kind": "blob", "roomProof": "room-5-proof.json", "dataAvailabilityProof": "room-5-da-proof.json" },
+    { "kind": "blob", "roomProof": "room-6-proof.json", "dataAvailabilityProof": "room-6-da-proof.json" },
+    { "kind": "calldata", "roomProof": "room-7-proof.json" },
+    { "kind": "calldata", "roomProof": "room-8-proof.json" }
+  ]
+}
+

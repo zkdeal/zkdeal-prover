@@ -1,0 +1,1565 @@
+{
+  "activeOpcodes": 154,
+  "invalidOpcodes": 102,
+  "opcodes": [
+    {
+      "active": true,
+      "byte": 0,
+      "hex": "0x00",
+      "name": "STOP"
+    },
+    {
+      "active": true,
+      "byte": 1,
+      "hex": "0x01",
+      "name": "ADD"
+    },
+    {
+      "active": true,
+      "byte": 2,
+      "hex": "0x02",
+      "name": "MUL"
+    },
+    {
+      "active": true,
+      "byte": 3,
+      "hex": "0x03",
+      "name": "SUB"
+    },
+    {
+      "active": true,
+      "byte": 4,
+      "hex": "0x04",
+      "name": "DIV"
+    },
+    {
+      "active": true,
+      "byte": 5,
+      "hex": "0x05",
+      "name": "SDIV"
+    },
+    {
+      "active": true,
+      "byte": 6,
+      "hex": "0x06",
+      "name": "MOD"
+    },
+    {
+      "active": true,
+      "byte": 7,
+      "hex": "0x07",
+      "name": "SMOD"
+    },
+    {
+      "active": true,
+      "byte": 8,
+      "hex": "0x08",
+      "name": "ADDMOD"
+    },
+    {
+      "active": true,
+      "byte": 9,
+      "hex": "0x09",
+      "name": "MULMOD"
+    },
+    {
+      "active": true,
+      "byte": 10,
+      "hex": "0x0a",
+      "name": "EXP"
+    },
+    {
+      "active": true,
+      "byte": 11,
+      "hex": "0x0b",
+      "name": "SIGNEXTEND"
+    },
+    {
+      "active": false,
+      "byte": 12,
+      "hex": "0x0c",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 13,
+      "hex": "0x0d",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 14,
+      "hex": "0x0e",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 15,
+      "hex": "0x0f",
+      "name": "INVALID"
+    },
+    {
+      "active": true,
+      "byte": 16,
+      "hex": "0x10",
+      "name": "LT"
+    },
+    {
+      "active": true,
+      "byte": 17,
+      "hex": "0x11",
+      "name": "GT"
+    },
+    {
+      "active": true,
+      "byte": 18,
+      "hex": "0x12",
+      "name": "SLT"
+    },
+    {
+      "active": true,
+      "byte": 19,
+      "hex": "0x13",
+      "name": "SGT"
+    },
+    {
+      "active": true,
+      "byte": 20,
+      "hex": "0x14",
+      "name": "EQ"
+    },
+    {
+      "active": true,
+      "byte": 21,
+      "hex": "0x15",
+      "name": "ISZERO"
+    },
+    {
+      "active": true,
+      "byte": 22,
+      "hex": "0x16",
+      "name": "AND"
+    },
+    {
+      "active": true,
+      "byte": 23,
+      "hex": "0x17",
+      "name": "OR"
+    },
+    {
+      "active": true,
+      "byte": 24,
+      "hex": "0x18",
+      "name": "XOR"
+    },
+    {
+      "active": true,
+      "byte": 25,
+      "hex": "0x19",
+      "name": "NOT"
+    },
+    {
+      "active": true,
+      "byte": 26,
+      "hex": "0x1a",
+      "name": "BYTE"
+    },
+    {
+      "active": true,
+      "byte": 27,
+      "hex": "0x1b",
+      "name": "SHL"
+    },
+    {
+      "active": true,
+      "byte": 28,
+      "hex": "0x1c",
+      "name": "SHR"
+    },
+    {
+      "active": true,
+      "byte": 29,
+      "hex": "0x1d",
+      "name": "SAR"
+    },
+    {
+      "active": true,
+      "byte": 30,
+      "hex": "0x1e",
+      "name": "CLZ"
+    },
+    {
+      "active": false,
+      "byte": 31,
+      "hex": "0x1f",
+      "name": "INVALID"
+    },
+    {
+      "active": true,
+      "byte": 32,
+      "hex": "0x20",
+      "name": "KECCAK256"
+    },
+    {
+      "active": false,
+      "byte": 33,
+      "hex": "0x21",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 34,
+      "hex": "0x22",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 35,
+      "hex": "0x23",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 36,
+      "hex": "0x24",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 37,
+      "hex": "0x25",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 38,
+      "hex": "0x26",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 39,
+      "hex": "0x27",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 40,
+      "hex": "0x28",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 41,
+      "hex": "0x29",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 42,
+      "hex": "0x2a",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 43,
+      "hex": "0x2b",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 44,
+      "hex": "0x2c",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 45,
+      "hex": "0x2d",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 46,
+      "hex": "0x2e",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 47,
+      "hex": "0x2f",
+      "name": "INVALID"
+    },
+    {
+      "active": true,
+      "byte": 48,
+      "hex": "0x30",
+      "name": "ADDRESS"
+    },
+    {
+      "active": true,
+      "byte": 49,
+      "hex": "0x31",
+      "name": "BALANCE"
+    },
+    {
+      "active": true,
+      "byte": 50,
+      "hex": "0x32",
+      "name": "ORIGIN"
+    },
+    {
+      "active": true,
+      "byte": 51,
+      "hex": "0x33",
+      "name": "CALLER"
+    },
+    {
+      "active": true,
+      "byte": 52,
+      "hex": "0x34",
+      "name": "CALLVALUE"
+    },
+    {
+      "active": true,
+      "byte": 53,
+      "hex": "0x35",
+      "name": "CALLDATALOAD"
+    },
+    {
+      "active": true,
+      "byte": 54,
+      "hex": "0x36",
+      "name": "CALLDATASIZE"
+    },
+    {
+      "active": true,
+      "byte": 55,
+      "hex": "0x37",
+      "name": "CALLDATACOPY"
+    },
+    {
+      "active": true,
+      "byte": 56,
+      "hex": "0x38",
+      "name": "CODESIZE"
+    },
+    {
+      "active": true,
+      "byte": 57,
+      "hex": "0x39",
+      "name": "CODECOPY"
+    },
+    {
+      "active": true,
+      "byte": 58,
+      "hex": "0x3a",
+      "name": "GASPRICE"
+    },
+    {
+      "active": true,
+      "byte": 59,
+      "hex": "0x3b",
+      "name": "EXTCODESIZE"
+    },
+    {
+      "active": true,
+      "byte": 60,
+      "hex": "0x3c",
+      "name": "EXTCODECOPY"
+    },
+    {
+      "active": true,
+      "byte": 61,
+      "hex": "0x3d",
+      "name": "RETURNDATASIZE"
+    },
+    {
+      "active": true,
+      "byte": 62,
+      "hex": "0x3e",
+      "name": "RETURNDATACOPY"
+    },
+    {
+      "active": true,
+      "byte": 63,
+      "hex": "0x3f",
+      "name": "EXTCODEHASH"
+    },
+    {
+      "active": true,
+      "byte": 64,
+      "hex": "0x40",
+      "name": "BLOCKHASH"
+    },
+    {
+      "active": true,
+      "byte": 65,
+      "hex": "0x41",
+      "name": "COINBASE"
+    },
+    {
+      "active": true,
+      "byte": 66,
+      "hex": "0x42",
+      "name": "TIMESTAMP"
+    },
+    {
+      "active": true,
+      "byte": 67,
+      "hex": "0x43",
+      "name": "NUMBER"
+    },
+    {
+      "active": true,
+      "byte": 68,
+      "hex": "0x44",
+      "name": "DIFFICULTY"
+    },
+    {
+      "active": true,
+      "byte": 69,
+      "hex": "0x45",
+      "name": "GASLIMIT"
+    },
+    {
+      "active": true,
+      "byte": 70,
+      "hex": "0x46",
+      "name": "CHAINID"
+    },
+    {
+      "active": true,
+      "byte": 71,
+      "hex": "0x47",
+      "name": "SELFBALANCE"
+    },
+    {
+      "active": true,
+      "byte": 72,
+      "hex": "0x48",
+      "name": "BASEFEE"
+    },
+    {
+      "active": true,
+      "byte": 73,
+      "hex": "0x49",
+      "name": "BLOBHASH"
+    },
+    {
+      "active": true,
+      "byte": 74,
+      "hex": "0x4a",
+      "name": "BLOBBASEFEE"
+    },
+    {
+      "active": true,
+      "byte": 75,
+      "hex": "0x4b",
+      "name": "SLOTNUM"
+    },
+    {
+      "active": false,
+      "byte": 76,
+      "hex": "0x4c",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 77,
+      "hex": "0x4d",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 78,
+      "hex": "0x4e",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 79,
+      "hex": "0x4f",
+      "name": "INVALID"
+    },
+    {
+      "active": true,
+      "byte": 80,
+      "hex": "0x50",
+      "name": "POP"
+    },
+    {
+      "active": true,
+      "byte": 81,
+      "hex": "0x51",
+      "name": "MLOAD"
+    },
+    {
+      "active": true,
+      "byte": 82,
+      "hex": "0x52",
+      "name": "MSTORE"
+    },
+    {
+      "active": true,
+      "byte": 83,
+      "hex": "0x53",
+      "name": "MSTORE8"
+    },
+    {
+      "active": true,
+      "byte": 84,
+      "hex": "0x54",
+      "name": "SLOAD"
+    },
+    {
+      "active": true,
+      "byte": 85,
+      "hex": "0x55",
+      "name": "SSTORE"
+    },
+    {
+      "active": true,
+      "byte": 86,
+      "hex": "0x56",
+      "name": "JUMP"
+    },
+    {
+      "active": true,
+      "byte": 87,
+      "hex": "0x57",
+      "name": "JUMPI"
+    },
+    {
+      "active": true,
+      "byte": 88,
+      "hex": "0x58",
+      "name": "PC"
+    },
+    {
+      "active": true,
+      "byte": 89,
+      "hex": "0x59",
+      "name": "MSIZE"
+    },
+    {
+      "active": true,
+      "byte": 90,
+      "hex": "0x5a",
+      "name": "GAS"
+    },
+    {
+      "active": true,
+      "byte": 91,
+      "hex": "0x5b",
+      "name": "JUMPDEST"
+    },
+    {
+      "active": true,
+      "byte": 92,
+      "hex": "0x5c",
+      "name": "TLOAD"
+    },
+    {
+      "active": true,
+      "byte": 93,
+      "hex": "0x5d",
+      "name": "TSTORE"
+    },
+    {
+      "active": true,
+      "byte": 94,
+      "hex": "0x5e",
+      "name": "MCOPY"
+    },
+    {
+      "active": true,
+      "byte": 95,
+      "hex": "0x5f",
+      "name": "PUSH0"
+    },
+    {
+      "active": true,
+      "byte": 96,
+      "hex": "0x60",
+      "name": "PUSH1"
+    },
+    {
+      "active": true,
+      "byte": 97,
+      "hex": "0x61",
+      "name": "PUSH2"
+    },
+    {
+      "active": true,
+      "byte": 98,
+      "hex": "0x62",
+      "name": "PUSH3"
+    },
+    {
+      "active": true,
+      "byte": 99,
+      "hex": "0x63",
+      "name": "PUSH4"
+    },
+    {
+      "active": true,
+      "byte": 100,
+      "hex": "0x64",
+      "name": "PUSH5"
+    },
+    {
+      "active": true,
+      "byte": 101,
+      "hex": "0x65",
+      "name": "PUSH6"
+    },
+    {
+      "active": true,
+      "byte": 102,
+      "hex": "0x66",
+      "name": "PUSH7"
+    },
+    {
+      "active": true,
+      "byte": 103,
+      "hex": "0x67",
+      "name": "PUSH8"
+    },
+    {
+      "active": true,
+      "byte": 104,
+      "hex": "0x68",
+      "name": "PUSH9"
+    },
+    {
+      "active": true,
+      "byte": 105,
+      "hex": "0x69",
+      "name": "PUSH10"
+    },
+    {
+      "active": true,
+      "byte": 106,
+      "hex": "0x6a",
+      "name": "PUSH11"
+    },
+    {
+      "active": true,
+      "byte": 107,
+      "hex": "0x6b",
+      "name": "PUSH12"
+    },
+    {
+      "active": true,
+      "byte": 108,
+      "hex": "0x6c",
+      "name": "PUSH13"
+    },
+    {
+      "active": true,
+      "byte": 109,
+      "hex": "0x6d",
+      "name": "PUSH14"
+    },
+    {
+      "active": true,
+      "byte": 110,
+      "hex": "0x6e",
+      "name": "PUSH15"
+    },
+    {
+      "active": true,
+      "byte": 111,
+      "hex": "0x6f",
+      "name": "PUSH16"
+    },
+    {
+      "active": true,
+      "byte": 112,
+      "hex": "0x70",
+      "name": "PUSH17"
+    },
+    {
+      "active": true,
+      "byte": 113,
+      "hex": "0x71",
+      "name": "PUSH18"
+    },
+    {
+      "active": true,
+      "byte": 114,
+      "hex": "0x72",
+      "name": "PUSH19"
+    },
+    {
+      "active": true,
+      "byte": 115,
+      "hex": "0x73",
+      "name": "PUSH20"
+    },
+    {
+      "active": true,
+      "byte": 116,
+      "hex": "0x74",
+      "name": "PUSH21"
+    },
+    {
+      "active": true,
+      "byte": 117,
+      "hex": "0x75",
+      "name": "PUSH22"
+    },
+    {
+      "active": true,
+      "byte": 118,
+      "hex": "0x76",
+      "name": "PUSH23"
+    },
+    {
+      "active": true,
+      "byte": 119,
+      "hex": "0x77",
+      "name": "PUSH24"
+    },
+    {
+      "active": true,
+      "byte": 120,
+      "hex": "0x78",
+      "name": "PUSH25"
+    },
+    {
+      "active": true,
+      "byte": 121,
+      "hex": "0x79",
+      "name": "PUSH26"
+    },
+    {
+      "active": true,
+      "byte": 122,
+      "hex": "0x7a",
+      "name": "PUSH27"
+    },
+    {
+      "active": true,
+      "byte": 123,
+      "hex": "0x7b",
+      "name": "PUSH28"
+    },
+    {
+      "active": true,
+      "byte": 124,
+      "hex": "0x7c",
+      "name": "PUSH29"
+    },
+    {
+      "active": true,
+      "byte": 125,
+      "hex": "0x7d",
+      "name": "PUSH30"
+    },
+    {
+      "active": true,
+      "byte": 126,
+      "hex": "0x7e",
+      "name": "PUSH31"
+    },
+    {
+      "active": true,
+      "byte": 127,
+      "hex": "0x7f",
+      "name": "PUSH32"
+    },
+    {
+      "active": true,
+      "byte": 128,
+      "hex": "0x80",
+      "name": "DUP1"
+    },
+    {
+      "active": true,
+      "byte": 129,
+      "hex": "0x81",
+      "name": "DUP2"
+    },
+    {
+      "active": true,
+      "byte": 130,
+      "hex": "0x82",
+      "name": "DUP3"
+    },
+    {
+      "active": true,
+      "byte": 131,
+      "hex": "0x83",
+      "name": "DUP4"
+    },
+    {
+      "active": true,
+      "byte": 132,
+      "hex": "0x84",
+      "name": "DUP5"
+    },
+    {
+      "active": true,
+      "byte": 133,
+      "hex": "0x85",
+      "name": "DUP6"
+    },
+    {
+      "active": true,
+      "byte": 134,
+      "hex": "0x86",
+      "name": "DUP7"
+    },
+    {
+      "active": true,
+      "byte": 135,
+      "hex": "0x87",
+      "name": "DUP8"
+    },
+    {
+      "active": true,
+      "byte": 136,
+      "hex": "0x88",
+      "name": "DUP9"
+    },
+    {
+      "active": true,
+      "byte": 137,
+      "hex": "0x89",
+      "name": "DUP10"
+    },
+    {
+      "active": true,
+      "byte": 138,
+      "hex": "0x8a",
+      "name": "DUP11"
+    },
+    {
+      "active": true,
+      "byte": 139,
+      "hex": "0x8b",
+      "name": "DUP12"
+    },
+    {
+      "active": true,
+      "byte": 140,
+      "hex": "0x8c",
+      "name": "DUP13"
+    },
+    {
+      "active": true,
+      "byte": 141,
+      "hex": "0x8d",
+      "name": "DUP14"
+    },
+    {
+      "active": true,
+      "byte": 142,
+      "hex": "0x8e",
+      "name": "DUP15"
+    },
+    {
+      "active": true,
+      "byte": 143,
+      "hex": "0x8f",
+      "name": "DUP16"
+    },
+    {
+      "active": true,
+      "byte": 144,
+      "hex": "0x90",
+      "name": "SWAP1"
+    },
+    {
+      "active": true,
+      "byte": 145,
+      "hex": "0x91",
+      "name": "SWAP2"
+    },
+    {
+      "active": true,
+      "byte": 146,
+      "hex": "0x92",
+      "name": "SWAP3"
+    },
+    {
+      "active": true,
+      "byte": 147,
+      "hex": "0x93",
+      "name": "SWAP4"
+    },
+    {
+      "active": true,
+      "byte": 148,
+      "hex": "0x94",
+      "name": "SWAP5"
+    },
+    {
+      "active": true,
+      "byte": 149,
+      "hex": "0x95",
+      "name": "SWAP6"
+    },
+    {
+      "active": true,
+      "byte": 150,
+      "hex": "0x96",
+      "name": "SWAP7"
+    },
+    {
+      "active": true,
+      "byte": 151,
+      "hex": "0x97",
+      "name": "SWAP8"
+    },
+    {
+      "active": true,
+      "byte": 152,
+      "hex": "0x98",
+      "name": "SWAP9"
+    },
+    {
+      "active": true,
+      "byte": 153,
+      "hex": "0x99",
+      "name": "SWAP10"
+    },
+    {
+      "active": true,
+      "byte": 154,
+      "hex": "0x9a",
+      "name": "SWAP11"
+    },
+    {
+      "active": true,
+      "byte": 155,
+      "hex": "0x9b",
+      "name": "SWAP12"
+    },
+    {
+      "active": true,
+      "byte": 156,
+      "hex": "0x9c",
+      "name": "SWAP13"
+    },
+    {
+      "active": true,
+      "byte": 157,
+      "hex": "0x9d",
+      "name": "SWAP14"
+    },
+    {
+      "active": true,
+      "byte": 158,
+      "hex": "0x9e",
+      "name": "SWAP15"
+    },
+    {
+      "active": true,
+      "byte": 159,
+      "hex": "0x9f",
+      "name": "SWAP16"
+    },
+    {
+      "active": true,
+      "byte": 160,
+      "hex": "0xa0",
+      "name": "LOG0"
+    },
+    {
+      "active": true,
+      "byte": 161,
+      "hex": "0xa1",
+      "name": "LOG1"
+    },
+    {
+      "active": true,
+      "byte": 162,
+      "hex": "0xa2",
+      "name": "LOG2"
+    },
+    {
+      "active": true,
+      "byte": 163,
+      "hex": "0xa3",
+      "name": "LOG3"
+    },
+    {
+      "active": true,
+      "byte": 164,
+      "hex": "0xa4",
+      "name": "LOG4"
+    },
+    {
+      "active": false,
+      "byte": 165,
+      "hex": "0xa5",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 166,
+      "hex": "0xa6",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 167,
+      "hex": "0xa7",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 168,
+      "hex": "0xa8",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 169,
+      "hex": "0xa9",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 170,
+      "hex": "0xaa",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 171,
+      "hex": "0xab",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 172,
+      "hex": "0xac",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 173,
+      "hex": "0xad",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 174,
+      "hex": "0xae",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 175,
+      "hex": "0xaf",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 176,
+      "hex": "0xb0",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 177,
+      "hex": "0xb1",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 178,
+      "hex": "0xb2",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 179,
+      "hex": "0xb3",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 180,
+      "hex": "0xb4",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 181,
+      "hex": "0xb5",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 182,
+      "hex": "0xb6",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 183,
+      "hex": "0xb7",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 184,
+      "hex": "0xb8",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 185,
+      "hex": "0xb9",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 186,
+      "hex": "0xba",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 187,
+      "hex": "0xbb",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 188,
+      "hex": "0xbc",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 189,
+      "hex": "0xbd",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 190,
+      "hex": "0xbe",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 191,
+      "hex": "0xbf",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 192,
+      "hex": "0xc0",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 193,
+      "hex": "0xc1",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 194,
+      "hex": "0xc2",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 195,
+      "hex": "0xc3",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 196,
+      "hex": "0xc4",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 197,
+      "hex": "0xc5",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 198,
+      "hex": "0xc6",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 199,
+      "hex": "0xc7",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 200,
+      "hex": "0xc8",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 201,
+      "hex": "0xc9",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 202,
+      "hex": "0xca",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 203,
+      "hex": "0xcb",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 204,
+      "hex": "0xcc",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 205,
+      "hex": "0xcd",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 206,
+      "hex": "0xce",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 207,
+      "hex": "0xcf",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 208,
+      "hex": "0xd0",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 209,
+      "hex": "0xd1",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 210,
+      "hex": "0xd2",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 211,
+      "hex": "0xd3",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 212,
+      "hex": "0xd4",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 213,
+      "hex": "0xd5",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 214,
+      "hex": "0xd6",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 215,
+      "hex": "0xd7",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 216,
+      "hex": "0xd8",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 217,
+      "hex": "0xd9",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 218,
+      "hex": "0xda",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 219,
+      "hex": "0xdb",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 220,
+      "hex": "0xdc",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 221,
+      "hex": "0xdd",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 222,
+      "hex": "0xde",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 223,
+      "hex": "0xdf",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 224,
+      "hex": "0xe0",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 225,
+      "hex": "0xe1",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 226,
+      "hex": "0xe2",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 227,
+      "hex": "0xe3",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 228,
+      "hex": "0xe4",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 229,
+      "hex": "0xe5",
+      "name": "INVALID"
+    },
+    {
+      "active": true,
+      "byte": 230,
+      "hex": "0xe6",
+      "name": "DUPN"
+    },
+    {
+      "active": true,
+      "byte": 231,
+      "hex": "0xe7",
+      "name": "SWAPN"
+    },
+    {
+      "active": true,
+      "byte": 232,
+      "hex": "0xe8",
+      "name": "EXCHANGE"
+    },
+    {
+      "active": false,
+      "byte": 233,
+      "hex": "0xe9",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 234,
+      "hex": "0xea",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 235,
+      "hex": "0xeb",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 236,
+      "hex": "0xec",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 237,
+      "hex": "0xed",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 238,
+      "hex": "0xee",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 239,
+      "hex": "0xef",
+      "name": "INVALID"
+    },
+    {
+      "active": true,
+      "byte": 240,
+      "hex": "0xf0",
+      "name": "CREATE"
+    },
+    {
+      "active": true,
+      "byte": 241,
+      "hex": "0xf1",
+      "name": "CALL"
+    },
+    {
+      "active": true,
+      "byte": 242,
+      "hex": "0xf2",
+      "name": "CALLCODE"
+    },
+    {
+      "active": true,
+      "byte": 243,
+      "hex": "0xf3",
+      "name": "RETURN"
+    },
+    {
+      "active": true,
+      "byte": 244,
+      "hex": "0xf4",
+      "name": "DELEGATECALL"
+    },
+    {
+      "active": true,
+      "byte": 245,
+      "hex": "0xf5",
+      "name": "CREATE2"
+    },
+    {
+      "active": false,
+      "byte": 246,
+      "hex": "0xf6",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 247,
+      "hex": "0xf7",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 248,
+      "hex": "0xf8",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 249,
+      "hex": "0xf9",
+      "name": "INVALID"
+    },
+    {
+      "active": true,
+      "byte": 250,
+      "hex": "0xfa",
+      "name": "STATICCALL"
+    },
+    {
+      "active": false,
+      "byte": 251,
+      "hex": "0xfb",
+      "name": "INVALID"
+    },
+    {
+      "active": false,
+      "byte": 252,
+      "hex": "0xfc",
+      "name": "INVALID"
+    },
+    {
+      "active": true,
+      "byte": 253,
+      "hex": "0xfd",
+      "name": "REVERT"
+    },
+    {
+      "active": true,
+      "byte": 254,
+      "hex": "0xfe",
+      "name": "INVALID"
+    },
+    {
+      "active": true,
+      "byte": 255,
+      "hex": "0xff",
+      "name": "SELFDESTRUCT"
+    }
+  ],
+  "precompileCount": 18,
+  "precompiles": [
+    "0x0000000000000000000000000000000000000001",
+    "0x0000000000000000000000000000000000000002",
+    "0x0000000000000000000000000000000000000003",
+    "0x0000000000000000000000000000000000000004",
+    "0x0000000000000000000000000000000000000005",
+    "0x0000000000000000000000000000000000000006",
+    "0x0000000000000000000000000000000000000007",
+    "0x0000000000000000000000000000000000000008",
+    "0x0000000000000000000000000000000000000009",
+    "0x000000000000000000000000000000000000000a",
+    "0x000000000000000000000000000000000000000b",
+    "0x000000000000000000000000000000000000000c",
+    "0x000000000000000000000000000000000000000d",
+    "0x000000000000000000000000000000000000000e",
+    "0x000000000000000000000000000000000000000f",
+    "0x0000000000000000000000000000000000000010",
+    "0x0000000000000000000000000000000000000011",
+    "0x0000000000000000000000000000000000000100"
+  ],
+  "schema": "zkdeal/osaka-opcode-manifest/v1",
+  "spec": "osaka"
+}

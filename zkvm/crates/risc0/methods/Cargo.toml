@@ -1,0 +1,11 @@
+[package]
+name = "r0-methods"
+version.workspace = true
+edition.workspace = true
+description = "Embeds the zkdeal STF risc0 guest ELF + deterministic image id"
+
+[build-dependencies]
+risc0-build = { version = "3.0.6", features = ["unstable"] }
+
+[package.metadata.risc0]
+methods = ["guest"]

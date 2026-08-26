@@ -1,0 +1,20 @@
+# VENDORED from ligeroinc/ligero-prover sdk/rust
+# (v1.5.0, commit 6395bb105f259160b42654ec4e3592432b048126, Apache-2.0 — see
+# LICENSE.md). Modifications vs upstream: [[example]] sections removed (the
+# examples/ tree is not vendored), profile section dropped (consumers set
+# their own), name/version untouched so `use ligetron::*` matches upstream.
+[package]
+name = "ligetron"
+version = "1.2.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+paste = "1.0.15"
+lazy_static = "1.4"
+base64 = "0.22.1"
+hex = "0.4.3"
+
+[lib]
+crate-type = ["cdylib", "staticlib", "rlib"]

@@ -1,0 +1,40 @@
+{
+  "name": "zkdeal-prover-node",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.13.1",
+  "scripts": {
+    "build:zkvm": "node scripts/run-platform.mjs build-zkvm",
+    "check:sources": "node zkvm/scripts/check-lock-freshness.mjs",
+    "check:no-git": "node zkvm/scripts/check-no-git-sources.mjs",
+    "check:artifacts": "node scripts/verify-zkvm-locks.mjs",
+    "check:artifacts:gpu": "node scripts/verify-zkvm-locks.mjs --require-zkvm-build"
+  },
+  "devDependencies": {
+    "@ethereumjs/util": "^10.1.2",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.23.1",
+    "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "hono": "4.12.27",
+      "underscore": "^1.13.8",
+      "ws": "^8.21.0",
+      "postcss": "^8.5.10",
+      "@fastify/static": "^10.1.2",
+      "find-my-way": "^9.7.0",
+      "next": "16.2.11",
+      "sharp": "^0.35.3",
+      "minimatch@^5.0.0": "^10.2.5",
+      "brace-expansion@^5.0.0": "^5.0.8"
+    },
+    "onlyBuiltDependencies": [
+      "blake-hash",
+      "esbuild",
+      "node-datachannel",
+      "sharp"
+    ]
+  }
+}

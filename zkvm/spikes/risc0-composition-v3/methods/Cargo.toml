@@ -1,0 +1,12 @@
+[package]
+name = "zkdeal-composition-methods"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[build-dependencies]
+risc0-binfmt = "=3.0.5"
+risc0-build = { version = "=3.0.6", features = ["unstable"] }
+
+[package.metadata.risc0]
+methods = ["cold-guest", "suffix-guest"]

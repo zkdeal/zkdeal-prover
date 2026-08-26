@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "source": "stf-core/tests/room_v5/forced_vectors.rs (emit_vectors)",
+  "note": "digest = sha256( for each case in order: raw ++ [reasonByte] ++ reasonHash ), reasonByte = 0 for null",
+  "deploymentDomain": "0x1111111111111111111111111111111111111111111111111111111111111111",
+  "roomId": 7,
+  "chainId": "1896894698282978",
+  "policy": {
+    "state_commitment": 0,
+    "max_blocks_per_batch": 4,
+    "max_transactions_per_block": 32,
+    "max_gas_per_block": 1000000,
+    "max_memory_bytes": 16777216,
+    "allow_contract_creation": false,
+    "allow_self_destruct": false,
+    "code": [
+      {
+        "address": "0x4444444444444444444444444444444444444444",
+        "runtime_code_hash": "0xc37586536e5fff37edbaf635d6239638b7e18038a65f05f92a0760e9ab392e6f"
+      },
+      {
+        "address": "0x4545454545454545454545454545454545454545",
+        "runtime_code_hash": "0x37b17dbd9715a8e422fa46115fe1f25e74020b4543587a818881a4231523a849"
+      }
+    ],
+    "calls": [
+      {
+        "caller": "0x0000000000000000000000000000000000000000",
+        "target": "0x4444444444444444444444444444444444444444",
+        "selectors": [
+          [
+            18,
+            52,
+            86,
+            120
+          ]
+        ],
+        "kinds": [
+          0
+        ]
+      },
+      {
+        "caller": "0x0000000000000000000000000000000000000000",
+        "target": "0x4545454545454545454545454545454545454545",
+        "selectors": [
+          [
+            228,
+            23,
+            0,
+            1
+          ]
+        ],
+        "kinds": [
+          0
+        ]
+      }
+    ],
+    "storage": [
+      {
+        "contract": "0x4444444444444444444444444444444444444444",
+        "slot_prefix": "0x0",
+        "prefix_bits": 0,
+        "writable": true
+      },
+      {
+        "contract": "0x4545454545454545454545454545454545454545",
+        "slot_prefix": "0x0",
+        "prefix_bits": 0,
+        "writable": true
+      }
+    ],
+    "imports": [],
+    "participant_registry": {
+      "contract": "0x4444444444444444444444444444444444444444",
+      "root_slot": "0xa",
+      "epoch_slot": "0xb",
+      "count_slot": "0xc",
+      "capacity_slot": "0xd"
+    },
+    "exit": {
+      "queue_contract": "0x4545454545454545454545454545454545454545",
+      "count_slot": "0x0",
+      "records_base_slot": "0x100",
+      "assets": [
+        {
+          "asset": "0x0000000000000000000000000000000000000000",
+          "kind": 0,
+          "token": "0x0000000000000000000000000000000000000000",
+          "balance_slot": "0x0"
+        }
+      ],
+      "fallback_recipient": "0xfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfbfb"
+    }
+  },
+  "policyHash": "0x841621a40991371dd0a165a66a5d2484c4e7cb65472ad6ddfb2bf4fb9f5c04fe",
+  "callerA": "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf",
+  "callerB": "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf",
+  "terminal": [
+    {
+      "address": "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf",
+      "nonce": 5,
+      "balance": "0x3e8"
+    }
+  ],
+  "digest": "0x5eed8ea7f2adb76ef68e70c2401340bdf4469ef66157f8bff0185120414ad5d4",
+  "cases": [
+    {
+      "name": "blob_envelope_prefix",
+      "raw": "0x030102",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0xbb847c79ce1eaa9c3156f9e68401d46fa33fab61c8fd28c03dbde050d6166c4f"
+    },
+    {
+      "name": "eip7702_envelope_prefix",
+      "raw": "0x040102",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0x90a23b2c471b3f1a0febc921ae1c70ca4d3a78dcbd3655c29f45dc085e00f660"
+    },
+    {
+      "name": "unknown_type_byte_0x05",
+      "raw": "0x050102",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0x4f5af33f5a6ba2ccbe002a5cbf9c9f8a36c1aea3ca3caffa49a6db2df70dcb45"
+    },
+    {
+      "name": "malformed_legacy_rlp",
+      "raw": "0xc0",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0xe8911f8fdd23f5782d8ce5069abfc8812ff1d4e362ca73ca03dffef50970cfe6"
+    },
+    {
+      "name": "pre_eip155_legacy_v27",
+      "raw": "0xf88405808301d4c094444444444444444444444444444444444444444480a41234567800000000000000000000000000000000000000000000000000000000000000001ba087636feda0520fc9cfdd78cd415cdacc7992a4e525633964257b02f02d425bc8a019600028c8f56276df1a712818bec8a7a228424bd5ef8a87a688ccd4c0c708a4",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0x26a174db48e68732d09e8602ae749dba479de0a0a48b443956c4cfef2d488516"
+    },
+    {
+      "name": "wrong_chain_id_1559",
+      "raw": "0x02f88e8706bd3736aadfe30580808301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000c001a0f997de5ff13786018908dc7010c682e0fffaaa243aaf3201b3cbb1373db76feea062f8ed0817a848d6a560cca4ccbefd5cec8790a787b344d2b0f6fac2e9e0234c",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0x2c1d563e76cc7067dbb30073ddf78d5ba374a8256276141082823eea6a44fd0a"
+    },
+    {
+      "name": "fee_bearing_1559_max_fee",
+      "raw": "0x02f88e8706bd3736aadfe20580018301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000c001a0715864a31fb63fbd71626a10cf5fc3365fa7f60839da067cfa5350e1af70c6bfa0566fc9ff83e899fedc8907c8a0509af66e995dd0f7b262c933d37f3003ba5f47",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0x472e7016a30290e09f3e3620b96ed9f36f57a31d9395c8fa0a241a0e4b3b752e"
+    },
+    {
+      "name": "nonzero_priority_fee_1559",
+      "raw": "0x02f88e8706bd3736aadfe20501808301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000c080a0a4cdfb97ccfaf35f59ea12daca5628797ba6717c5f0445f77d1bcfe6a400e04aa077da9ac823cb8e8d98ec26a38b80ce52841fea19b54b10816f37980847212b83",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0x644da1ef7315f0d5feb504e051e21fddd4cfcad13b7c128381117cfd9279c9c6"
+    },
+    {
+      "name": "legacy_gas_price_nonzero",
+      "raw": "0xf88b05018301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000870d7a6e6d55bfe7a0cb9a69f33d9965c73ce190ceb2dbcd19c87c584fd43b7cf963e9e2ac4b6877bda0150f6a6d22fb80c3044dc2cae4f6ac79e9b73dd36acdeb32b320083bbf33631e",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0x2076e8aaba4484a0d68fa061f01a4c847798c41a649005e26543466b0e94b387"
+    },
+    {
+      "name": "nonce_equals_u64_max",
+      "raw": "0x02f8968706bd3736aadfe288ffffffffffffffff80808301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000c001a07c34017bd49953a6ff33c658ee390b129f3cba084ddcd09279775d8fa8334e79a035a99510d55a7c8c750371ef0cda0598923512e603f6c99af768a073438ae517",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0xb488072e66d57f7beba6abb82e8dfa2cf2a1c9eb95043dcac6e6b1ceb5d4887c"
+    },
+    {
+      "name": "trailing_bytes_after_valid_envelope",
+      "raw": "0x02f88e8706bd3736aadfe20580808301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000c001a0b16a4eec6044a7f77406bfcc047345081ad1b74a4e9f70579a85139dc09327a8a019d8bd096eb6c902090cd2dc8600fd3b2434cef45e8f7c14586a132ff714bed000",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0x2f0658a78102939af2537b04ae0a3cd8e36aab51c54a6b2ae319ce8b7fa33b85"
+    },
+    {
+      "name": "high_s_signature",
+      "raw": "0x02f88e8706bd3736aadfe20580808301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000c080a0b16a4eec6044a7f77406bfcc047345081ad1b74a4e9f70579a85139dc09327a8a0e62742f6914936fdf6f32d2379ff02c3967a0df250b9242767684b5cd9218271",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 1,
+      "reasonHash": "0x5be1d1500fa8ad0bbc2eb0d3261c950a7696343992c824d4dac9eb498ce27228"
+    },
+    {
+      "name": "contract_creation",
+      "raw": "0x02f87a8706bd3736aadfe20580808301d4c08080a4123456780000000000000000000000000000000000000000000000000000000000000000c080a042eb64698c5ba24da5a1c5e312d21741bf308ccf8a2408a45534e92d90dea08ea0093855089bbf9916246645a6cdc6bd6995e8793235a9d219e200b6eaf5238370",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 2,
+      "reasonHash": "0x5ba710710fb63eac88c3485aa8b0d68051e298e35fc4b39163ca5f092995f7a2"
+    },
+    {
+      "name": "target_outside_call_rules",
+      "raw": "0x02f88e8706bd3736aadfe20580808301d4c094999999999999999999999999999999999999999980a4123456780000000000000000000000000000000000000000000000000000000000000000c001a0188398389fc30c075affa81930ec9c67c5eea1bc40d2e9932cf44ce69253e8baa06a7db4cd5cc9b3c44e9b2249dee911bf5204d4f8a361fffbb8a93e20178672f1",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 2,
+      "reasonHash": "0x72a292114b2aad08030c77ffda224046059c347589b8d0910f1bc885696b6b89"
+    },
+    {
+      "name": "allowed_target_calldata_below_four_bytes",
+      "raw": "0x02f86d8706bd3736aadfe20580808301d4c09444444444444444444444444444444444444444448083123456c001a0aa18a32eb882e8e436e9e20ea4c51d37750161b8eb336553b6b3d17bacf12639a011d569ba0bf7ab9f81eb1aa689c9d6e24481080c79ccb25f154754fb7fc9712e",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 2,
+      "reasonHash": "0x5455f60f8dd60e0f68ee0d924c9a4e988386e401978639b00e196b4a42d33608"
+    },
+    {
+      "name": "unknown_selector",
+      "raw": "0x02f88e8706bd3736aadfe20580808301d4c094444444444444444444444444444444444444444480a4deadbeef0000000000000000000000000000000000000000000000000000000000000000c001a0351d8bd4ebe2ffa096946493e9df03fa1f1e4708b26aafbf4e1b6fa4ded253bea05ec41ed78f7dca84f63da95214eaf1a4ad8794cc6c07f4b1f512f76632df322b",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 2,
+      "reasonHash": "0x98023d02b6639b6e6b92e96c2f2560ee3d7649dfd84522fbe1b59db87b42136c"
+    },
+    {
+      "name": "sentinel_rule_caller_not_active_member",
+      "raw": "0x02f88e8706bd3736aadfe20580808301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000c001a0b16a4eec6044a7f77406bfcc047345081ad1b74a4e9f70579a85139dc09327a8a019d8bd096eb6c902090cd2dc8600fd3b2434cef45e8f7c14586a132ff714bed0",
+      "activeMembers": [
+        "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf"
+      ],
+      "reason": 2,
+      "reasonHash": "0x32cf686527fcc9bf15354660a05e1a1cdf0ed50959e8493becfa313243c3b3c8"
+    },
+    {
+      "name": "sender_nonce_mismatch",
+      "raw": "0x02f88e8706bd3736aadfe20480808301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000c080a0d2f0887e7bd5960d59eebe062ca2b5e13b37d505bfb0ef246f22227197645feaa00e51efe9e54bceb9cfd4e5be72e9e53c4144709bc86097d731a50487c61611d1",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 3,
+      "reasonHash": "0xe51c011f687455df3bd762d62f0e119835f668ed38c9be8562e830963b8d471c"
+    },
+    {
+      "name": "sender_balance_below_value",
+      "raw": "0x02f8908706bd3736aadfe20580808301d4c09444444444444444444444444444444444444444448203e9a4123456780000000000000000000000000000000000000000000000000000000000000000c080a0662ed1f427bd3f6edabfe70ea94f760765d33d3a510749adff101a2e33f891d6a00f152fb94b36d4d3014f3345ade2b4c7c9c881bf5fa4ce468ef915da54580658",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": 3,
+      "reasonHash": "0x047336fe5c37cc93d9ca550c5569fa9b763de3019e03af4c0b70c2332dfad070"
+    },
+    {
+      "name": "absent_sender_nonce_one",
+      "raw": "0x02f88e8706bd3736aadfe20180808301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000c080a02d90a96006db228427e4da3490ffbc7113497b78b17476b1f09062659c028fc9a03b86ef73ad21c981aca999fc8247f9815fde492bf9733cf6402b77dfc75ef6fe",
+      "activeMembers": [
+        "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf"
+      ],
+      "reason": 3,
+      "reasonHash": "0x844efc4abcb4a1473725f5d91ecff015887b2ac4fad6e324b4a9d06e90512173"
+    },
+    {
+      "name": "includable_member_exact_nonce",
+      "raw": "0x02f88e8706bd3736aadfe20580808301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000c001a0b16a4eec6044a7f77406bfcc047345081ad1b74a4e9f70579a85139dc09327a8a019d8bd096eb6c902090cd2dc8600fd3b2434cef45e8f7c14586a132ff714bed0",
+      "activeMembers": [
+        "0x7e5f4552091a69125d5dfcb7b8c2659029395bdf"
+      ],
+      "reason": null,
+      "reasonHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "includable_absent_sender_nonce_zero",
+      "raw": "0x02f88e8706bd3736aadfe28080808301d4c094444444444444444444444444444444444444444480a4123456780000000000000000000000000000000000000000000000000000000000000000c080a08e877decffd57a4e315ee65bf4e408798d1c280ee7041c5c4dd0f8604e0b4d71a02c85348796fb1f8180d53d3ad52b8fe70609e532df931763f2c330ee9e760666",
+      "activeMembers": [
+        "0x2b5ad5c4795c026514f8317c7a215e218dccd6cf"
+      ],
+      "reason": null,
+      "reasonHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ]
+}
