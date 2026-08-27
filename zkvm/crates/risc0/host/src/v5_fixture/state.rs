@@ -4,7 +4,7 @@
 use alloy_primitives::{keccak256, Address, Bytes, B256, U256};
 use alloy_trie::{proof::ProofRetainer, HashBuilder, Nibbles, TrieAccount};
 use anyhow::{Context, Result};
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, BTreeSet};
 use stf_types::{
     storage_keys_root_v5, AccountState, CertifiedImportBindingV5, CompactAccountWitnessV4,
     CompactStateWitnessV4, CompactStorageWitnessV4, L1ImportWitnessV5, L1MirrorBindingV5,
@@ -217,6 +217,54 @@ pub(super) fn compact_state(state: &[(Address, AccountState)]) -> CompactStateWi
         canonical_state_root: B256::ZERO,
         accounts,
     }
+}
+
+/// Build a continuation witness from the replayed values while retaining the
+/// cold template's declared storage envelope.
+///
+/// `StateMap::to_input_state` correctly canonicalizes zero-valued storage out
+/// of every replay step.  A compact witness has a second job, however: its
+/// explicit zero slots declare what the guest may read or write.  Reinsert the
+/// cold declaration as zero only when the account still exists in the replay;
+/// this widens the access envelope without changing the canonical state root
+/// and never resurrects an account removed by execution.
+pub(super) fn compact_state_with_declared_storage(
+    state: &[(Address, AccountState)],
+    declarations: &[(Address, AccountState)],
+) -> CompactStateWitnessV4 {
+    let declared = declarations
+        .iter()
+        .map(|(address, account)| {
+            (
+                *address,
+                account
+                    .storage
+                    .iter()
+                    .map(|(slot, _)| *slot)
+                    .collect::<BTreeSet<_>>(),
+            )
+        })
+        .collect::<BTreeMap<_, _>>();
+    let mut witness = compact_state(state);
+    for account in witness.accounts.iter_mut().filter(|account| account.exists) {
+        let Some(slots) = declared.get(&account.address) else {
+            continue;
+        };
+        let mut storage = account
+            .storage
+            .drain(..)
+            .map(|item| (item.slot, item))
+            .collect::<BTreeMap<_, _>>();
+        for slot in slots {
+            storage.entry(*slot).or_insert(CompactStorageWitnessV4 {
+                slot: *slot,
+                value: U256::ZERO,
+                proof: vec![],
+            });
+        }
+        account.storage = storage.into_values().collect();
+    }
+    witness
 }
 
 pub(super) fn make_import(

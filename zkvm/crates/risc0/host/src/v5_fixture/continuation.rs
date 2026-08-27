@@ -24,7 +24,7 @@ use stf_types::{AccountState, CompactStateWitnessV4, L1ImportWitnessV5};
 use super::config::FixtureConfig;
 use super::contracts::RegistrySlots;
 use super::signing::env;
-use super::state::{compact_state, registry_view};
+use super::state::{compact_state, compact_state_with_declared_storage, registry_view};
 
 /// The room as its already-proved blocks leave it: the state batch `n` opens
 /// at, that state's root, and the height of the last replayed block.
@@ -151,7 +151,10 @@ pub(super) fn batch_opening(
     }
     Ok(BatchOpening {
         pre_state_root: replay.root,
-        compact_state: compact_state(&replay.state),
+        // Replay state is canonical and therefore omits zero storage. Restore
+        // the cold template's general storage declaration envelope in the
+        // witness so a continuation may still read an unchanged zero slot.
+        compact_state: compact_state_with_declared_storage(&replay.state, cold.state),
         participant_root: root,
         participant_epoch: epoch,
         participant_count: count,

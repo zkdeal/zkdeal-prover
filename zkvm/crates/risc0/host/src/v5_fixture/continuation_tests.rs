@@ -12,11 +12,11 @@
 
 use alloy_primitives::{Address, Bytes, B256, U256};
 use serde_json::{json, Value};
-use stf_types::room_chain_id_v5;
+use stf_types::{room_chain_id_v5, AccountState, CompactStateWitnessV4};
 
 use super::bytecode::storage_runtime;
 use super::config::parse_fixture_config;
-use super::contracts::legacy_contracts;
+use super::contracts::{exit_queue_address, legacy_contracts};
 use super::request_tests::request;
 use super::signing::sign_calldata_as;
 
@@ -127,6 +127,44 @@ fn a_second_batch_chains_onto_the_first() {
     assert_eq!(proved[0]["block_number"], json!(3));
     assert_eq!(proved[1]["block_number"], json!(4));
     assert_eq!(second["measurement"]["transactions"], json!(2));
+}
+
+#[test]
+fn a_continuation_retains_an_unchanged_zero_storage_declaration() {
+    let second = super::prepare(&room_at(2, blocks(4)), IMAGE_ID)
+        .expect("a continuation may read the inert exit queue count");
+    let compact: CompactStateWitnessV4 =
+        serde_json::from_value(second["roomRequest"]["roomWitness"]["compact_state"].clone())
+            .expect("prepared compact-state witness");
+    let queue = compact
+        .accounts
+        .iter()
+        .find(|account| account.address == exit_queue_address())
+        .expect("the cold exit-queue account remains present");
+    assert!(queue.exists);
+    assert!(queue
+        .storage
+        .iter()
+        .any(|slot| slot.slot == U256::ZERO && slot.value == U256::ZERO));
+}
+
+#[test]
+fn a_continuation_does_not_resurrect_a_removed_declared_account() {
+    let removed = Address::repeat_byte(0xa5);
+    let declarations = vec![(
+        removed,
+        AccountState {
+            nonce: 1,
+            balance: U256::ZERO,
+            code: Bytes::from_static(&[0x00]),
+            storage: vec![(U256::ZERO, U256::ZERO)],
+        },
+    )];
+    let compact = super::state::compact_state_with_declared_storage(&[], &declarations);
+    assert!(!compact
+        .accounts
+        .iter()
+        .any(|account| account.address == removed));
 }
 
 #[test]

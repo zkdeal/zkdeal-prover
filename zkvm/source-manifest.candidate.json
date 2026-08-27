@@ -24,7 +24,7 @@
     "vendor/rustcrypto-crypto-bigint",
     "vendor/rustcrypto-k256"
   ],
-  "filesDigest": "5c7d7a192a8c858a6d4ee9cc70ed2226ba18a1cad87b665a41f70296ba783e60",
+  "filesDigest": "bcc153e3fd9454532bc7498fce8aba181b87676cc1474e253e825c097bfecddb",
   "files": [
     {
       "path": "Cargo.lock",
@@ -172,14 +172,14 @@
     },
     {
       "path": "crates/risc0/host/src/v5_fixture/continuation.rs",
-      "size": 6848,
-      "sha256": "4e9e7b6d621357acd114c2f0233c012e6cb6ee1b5deffbab3844f49448d2e8fa",
+      "size": 7149,
+      "sha256": "80dd397df63567df998863e9a69d7c06fd7171025915cffae0cda0b6a271e72d",
       "executable": false
     },
     {
       "path": "crates/risc0/host/src/v5_fixture/continuation_tests.rs",
-      "size": 11764,
-      "sha256": "d0bf9c8d65279c723a1fc4d0ac9c56cc78337e90c532937f7bd7a6dce5384a42",
+      "size": 13137,
+      "sha256": "8b888ac5376b2f208f880fbe5f9009f9cf1a982440222f8fba20fab06611bf1c",
       "executable": false
     },
     {
@@ -232,8 +232,8 @@
     },
     {
       "path": "crates/risc0/host/src/v5_fixture/state.rs",
-      "size": 11484,
-      "sha256": "6582628bf8fc081b15532f98980e45bc44adc4697529697a754990278d8d0ee5",
+      "size": 13283,
+      "sha256": "7e0041068c79e6a772bc2005ea58e37490cd1399c90f58076fd2b5836d871eff",
       "executable": false
     },
     {
