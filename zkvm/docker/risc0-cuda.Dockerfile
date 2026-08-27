@@ -166,7 +166,7 @@ RUN test "${#SOURCE_MANIFEST_SHA256}" -eq 64 \
     && case "${SOURCE_MANIFEST_SHA256}" in *[!0-9a-f]*) exit 1;; esac
 LABEL org.opencontainers.image.title="zkdeal RISC Zero CUDA prover" \
       org.opencontainers.image.source-manifest.sha256="${SOURCE_MANIFEST_SHA256}" \
-      org.opencontainers.image.source="https://github.com/OlegJakushkin/zkdeal" \
+      org.opencontainers.image.source="https://github.com/zkdeal/zkdeal-prover" \
       org.opencontainers.image.licenses="BUSL-1.1"
 
 ENV RISC0_PROVER=local \
