@@ -69,12 +69,13 @@ card; the **guest program ID is identical across all of them** (the guest is
 RISC-V, not CUDA), so proofs from any tag verify against the same on-chain
 pin.
 
-| Tag | `CUDA_ARCH` | Cards | Status |
+| Immutable release tag | `CUDA_ARCH` | Cards | Current-release evidence |
 | --- | --- | --- | --- |
-| `zkdeal/prover-cuda:sm86` | 86 | RTX 30xx (Ampere) | hardware-validated |
-| `zkdeal/prover-cuda:sm89` | 89 | RTX 40xx (Ada) - the default-node floor | hardware-validated; `latest` points here |
-| `zkdeal/prover-cuda:sm90` | 90 | H100 (Hopper), incl. Azure confidential GPU VMs | **build-verified only** - we have not run it on H100 hardware yet |
-| `zkdeal/prover-cuda:sm120` | 120 | RTX 50xx (Blackwell), incl. RTX 5090; needs an r570+ driver | hardware validation in progress - the 5090 release run |
+| `sm86-d60547b-20260827` | 86 | RTX 30xx / A10 (Ampere) | native `sm_86` cubins build-inspected; not hardware-exercised in this release run |
+| `sm89-d60547b-20260827` | 89 | RTX 40xx / L4 (Ada) | native `sm_89` cubins build-inspected; `latest` currently resolves to this image, but production should use the immutable reference below |
+| `sm90-d60547b-20260827` | 90 | H100 (Hopper), including Azure confidential GPU VMs | native `sm_90` cubins build-inspected; not yet exercised by us on H100 hardware |
+| `sm100-d60547b-20260827` | 100 | B100 / B200 (datacenter Blackwell) | native `sm_100` cubins and the CUDA-only service exercised on an NVIDIA B200; the clean public-layout acceptance also completed on B200 |
+| `sm120-d60547b-20260827` | 120 | RTX 50xx (GeForce Blackwell), including RTX 5090 | native `sm_120` cubins build-inspected; not hardware-exercised in this release run |
 
 Tags are convenience labels only. Production pins the **manifest digest** and
 verifies the image's `org.opencontainers.image.source-manifest.sha256` label
@@ -82,19 +83,19 @@ against the deterministic source manifest (§6 for checking a running prover;
 [REPRODUCING-THE-TRUST-ROOT.md](REPRODUCING-THE-TRUST-ROOT.md) for the label
 and manifest themselves). Recorded image digests:
 
-| Tag | Manifest digest |
+| Immutable release tag | Manifest digest |
 | --- | --- |
-| `sm89` (= `latest`) | `sha256:810ef5dffb2c9aaf6df152c2d0a8b41b2abdcc9f6021d4334d6fb2a69b977e11` |
-| `sm86` | `sha256:76f0acfb81e8d8170a39e215c168153a0854a4927b547d26677e158913c838a5` |
-| `sm90` | `sha256:ba3b1ebb47df07c7b47fdfb441f66e00659b889156e3b556b41e566e9a08f454` |
-| `sm120` | pending publication - filled by the 5090 release run |
+| `sm86-d60547b-20260827` | `sha256:d6fb137376c365fe3c881fbe89cd1a7111e2309f278a54144d0502cd6eea50e7` |
+| `sm89-d60547b-20260827` | `sha256:910afc1e2fb078ac8b4f11f64bdf7aa3d8b1f4b8cadf8a142b7b9e66bde08006` |
+| `sm90-d60547b-20260827` | `sha256:35043aa6408292420695812a64bd2aa0f9e180019d78ce2b5cd7caedaaf8dd84` |
+| `sm100-d60547b-20260827` | `sha256:e1a0b4b36637a415823fdcf1139657884dfa1f1016441a8d1e3701bed4483d67` |
+| `sm120-d60547b-20260827` | `sha256:16f8849f1db554c97c9571d5c43e399a24c61b239f728b70bec93fa29d7f799d` |
 
-> **Superseded (pre-v6).** The digests above are the last published **v5**
-> protocol binaries and are kept for the historical record. The v6 protocol
-> requires a fresh trust-root ceremony (new guest program ID, new lock, new
-> source manifest); its image digests will be added here when that ceremony
-> publishes them. These v5 images do not prove v6 statements and do not verify
-> against a v6 deployment.
+These are the corrected protocol-v6 images built from prover source commit
+`d60547ba7e040d2ba77bd154bb6e20c10d276657`. The `/v5/*` HTTP route prefix
+names the stable host API and witness family; it does not mean that the
+container runs protocol v5. A current container reports `protocolVersion: 6`
+and `evmFork: "osaka"` from `/healthz`.
 
 ## 2. Quickstart
 
@@ -104,11 +105,16 @@ Requirements: an NVIDIA GPU with ≥8 GB VRAM, a driver new enough for CUDA
 refuses to serve without it.
 
 ```bash
+IMAGE='docker.io/zkdeal/prover-cuda:sm89-d60547b-20260827@sha256:910afc1e2fb078ac8b4f11f64bdf7aa3d8b1f4b8cadf8a142b7b9e66bde08006'
 docker run --gpus all -p 8080:8080 \
   -e ZKDEAL_PROVER_TOKEN='<a long random secret>' \
   -e SEGMENT_PO2=20 \
-  zkdeal/prover-cuda:sm89
+  "$IMAGE"
 ```
+
+The example is the Ada/sm89 pin. Substitute the matching complete
+tag-and-digest pair from the table for another supported architecture; do not
+reuse the sm89 image and rely on PTX just-in-time compilation.
 
 **Always set `ZKDEAL_PROVER_TOKEN`.** Without it every `/v5/*` proving route
 is unauthenticated - the prover prints a `Blocker:` warning and serves
@@ -148,7 +154,7 @@ Deployment sketch:
 
 Honest caveats:
 
-- The `sm90` tag is **build-verified but not yet validated on H100
+- The current `sm90-d60547b-20260827` image is **build-inspected but not yet validated on H100
   hardware** by us. Treat the first deployment as a pilot and confirm
   `/healthz` + a `/v5/cold-templates/prove` round-trip before joining a pool.
 - The TEE protects confidentiality/integrity of the *running* prover. It is
