@@ -19,6 +19,41 @@ the single source of the lock's shape and literals; and
 `scripts/verify-zkvm-locks.mjs` re-checks the lock in CI as a required job -
 absent generated build outputs are reported, never silently passed over.
 
+## Motivational example
+
+A prover container can be “healthy” and still be the wrong artifact: a mutable
+tag, PTX just-in-time compilation for another GPU, a development build, or a
+silent CPU path all change what was actually tested. The useful smoke test
+therefore starts from an immutable digest and checks the binary as well as the
+HTTP surface.
+
+This run pulls the published `sm100` image on an NVIDIA B200, finds native
+`sm_100` cubins with PTX JIT disabled, and then checks that the live service is
+production CUDA with no CPU fallback.
+
+[![A terminal verifies the digest-pinned sm100 prover image on B200 and reports production CUDA with CPU fallback disabled.](https://zkdeal.org/blog/terminal/vii-docker-prover-smoke-poster.png?v=71e3944c65e3)](https://zkdeal.org/blog/run-the-supplied-zkdeal-docker-stack/#terminal-recording)
+
+**Watch or inspect the run:** [interactive Asciinema recording](https://zkdeal.org/blog/run-the-supplied-zkdeal-docker-stack/#terminal-recording) · [copyable transcript](https://zkdeal.org/blog/terminal/vii-docker-prover-smoke.txt) · [Asciicast v3](https://zkdeal.org/blog/terminal/vii-docker-prover-smoke.cast) · [VHS tape](https://zkdeal.org/blog/terminal/vii-docker-prover-smoke.tape) · [WebM](https://zkdeal.org/blog/terminal/vii-docker-prover-smoke.webm) · [MP4](https://zkdeal.org/blog/terminal/vii-docker-prover-smoke.mp4)
+
+With the digest-pinned service running on loopback, the final checks stay
+small:
+
+```sh
+curl -fsS http://127.0.0.1:8080/healthz | \
+  jq '{status,protocolVersion,evmFork,cpuFallback,prover}'
+curl -fsS http://127.0.0.1:8080/v5/capabilities | \
+  jq '{cudaCompiled,productionCompiled,proofModes,ethereumSeal}'
+```
+
+Expected result includes:
+
+```text
+{"status":"ready","protocolVersion":6,"evmFork":"osaka","cpuFallback":false,"prover":"risc0-local-cuda"}
+{"cudaCompiled":true,"productionCompiled":true,"proofModes":["succinct","groth16"],"ethereumSeal":true}
+```
+
+[Run the complete image-verification tutorial](https://zkdeal.org/blog/run-the-supplied-zkdeal-docker-stack/) or continue with the [operator guide](docs/RUNNING-A-PROVER.md).
+
 ## Quickstart
 
 Docker Desktop must be running. No host toolchain is needed - Rust, CUDA and
