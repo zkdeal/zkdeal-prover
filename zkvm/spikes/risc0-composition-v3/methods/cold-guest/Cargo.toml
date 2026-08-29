@@ -2,10 +2,10 @@
 name = "zkdeal-cold-template-v4"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
 publish = false
 
 [workspace]
 
 [dependencies]
 risc0-zkvm = { version = "=3.0.6", default-features = false, features = ["std"] }
-

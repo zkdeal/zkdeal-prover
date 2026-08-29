@@ -2,6 +2,7 @@
 name = "r0-methods"
 version.workspace = true
 edition.workspace = true
+license.workspace = true
 description = "Embeds the zkdeal STF risc0 guest ELF + deterministic image id"
 
 [build-dependencies]

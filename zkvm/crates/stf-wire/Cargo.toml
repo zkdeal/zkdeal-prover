@@ -2,6 +2,7 @@
 name = "stf-wire"
 version.workspace = true
 edition.workspace = true
+license.workspace = true
 description = "Wire codecs shared by every zkVM backend: borsh guest input/journal encoding + the TS witness-JSON bridge"
 
 [features]

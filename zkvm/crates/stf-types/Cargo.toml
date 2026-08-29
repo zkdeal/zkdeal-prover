@@ -2,6 +2,7 @@
 name = "stf-types"
 version.workspace = true
 edition.workspace = true
+license.workspace = true
 description = "zkdeal STF guest/host shared types (no_std-friendly)"
 
 [dependencies]

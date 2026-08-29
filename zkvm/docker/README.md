@@ -28,8 +28,9 @@ The physical GPU node runs only `--check-build-input`; it must never regenerate
 this file after the umbrella archive has been hashed and transferred.
 
 `risc0-cuda.Dockerfile.dockerignore` deliberately limits this build context
-to `zkvm/` and excludes local Cargo/build outputs; do not remove it or Docker
-will upload multi-gigabyte developer targets before the build starts.
+to the root `LICENSE` plus `zkvm/`, and excludes local Cargo/build outputs; do
+not remove it or Docker will upload multi-gigabyte developer targets before
+the build starts.
 
 For the multi-artifact `zkvm/build.mjs --cuda` flow, build, **push**, and pin
 the source-independent `toolchain` stage and the separately built minimal

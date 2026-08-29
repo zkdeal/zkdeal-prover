@@ -6,6 +6,7 @@ exclude = ["methods/cold-guest", "methods/suffix-guest"]
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
 
 # This spike is its own workspace root, so cargo's upward search never reaches
 # `zkvm/Cargo.toml`. Mirror its `[patch.crates-io]` block here or the spike
@@ -15,4 +16,3 @@ edition = "2021"
 [patch.crates-io]
 risc0-sys = { path = "../../vendor/risc0-sys" }
 risc0-groth16-sys = { path = "../../vendor/risc0-groth16-sys" }
-

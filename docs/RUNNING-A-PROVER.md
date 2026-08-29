@@ -16,14 +16,12 @@ manifest digest, ready for a GPU. The source is what you check it against: the
 guest state-transition function, the `zkdeal-r0` host, the build contract and
 the reproducibility ceremony that ties the two together.
 
-The prover source is published under the **Business Source License 1.1**
-(`prover-node/zkdeal-BUSL-1.1-LICENSE`, also carried at
-`prover-node/zkvm/zkdeal-BUSL-1.1-LICENSE` and shipped inside the image at
-`/zkdeal-BUSL-1.1-LICENSE`). In short: copying, modification, redistribution
-and non-production use are granted now; there is no Additional Use Grant, so
-production use needs a commercial license until the Change Date (16 August
-2030), after which the terms become MIT. Publication is a transparency and
-audit commitment, not a production-use grant.
+The prover source is published under the **MIT License** ([`LICENSE`](../LICENSE)).
+Images built from this revision ship that license at `/LICENSE`. Previously
+published digest-pinned images are immutable and may retain the license file
+and OCI label that applied when they were built. MIT permits use, copying,
+modification, distribution, sublicensing, and sale subject to the license's
+notice and warranty-disclaimer terms.
 
 Reading the source is one thing; establishing that the image you pulled was
 built from it is another. The end-to-end procedure - pinned
@@ -43,7 +41,7 @@ its contents. Its useful contents are exactly:
 | `/usr/local/bin/zkdeal-r0` | The prover host binary (stripped). The RISC Zero **guest ELF and its image ID are compiled into this binary** - they are not separate files. |
 | `/home/zkdeal/.risc0/extensions/v0.1.0-risc0-groth16` | RISC Zero's Groth16 proving parameters (~2.2 GB, upstream content, sha256-verified at build). |
 | `/etc/zkdeal/source-manifest.json` | The deterministic inventory of the sources this image was built from. Its sha256 is also the image's `org.opencontainers.image.source-manifest.sha256` label; a reviewer checks one against the other. |
-| `/zkdeal-BUSL-1.1-LICENSE` | The license, carried on every shipped first-party image as the BUSL requires. |
+| `/LICENSE` | The MIT license for the first-party prover source in images built from this revision. Legacy immutable digests may retain their earlier license path and label. |
 | CA certificates, `nvidia/cuda:12.9.1-runtime` base | TLS trust + CUDA runtime libraries. |
 
 It is built with `--target runtime` from
@@ -220,13 +218,12 @@ development key, and a loopback-only `L1_RPC_URL`.
 
 Three independent layers:
 
-1. **Distribution and licensing**: the public image contains one stripped
+1. **Distribution and integrity**: the public image contains one stripped
    binary + upstream proving parameters, and is the operational product
-   surface. The source is published under BUSL-1.1 (section 1), so the
-   commercial boundary is a license term rather than secrecy. Neither the
-   license nor the image shape protects the *protocol* - the protocol's
-   security never depends on secrecy, which is why the source can be
-   published at all.
+   surface. The source is MIT licensed, while the source manifest and pinned
+   image digest let operators verify what they run. Neither the license nor
+   the image shape protects the *protocol*; its security never depends on
+   secrecy.
 2. **Runtime protection (optional, TEE)**: in an Azure confidential GPU VM
    the running prover and witnesses are shielded from the infrastructure
    operator (§3).

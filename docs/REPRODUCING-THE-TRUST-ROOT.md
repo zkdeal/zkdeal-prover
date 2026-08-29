@@ -84,18 +84,21 @@ the `SOURCE_MANIFEST_SHA256` build argument, and the builder stage independently
 `sha256sum --check`s the copied `source-manifest.candidate.json` against the
 same value, so a label that disagrees with the copied bytes cannot be built.
 
-The image also carries the manifest file itself. Extract it and diff it against
-the published one:
+The image also carries the manifest file itself. For an image built from this
+MIT-licensed revision, extract it and the license, then diff the manifest
+against the published one:
 
 ```sh
 cid=$(docker create <registry>/zkdeal-risc0-runtime@sha256:<runtime-digest>)
 docker cp "$cid:/etc/zkdeal/source-manifest.json" ./image-source-manifest.json
-docker cp "$cid:/zkdeal-BUSL-1.1-LICENSE" ./image-LICENSE
+docker cp "$cid:/LICENSE" ./image-LICENSE
 docker rm -f "$cid"
 ```
 
 `org.opencontainers.image.source` and `org.opencontainers.image.licenses`
-(`BUSL-1.1`) are on the same image.
+(`MIT` for images built from this revision) are on the same image. Immutable
+older digests retain the label and license path that applied when they were
+built.
 
 The toolchain image records what it actually installed, observed inside the
 image rather than declared in a script:

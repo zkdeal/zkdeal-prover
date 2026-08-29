@@ -121,8 +121,8 @@ volumes are absent before the first attempt.
 ## 3. Build and push the toolchain image (CUDA_ARCH=89, with the RISC0_HOME re-pin loop)
 
 Run from `prover-node/`. The build context is this folder;
-`risc0-cuda.Dockerfile.dockerignore` limits it to `zkvm/` minus targets and
-build outputs, so do not remove that file.
+`risc0-cuda.Dockerfile.dockerignore` limits it to the root `LICENSE` plus
+`zkvm/` minus targets and build outputs, so do not remove that file.
 
 **First pass - no pin, to learn the digest:**
 

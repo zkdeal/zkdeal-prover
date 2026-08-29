@@ -2,6 +2,7 @@
 # context filter prevents local Cargo targets (multiple GiB) and unrelated
 # monorepo artifacts from entering the reproducible CUDA build context.
 **
+!LICENSE
 !zkvm
 !zkvm/**
 zkvm/target

@@ -2,6 +2,7 @@
 name = "zkdeal-risc0-composition-spike"
 version.workspace = true
 edition.workspace = true
+license.workspace = true
 publish = false
 
 [[bin]]
@@ -19,4 +20,3 @@ risc0-zkvm = { version = "=3.0.6", features = ["prove", "disable-dev-mode"] }
 [features]
 default = []
 cuda = ["risc0-zkvm/cuda"]
-

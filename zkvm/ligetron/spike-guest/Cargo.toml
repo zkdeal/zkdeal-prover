@@ -16,6 +16,7 @@
 name = "stf-guest"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
 
 # Own workspace root, like ligetron/sdk-rust and crates/ligetron-guest. Without
 # this, cargo's root search walks up to zkvm/Cargo.toml, which lists neither
@@ -52,4 +53,3 @@ strip = true
 opt-level = "z"
 lto = true
 panic = "abort"
-

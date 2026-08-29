@@ -2,6 +2,7 @@
 name = "stf-wasm"
 version.workspace = true
 edition.workspace = true
+license.workspace = true
 description = "wasm-bindgen wrapper over stf-core execute_block_full — the shared real-STF executor for browser and Node backends"
 
 [lib]

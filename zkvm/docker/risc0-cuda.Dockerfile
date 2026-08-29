@@ -167,7 +167,7 @@ RUN test "${#SOURCE_MANIFEST_SHA256}" -eq 64 \
 LABEL org.opencontainers.image.title="zkdeal RISC Zero CUDA prover" \
       org.opencontainers.image.source-manifest.sha256="${SOURCE_MANIFEST_SHA256}" \
       org.opencontainers.image.source="https://github.com/zkdeal/zkdeal-prover" \
-      org.opencontainers.image.licenses="BUSL-1.1"
+      org.opencontainers.image.licenses="MIT"
 
 ENV RISC0_PROVER=local \
     RISC0_HOME=/home/zkdeal/.risc0 \
@@ -190,9 +190,8 @@ COPY --from=toolchain --chown=10001:10001 \
 COPY --from=builder /workspace/zkvm/target/release/zkdeal-r0 /usr/local/bin/zkdeal-r0
 COPY --from=builder /workspace/zkvm/source-manifest.candidate.json /etc/zkdeal/source-manifest.json
 
-# The BUSL requires conspicuous display of the license on each copy of the
-# Licensed Work; every shipped first-party image carries it at the image root.
-COPY --chmod=0444 zkvm/zkdeal-BUSL-1.1-LICENSE /zkdeal-BUSL-1.1-LICENSE
+# Carry the MIT license for the first-party source at the image root.
+COPY --chmod=0444 LICENSE /LICENSE
 
 USER zkdeal
 EXPOSE 8080

@@ -11,9 +11,9 @@ COPY --from=node_runtime /usr/lib/libgcc_s.so.1 /usr/lib/libgcc_s.so.1
 RUN node --version && docker --version
 
 # The orchestrator image is pushed to the release registry, so it carries the
-# conspicuous BUSL-1.1 license copy like every first-party image. Build context
-# is the prover-node root ($Source in the runbook).
-COPY --chmod=0444 zkvm/zkdeal-BUSL-1.1-LICENSE /zkdeal-BUSL-1.1-LICENSE
-LABEL org.opencontainers.image.licenses="BUSL-1.1"
+# MIT license for the first-party source. Build context is the prover-node root
+# ($Source in the runbook).
+COPY --chmod=0444 LICENSE /LICENSE
+LABEL org.opencontainers.image.licenses="MIT"
 
 WORKDIR /workspace

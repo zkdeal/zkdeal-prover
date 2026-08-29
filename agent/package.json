@@ -1,6 +1,7 @@
 {
   "name": "zkdeal-prover-agent",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "description": "queue-pull sidecar: leases proof jobs from the shared prove queue and forwards them to the local CUDA prover",

@@ -2,6 +2,7 @@
 name = "zkdeal-r0"
 version.workspace = true
 edition.workspace = true
+license.workspace = true
 description = "risc0 STF prover/verifier host — JSON-over-stdio (matches server/src/zkvm-assist.ts and @zkdeal/zkvm risc0-node)"
 
 [[bin]]
