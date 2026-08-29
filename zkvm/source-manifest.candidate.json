@@ -24,7 +24,7 @@
     "vendor/rustcrypto-crypto-bigint",
     "vendor/rustcrypto-k256"
   ],
-  "filesDigest": "bcc153e3fd9454532bc7498fce8aba181b87676cc1474e253e825c097bfecddb",
+  "filesDigest": "aaff748d26509cea63c20fa9babdfcd2eea6bfe3094f514c2413f2039951e33c",
   "files": [
     {
       "path": "Cargo.lock",
@@ -34,8 +34,8 @@
     },
     {
       "path": "Cargo.toml",
-      "size": 3042,
-      "sha256": "490cc65cc15ca3c39263d5799a2f7d42074c4c84dc33f76b869a05fa9efdcc7b",
+      "size": 3058,
+      "sha256": "181d8d923207cc57fda6f99d79c192f5c0ab4d431d3023b3f76afa2bdf32c931",
       "executable": false
     },
     {
@@ -64,8 +64,8 @@
     },
     {
       "path": "crates/risc0/host/Cargo.toml",
-      "size": 1982,
-      "sha256": "cd80b1e4274066bf84cec9dbef45aaf282ba68773504a4d674bd8c7fdf3cde7c",
+      "size": 2007,
+      "sha256": "3093653254d3cadf143c6c321606d4517c6d971cd77169ed41236a2cc799f021",
       "executable": false
     },
     {
@@ -250,8 +250,8 @@
     },
     {
       "path": "crates/risc0/methods/Cargo.toml",
-      "size": 288,
-      "sha256": "849166b7b05a8d504675fc3501b7cbfc6b5d07c6b3d77b2a59991fa8ef96e6b2",
+      "size": 313,
+      "sha256": "5a2a1f2ca19223c75d21688ab17050ee09ef2869fc076bf075e6ff7c7ca50c5a",
       "executable": false
     },
     {
@@ -268,8 +268,8 @@
     },
     {
       "path": "crates/risc0/methods/guest/Cargo.toml",
-      "size": 1909,
-      "sha256": "d39e687f13e4882f0d1df53169b1c1479e6c1211ee430e35b9750fae193e06b6",
+      "size": 1925,
+      "sha256": "9e277378b88addde86fdc2047144dfe672706de7b376c106094c468f358f6edd",
       "executable": false
     },
     {
@@ -292,8 +292,8 @@
     },
     {
       "path": "crates/risc0/wasm-verifier/Cargo.toml",
-      "size": 822,
-      "sha256": "f2e2498da8fcdeee97453a46c9846e81ec243a679f0d4b40d217e9783767c10d",
+      "size": 847,
+      "sha256": "b386fc02c04d546565b60ffc840e90d8f1b7abde665e145eeb4e2d5df8998e3f",
       "executable": false
     },
     {
@@ -304,8 +304,8 @@
     },
     {
       "path": "crates/stf-core/Cargo.toml",
-      "size": 1457,
-      "sha256": "b70e4eb1f6470a0f01d4051848bd4eeec9a7b8e239fffad77672f0942651678d",
+      "size": 1482,
+      "sha256": "15383da9bbc7894aec5f04562b26e538975f668dabb3b5426b7237c9ac7cf7cb",
       "executable": false
     },
     {
@@ -634,8 +634,8 @@
     },
     {
       "path": "crates/stf-types/Cargo.toml",
-      "size": 627,
-      "sha256": "e87285be55dbd7b16adf7c10398ea15aaec2489ed77d29108249277aeeb23429",
+      "size": 652,
+      "sha256": "d5c4cf5dba6390591ad8e7ae32a47f86e07b443c026da19517cc513375860cb0",
       "executable": false
     },
     {
@@ -742,8 +742,8 @@
     },
     {
       "path": "crates/stf-wire/Cargo.toml",
-      "size": 614,
-      "sha256": "315c524ab0b2b77f24dea075e98fc7252fdbf658f389e7f24fc8fa7410d44c0b",
+      "size": 639,
+      "sha256": "e77f849a7b631697be2c9b93a1530ac217c06761ea5a57aa9a27155846cdf31c",
       "executable": false
     },
     {
@@ -850,8 +850,8 @@
     },
     {
       "path": "docker/README.md",
-      "size": 7587,
-      "sha256": "cfed6e4a48759ddd03c0b19496e8820ad2fd598256a45e2317de6297343e0819",
+      "size": 7612,
+      "sha256": "664e6706036a5ee427229aa6ddeec04361c97ab0a5f325bcbadb0b7b6d9ce01c",
       "executable": false
     },
     {
@@ -868,8 +868,8 @@
     },
     {
       "path": "docker/V6_TRUST_ROOT_CEREMONY.md",
-      "size": 19655,
-      "sha256": "4964fc25474dbb87ef0df46ed3a431b5fa61fcf639a150351176c12de361d3b5",
+      "size": 19679,
+      "sha256": "4e3178c88f53df25cfcc17483cb9f5f80700919966c89667896fbcfd149777d8",
       "executable": false
     },
     {
@@ -886,8 +886,8 @@
     },
     {
       "path": "docker/release-orchestrator.Dockerfile",
-      "size": 989,
-      "sha256": "5c90b685cfb8776d3d1ccede830dd58652372858a1811258a9b5574a1deb083d",
+      "size": 923,
+      "sha256": "ff06f586703faa0fe33e3ea1442a2dae01555981d38cdc9475d13c48f5f1af99",
       "executable": false
     },
     {
@@ -904,14 +904,14 @@
     },
     {
       "path": "docker/risc0-cuda.Dockerfile",
-      "size": 10926,
-      "sha256": "ceaa20fb900e9192a5a499ea912e3931df325df1788337dfaba6ab56ecbf9059",
+      "size": 10800,
+      "sha256": "ec837268e33d6faf1fd3e7889aa7c2284e21d1d3c22b8855a9ae771025663ec4",
       "executable": false
     },
     {
       "path": "docker/risc0-cuda.Dockerfile.dockerignore",
-      "size": 291,
-      "sha256": "a60d0f74e6c1bdb6aed440da0633ad743c7a2ac6fc290bb6b4c4c0d9ee424c2f",
+      "size": 300,
+      "sha256": "abae83735ce4e729e561b8c831012feec30f9dffe93cde901ae0383b47fb2082",
       "executable": false
     },
     {
