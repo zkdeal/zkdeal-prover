@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  node:
+    name: Agent and build-contract checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.13.1 --activate
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type-check prover agent
+        run: pnpm -C agent run build
+
+      - name: Test prover agent
+        run: pnpm -C agent exec vitest run --retry=2
+
+      - name: Test trust-root and release build contracts
+        run: node --test zkvm/scripts/*.test.mjs
+
+      - name: Enforce repository-client-free release sources
+        run: pnpm check:no-git
+
+  rust:
+    name: CPU state-transition and host checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: zkvm
+    env:
+      CARGO_TERM_COLOR: always
+      RISC0_SKIP_BUILD: "1"
+      RISC0_SKIP_BUILD_KERNELS: "1"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install pinned Rust toolchain
+        run: rustup toolchain install 1.88.0 --profile minimal
+
+      - name: Test state-transition function
+        run: cargo test -p stf-core --locked
+
+      - name: Test wire and public types
+        run: cargo test -p stf-wire -p stf-types --locked
+
+      - name: Check proving-disabled host surface
+        run: cargo check -p zkdeal-r0 -p r0-methods --locked
+
+      - name: Test host HTTP surface
+        run: cargo test -p zkdeal-r0 --locked http_
